@@ -669,14 +669,17 @@ export const Questions: Array<Question> = [
 				title: "Je-li to považováno za nebezpečné či rušivé pro soupeře.",
 				isRight: true
 			},
-			{ title: " Vždy.", isRight: false },
+			{ title: "Vždy.", isRight: false },
 			{ title: "Pouze, je-li soupeř zasažen do hlavy.", isRight: false },
-			{ title: "Nikdy.", isRight: false }
+			{
+				title: "Nikdy. Vždy je udělen buď volný úder, nebo pětiminutový trest.",
+				isRight: false
+			}
 		]
 	},
 
 	{
-		title: "Vždy je udělen buď volný úder, nebo pětiminutový trest. Hráč vloží florbalku do střely soupeře, přičemž se florbalka zlomí a vyletí mu z ruky. Následně:",
+		title: "Hráč vloží florbalku do střely soupeře, přičemž se florbalka zlomí a vyletí mu z ruky. Následně:",
 		options: [
 			{
 				title: "Hráč, jehož florbalka odletěla, musí tuto florbalku ze hřiště sebrat a odnést do vlastního prostoru pro střídání, jinak mu bude uložen dvouminutový trest.",
