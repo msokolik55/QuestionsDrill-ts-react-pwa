@@ -86,8 +86,8 @@ function App() {
 				</Toolbar>
 			</AppBar>
 			<Container>
-				<Grid container direction="row">
-					<Grid item direction="column" xs={7}>
+				<Grid container direction="row" spacing={4}>
+					<Grid item direction="column" sm={7}>
 						<h4>
 							{questionID + 1} / {Questions.length}
 						</h4>
@@ -119,14 +119,19 @@ function App() {
 						</Button>
 					</Grid>
 
-					<Grid item direction="column" xs={5}>
+					<Grid
+						item
+						direction="column"
+						alignContent="center"
+						sm={5}
+						style={{ paddingTop: "2rem", display: "flex" }}>
 						<Button
 							variant="contained"
 							color="secondary"
 							onClick={() => resetAnswers()}>
 							Reset
 						</Button>
-						<Card>
+						<Card style={{ marginBottom: "0.5rem" }}>
 							<CardContent>
 								<Typography variant="subtitle1">
 									Zle zodpovedané
