@@ -7,9 +7,12 @@ import {
 	AppBar,
 	Toolbar,
 	Typography,
-	Card,
 	Button,
-	CardContent
+	Card,
+	CardContent,
+	Accordion,
+	AccordionSummary,
+	AccordionDetails
 } from "@material-ui/core";
 
 import { Question } from "./data/interfaces";
@@ -165,7 +168,7 @@ function App() {
 							onClick={() => resetAnswers()}>
 							Reset
 						</Button>
-						<Card style={{ marginBottom: "0.5rem" }}>
+						{/* <Card style={{ marginBottom: "0.5rem" }}>
 							<CardContent>
 								<Typography variant="subtitle1">
 									<Grid container justifyContent="space-between">
@@ -206,6 +209,46 @@ function App() {
 									))}
 							</CardContent>
 						</Card>
+						*/}
+						<Accordion style={{ marginBottom: "0.5rem" }}>
+							<AccordionSummary>
+								<Typography variant="subtitle1">
+									Zle zodpovedané
+									<span style={{ color: "grey" }}>
+										{" (" + answeredWrong.length + ")"}
+									</span>
+								</Typography>
+							</AccordionSummary>
+							<AccordionDetails>
+								{answeredWrong
+									.sort((a, b) => a - b)
+									.map((num) => (
+										<Button onClick={() => generateQuestion(num)}>
+											{num + 1}
+										</Button>
+									))}
+							</AccordionDetails>
+						</Accordion>
+						<Accordion>
+							<AccordionSummary>
+								<Typography variant="subtitle1">
+									Zodpovedané{" "}
+									<span style={{ color: "grey" }}>
+										{" " +
+											answeredQuestions.length +
+											" / " +
+											Questions.length}
+									</span>
+								</Typography>
+							</AccordionSummary>
+							{answeredQuestions
+								.sort((a, b) => a - b)
+								.map((num) => (
+									<Button onClick={() => generateQuestion(num)}>
+										{num + 1}
+									</Button>
+								))}
+						</Accordion>
 					</Grid>
 				</Grid>
 			</Container>
