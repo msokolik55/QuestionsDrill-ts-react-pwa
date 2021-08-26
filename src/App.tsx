@@ -130,24 +130,27 @@ function App() {
 								{opt.title}
 							</Button>
 						))}
-						<Button
-							variant="contained"
-							color="secondary"
-							onClick={() => generateQuestion(questionID - 1)}>
-							Predchádzajúca
-						</Button>
-						<Button
-							variant="contained"
-							color="secondary"
-							onClick={() => generateQuestion()}>
-							Náhodná
-						</Button>
-						<Button
-							variant="contained"
-							color="secondary"
-							onClick={() => generateQuestion(questionID + 1)}>
-							Ďalšia
-						</Button>
+
+						<Grid container justifyContent="space-between">
+							<Button
+								variant="contained"
+								color="secondary"
+								onClick={() => generateQuestion(questionID - 1)}>
+								Predchádzajúca
+							</Button>
+							<Button
+								variant="contained"
+								color="secondary"
+								onClick={() => generateQuestion()}>
+								Náhodná
+							</Button>
+							<Button
+								variant="contained"
+								color="secondary"
+								onClick={() => generateQuestion(questionID + 1)}>
+								Ďalšia
+							</Button>
+						</Grid>
 					</Grid>
 
 					<Grid
@@ -165,7 +168,12 @@ function App() {
 						<Card style={{ marginBottom: "0.5rem" }}>
 							<CardContent>
 								<Typography variant="subtitle1">
-									Zle zodpovedané
+									<Grid container justifyContent="space-between">
+										Zle zodpovedané
+										<span style={{ color: "grey" }}>
+											{" " + answeredWrong.length}
+										</span>
+									</Grid>
 								</Typography>
 								{answeredWrong
 									.sort((a, b) => a - b)
@@ -178,7 +186,17 @@ function App() {
 						</Card>
 						<Card>
 							<CardContent>
-								<Typography variant="subtitle1">Zodpovedané</Typography>
+								<Typography variant="subtitle1">
+									<Grid container justifyContent="space-between">
+										Zodpovedané{" "}
+										<span style={{ color: "grey" }}>
+											{" " +
+												answeredQuestions.length +
+												" / " +
+												Questions.length}
+										</span>
+									</Grid>
+								</Typography>
 								{answeredQuestions
 									.sort((a, b) => a - b)
 									.map((num) => (
