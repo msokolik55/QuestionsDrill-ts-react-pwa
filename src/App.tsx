@@ -16,6 +16,18 @@ import { Question } from "./data/interfaces";
 import { Questions } from "./data/questions";
 
 function App() {
+	//#region DELETE
+	// const gen = () => {
+	// 	let arr: Array<number> = [];
+	// 	for (let i = 0; i < Questions.length - 1; i++) {
+	// 		arr.push(i);
+	// 	}
+	// 	return arr;
+	// };
+
+	// const [answeredQuestions, setAnsweredQuestions] = useState<Array<number>>(gen());
+	//#endregion
+
 	//#region useState
 	const [question, setQuestion] = useState(Questions[0]);
 	const [questionID, setQuestionID] = useState(0);
@@ -39,16 +51,23 @@ function App() {
 		setAnsweredQuestions([]);
 	};
 
+	const randomNumber = (maximum: number) => {
+		return Math.floor(Math.random() * maximum);
+	};
+
 	const generateQuestion = (id: number = -1) => {
 		let n: number;
 		if (id !== -1) {
 			n = id;
 		} else {
-			do {
-				n = Math.floor(Math.random() * Questions.length);
-			} while (answeredQuestions.includes(n));
+			if (answeredQuestions.length >= Questions.length) {
+				n = randomNumber(Questions.length);
+			} else {
+				do {
+					n = randomNumber(Questions.length);
+				} while (answeredQuestions.includes(n));
+			}
 		}
-		// n = id !== -1 ? id : Math.floor(Math.random() * Questions.length);
 
 		let que: Question = {
 			title: Questions[n].title,
@@ -115,7 +134,7 @@ function App() {
 							variant="contained"
 							color="secondary"
 							onClick={() => generateQuestion()}>
-							Ďalšia
+							Náhodná
 						</Button>
 					</Grid>
 
