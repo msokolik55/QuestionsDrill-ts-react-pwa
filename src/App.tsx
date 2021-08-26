@@ -16,6 +16,38 @@ import {
 import { Question } from "./data/interfaces";
 import { Questions } from "./data/questions";
 
+interface Props {
+	title: string;
+	items: Array<number>;
+	maximum: number;
+	setQuestion: (id?: number | undefined) => void;
+	keyLabel: string;
+}
+
+function AccordionStat({ title, items, maximum, setQuestion, keyLabel }: Props) {
+	return (
+		<Accordion style={{ width: "100%" }}>
+			<AccordionSummary>
+				<Grid container justifyContent="space-between">
+					<Typography variant="subtitle1">{title}</Typography>
+					<Typography style={{ color: "grey" }}>
+						{items.length + " / " + maximum}
+					</Typography>
+				</Grid>
+			</AccordionSummary>
+			<AccordionDetails>
+				{items
+					.sort((a, b) => a - b)
+					.map((num) => (
+						<Button key={keyLabel + num} onClick={() => setQuestion(num)}>
+							{num + 1}
+						</Button>
+					))}
+			</AccordionDetails>
+		</Accordion>
+	);
+}
+
 function App() {
 	//#region DELETE
 	// const gen = () => {
@@ -107,7 +139,7 @@ function App() {
 			</AppBar>
 			<Container>
 				<Grid container direction="row" spacing={4}>
-					<Grid item sm={7}>
+					<Grid item sm={7} style={{ width: "100%" }}>
 						<h4>
 							{questionID + 1} / {Questions.length}
 						</h4>
@@ -166,7 +198,22 @@ function App() {
 								onClick={() => resetAnswers()}>
 								Reset
 							</Button>
-							<Accordion style={{ marginBottom: "0.5rem", width: "100%" }}>
+
+							<AccordionStat
+								title="Zle zodpovedané"
+								items={answeredWrong}
+								maximum={answeredQuestions.length}
+								setQuestion={() => generateQuestion()}
+								keyLabel="wrong-"
+							/>
+							<AccordionStat
+								title="Zodpovedané"
+								items={answeredQuestions}
+								maximum={Questions.length}
+								setQuestion={() => generateQuestion()}
+								keyLabel="answered-"
+							/>
+							{/* <Accordion style={{ marginBottom: "0.5rem", width: "100%" }}>
 								<AccordionSummary>
 									<Grid container justifyContent="space-between">
 										<Typography variant="subtitle1">
@@ -214,7 +261,7 @@ function App() {
 											{num + 1}
 										</Button>
 									))}
-							</Accordion>
+							</Accordion> */}
 						</Grid>
 					</Grid>
 				</Grid>
