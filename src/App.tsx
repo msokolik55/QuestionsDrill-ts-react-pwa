@@ -12,7 +12,7 @@ import {
 	AccordionSummary,
 	AccordionDetails
 } from "@material-ui/core";
-import { ArrowBack, ArrowForward } from "@material-ui/icons";
+import { ArrowBack, ArrowForward, ExpandMore } from "@material-ui/icons";
 
 import { Question } from "./data/interfaces";
 import { Questions } from "./data/questions";
@@ -28,7 +28,7 @@ interface Props {
 function AccordionStat({ title, items, maximum, setQuestion, keyLabel }: Props) {
 	return (
 		<Accordion style={{ width: "100%" }}>
-			<AccordionSummary>
+			<AccordionSummary expandIcon={<ExpandMore />}>
 				<Grid container justifyContent="space-between">
 					<Typography variant="subtitle1">{title}</Typography>
 					<Typography style={{ color: "grey" }}>
