@@ -17,15 +17,21 @@ import { ArrowBack, ArrowForward, ExpandMore } from "@material-ui/icons";
 import { Question } from "./data/interfaces";
 import { Questions } from "./data/questions";
 
-interface Props {
+interface PropsStats {
 	title: string;
 	items: Array<number>;
 	maximum: number;
-	setQuestion: (id?: number | undefined) => void;
+	generateQuestion: (id?: number | undefined) => void;
 	keyLabel: string;
 }
 
-function AccordionStat({ title, items, maximum, setQuestion, keyLabel }: Props) {
+function AccordionStats({
+	title,
+	items,
+	maximum,
+	generateQuestion,
+	keyLabel
+}: PropsStats) {
 	return (
 		<Accordion style={{ width: "100%" }}>
 			<AccordionSummary expandIcon={<ExpandMore />}>
@@ -36,11 +42,13 @@ function AccordionStat({ title, items, maximum, setQuestion, keyLabel }: Props) 
 					</Typography>
 				</Grid>
 			</AccordionSummary>
-			<AccordionDetails>
+			<AccordionDetails style={{ flexWrap: "wrap" }}>
 				{items
 					.sort((a, b) => a - b)
 					.map((num) => (
-						<Button key={keyLabel + num} onClick={() => setQuestion(num)}>
+						<Button
+							key={keyLabel + num}
+							onClick={() => generateQuestion(num)}>
 							{num + 1}
 						</Button>
 					))}
@@ -200,69 +208,20 @@ function App() {
 								Reset
 							</Button>
 
-							<AccordionStat
+							<AccordionStats
 								title="Zle zodpovedané"
 								items={answeredWrong}
 								maximum={answeredQuestions.length}
-								setQuestion={() => generateQuestion()}
+								generateQuestion={generateQuestion}
 								keyLabel="wrong-"
 							/>
-							<AccordionStat
+							<AccordionStats
 								title="Zodpovedané"
 								items={answeredQuestions}
 								maximum={Questions.length}
-								setQuestion={() => generateQuestion()}
+								generateQuestion={generateQuestion}
 								keyLabel="answered-"
 							/>
-							{/* <Accordion style={{ marginBottom: "0.5rem", width: "100%" }}>
-								<AccordionSummary>
-									<Grid container justifyContent="space-between">
-										<Typography variant="subtitle1">
-											Zle zodpovedané
-										</Typography>
-										<Typography style={{ color: "grey" }}>
-											{answeredWrong.length +
-												" / " +
-												answeredQuestions.length}
-										</Typography>
-									</Grid>
-								</AccordionSummary>
-								<AccordionDetails>
-									{answeredWrong
-										.sort((a, b) => a - b)
-										.map((num) => (
-											<Button
-												key={"wrong-" + num}
-												onClick={() => generateQuestion(num)}>
-												{num + 1}
-											</Button>
-										))}
-								</AccordionDetails>
-							</Accordion>
-							<Accordion>
-								<AccordionSummary>
-									<Grid container justifyContent="space-between">
-										<Typography variant="subtitle1">
-											Zodpovedané{" "}
-										</Typography>
-										<Typography style={{ color: "grey" }}>
-											{" " +
-												answeredQuestions.length +
-												" / " +
-												Questions.length}
-										</Typography>
-									</Grid>
-								</AccordionSummary>
-								{answeredQuestions
-									.sort((a, b) => a - b)
-									.map((num) => (
-										<Button
-											key={"answered-" + num}
-											onClick={() => generateQuestion(num)}>
-											{num + 1}
-										</Button>
-									))}
-							</Accordion> */}
 						</Grid>
 					</Grid>
 				</Grid>
