@@ -79,13 +79,23 @@ function App() {
 	//#endregion
 
 	//#region functions
-	const checkAnswer = (id: number) => {
-		if (!question.options[id].isRight) {
-			setAnsweredWrong([...answeredWrong, questionID]);
+	const insertID = (
+		items: Array<number>,
+		setter: (value: React.SetStateAction<number[]>) => void,
+		id: number
+	) => {
+		if (!items.includes(id)) {
+			setter([...items, id]);
 		}
+	};
+
+	const checkAnswer = (id: number) => {
+		if (!question.options[id].isRight)
+			insertID(answeredWrong, setAnsweredWrong, questionID);
+
+		insertID(answeredQuestions, setAnsweredQuestions, questionID);
 
 		setHasAnswered(true);
-		setAnsweredQuestions([...answeredQuestions, questionID]);
 	};
 
 	const resetAnswers = () => {
