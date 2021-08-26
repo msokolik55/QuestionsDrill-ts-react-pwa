@@ -107,7 +107,7 @@ function App() {
 			</AppBar>
 			<Container>
 				<Grid container direction="row" spacing={4}>
-					<Grid item direction="column" sm={7}>
+					<Grid item sm={7}>
 						<h4>
 							{questionID + 1} / {Questions.length}
 						</h4>
@@ -154,63 +154,68 @@ function App() {
 						</Grid>
 					</Grid>
 
-					<Grid
-						item
-						direction="column"
-						alignContent="center"
-						sm={5}
-						style={{ paddingTop: "2rem", display: "flex" }}>
-						<Button
-							variant="contained"
-							color="secondary"
-							onClick={() => resetAnswers()}>
-							Reset
-						</Button>
-						<Accordion style={{ marginBottom: "0.5rem" }}>
-							<AccordionSummary>
-								<Grid container justifyContent="space-between">
-									<Typography variant="subtitle1">
-										Zle zodpovedané
-									</Typography>
-									<Typography style={{ color: "grey" }}>
-										{answeredWrong.length +
-											" / " +
-											answeredQuestions.length}
-									</Typography>
-								</Grid>
-							</AccordionSummary>
-							<AccordionDetails>
-								{answeredWrong
+					<Grid item sm={5} style={{ flex: 1 }}>
+						<Grid
+							container
+							direction="column"
+							alignContent="center"
+							style={{ paddingTop: "2rem", display: "flex" }}>
+							<Button
+								variant="contained"
+								color="secondary"
+								onClick={() => resetAnswers()}>
+								Reset
+							</Button>
+							<Accordion style={{ marginBottom: "0.5rem", width: "100%" }}>
+								<AccordionSummary>
+									<Grid container justifyContent="space-between">
+										<Typography variant="subtitle1">
+											Zle zodpovedané
+										</Typography>
+										<Typography style={{ color: "grey" }}>
+											{answeredWrong.length +
+												" / " +
+												answeredQuestions.length}
+										</Typography>
+									</Grid>
+								</AccordionSummary>
+								<AccordionDetails>
+									{answeredWrong
+										.sort((a, b) => a - b)
+										.map((num) => (
+											<Button
+												key={"wrong-" + num}
+												onClick={() => generateQuestion(num)}>
+												{num + 1}
+											</Button>
+										))}
+								</AccordionDetails>
+							</Accordion>
+							<Accordion>
+								<AccordionSummary>
+									<Grid container justifyContent="space-between">
+										<Typography variant="subtitle1">
+											Zodpovedané{" "}
+										</Typography>
+										<Typography style={{ color: "grey" }}>
+											{" " +
+												answeredQuestions.length +
+												" / " +
+												Questions.length}
+										</Typography>
+									</Grid>
+								</AccordionSummary>
+								{answeredQuestions
 									.sort((a, b) => a - b)
 									.map((num) => (
-										<Button onClick={() => generateQuestion(num)}>
+										<Button
+											key={"answered-" + num}
+											onClick={() => generateQuestion(num)}>
 											{num + 1}
 										</Button>
 									))}
-							</AccordionDetails>
-						</Accordion>
-						<Accordion>
-							<AccordionSummary>
-								<Grid container justifyContent="space-between">
-									<Typography variant="subtitle1">
-										Zodpovedané{" "}
-									</Typography>
-									<Typography style={{ color: "grey" }}>
-										{" " +
-											answeredQuestions.length +
-											" / " +
-											Questions.length}
-									</Typography>
-								</Grid>
-							</AccordionSummary>
-							{answeredQuestions
-								.sort((a, b) => a - b)
-								.map((num) => (
-									<Button onClick={() => generateQuestion(num)}>
-										{num + 1}
-									</Button>
-								))}
-						</Accordion>
+							</Accordion>
+						</Grid>
 					</Grid>
 				</Grid>
 			</Container>
