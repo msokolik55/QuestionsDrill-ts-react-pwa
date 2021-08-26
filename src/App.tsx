@@ -8,8 +8,6 @@ import {
 	Toolbar,
 	Typography,
 	Button,
-	Card,
-	CardContent,
 	Accordion,
 	AccordionSummary,
 	AccordionDetails
@@ -168,56 +166,18 @@ function App() {
 							onClick={() => resetAnswers()}>
 							Reset
 						</Button>
-						{/* <Card style={{ marginBottom: "0.5rem" }}>
-							<CardContent>
-								<Typography variant="subtitle1">
-									<Grid container justifyContent="space-between">
-										Zle zodpovedané
-										<span style={{ color: "grey" }}>
-											{" " + answeredWrong.length}
-										</span>
-									</Grid>
-								</Typography>
-								{answeredWrong
-									.sort((a, b) => a - b)
-									.map((num) => (
-										<Button onClick={() => generateQuestion(num)}>
-											{num + 1}
-										</Button>
-									))}
-							</CardContent>
-						</Card>
-						<Card>
-							<CardContent>
-								<Typography variant="subtitle1">
-									<Grid container justifyContent="space-between">
-										Zodpovedané{" "}
-										<span style={{ color: "grey" }}>
-											{" " +
-												answeredQuestions.length +
-												" / " +
-												Questions.length}
-										</span>
-									</Grid>
-								</Typography>
-								{answeredQuestions
-									.sort((a, b) => a - b)
-									.map((num) => (
-										<Button onClick={() => generateQuestion(num)}>
-											{num + 1}
-										</Button>
-									))}
-							</CardContent>
-						</Card>
-						*/}
 						<Accordion style={{ marginBottom: "0.5rem" }}>
 							<AccordionSummary>
-								<Typography variant="subtitle1">
-									Zle zodpovedané
-									<span style={{ color: "grey" }}>
-										{" (" + answeredWrong.length + ")"}
-									</span>
-								</Typography>
+								<Grid container justifyContent="space-between">
+									<Typography variant="subtitle1">
+										Zle zodpovedané
+									</Typography>
+									<Typography style={{ color: "grey" }}>
+										{answeredWrong.length +
+											" / " +
+											answeredQuestions.length}
+									</Typography>
+								</Grid>
 							</AccordionSummary>
 							<AccordionDetails>
 								{answeredWrong
@@ -231,15 +191,17 @@ function App() {
 						</Accordion>
 						<Accordion>
 							<AccordionSummary>
-								<Typography variant="subtitle1">
-									Zodpovedané{" "}
-									<span style={{ color: "grey" }}>
+								<Grid container justifyContent="space-between">
+									<Typography variant="subtitle1">
+										Zodpovedané{" "}
+									</Typography>
+									<Typography style={{ color: "grey" }}>
 										{" " +
 											answeredQuestions.length +
 											" / " +
 											Questions.length}
-									</span>
-								</Typography>
+									</Typography>
+								</Grid>
 							</AccordionSummary>
 							{answeredQuestions
 								.sort((a, b) => a - b)
