@@ -12,6 +12,7 @@ import {
 	AccordionSummary,
 	AccordionDetails
 } from "@material-ui/core";
+import { ArrowBack, ArrowForward } from "@material-ui/icons";
 
 import { Question } from "./data/interfaces";
 import { Questions } from "./data/questions";
@@ -169,7 +170,7 @@ function App() {
 								variant="contained"
 								color="secondary"
 								onClick={() => generateQuestion(questionID - 1)}>
-								Predchádzajúca
+								<ArrowBack />
 							</Button>
 							<Button
 								variant="contained"
@@ -181,7 +182,7 @@ function App() {
 								variant="contained"
 								color="secondary"
 								onClick={() => generateQuestion(questionID + 1)}>
-								Ďalšia
+								<ArrowForward />
 							</Button>
 						</Grid>
 					</Grid>
