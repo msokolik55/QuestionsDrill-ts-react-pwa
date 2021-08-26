@@ -55,10 +55,10 @@ function App() {
 		return Math.floor(Math.random() * maximum);
 	};
 
-	const generateQuestion = (id: number = -1) => {
+	const generateQuestion = (id: number | undefined = undefined) => {
 		let n: number;
-		if (id !== -1) {
-			n = id;
+		if (id !== undefined) {
+			n = (id + Questions.length) % Questions.length;
 		} else {
 			if (answeredQuestions.length >= Questions.length) {
 				n = randomNumber(Questions.length);
@@ -133,8 +133,20 @@ function App() {
 						<Button
 							variant="contained"
 							color="secondary"
+							onClick={() => generateQuestion(questionID - 1)}>
+							Predchádzajúca
+						</Button>
+						<Button
+							variant="contained"
+							color="secondary"
 							onClick={() => generateQuestion()}>
 							Náhodná
+						</Button>
+						<Button
+							variant="contained"
+							color="secondary"
+							onClick={() => generateQuestion(questionID + 1)}>
+							Ďalšia
 						</Button>
 					</Grid>
 
