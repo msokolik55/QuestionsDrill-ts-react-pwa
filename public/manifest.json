@@ -1,12 +1,12 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Drill otázok",
+  "name": "Český florbal - drill otázok",
   "icons": [
     {
       "src": "banner-become_referee.png",
+      "type": "image/png",
       "sizes": "64x64 32x32 24x24 16x16 192x192 512x512",
-      "purpose": "any maskable",
-      "type": "image/x-icon"
+      "purpose": "any maskable"
     }
   ],
   "start_url": ".",
