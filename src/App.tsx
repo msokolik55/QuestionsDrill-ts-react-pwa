@@ -153,7 +153,7 @@ function App() {
 		<>
 			<AppBar position="static" color="secondary">
 				<Toolbar>
-					<Typography variant="h4">Drill - rozhodčí úrovne E</Typography>
+					<Typography variant="h4">Drill - rozhodčí úrovně E</Typography>
 				</Toolbar>
 			</AppBar>
 			<Container>
