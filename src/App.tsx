@@ -10,7 +10,7 @@ import {
 	Button,
 	Accordion,
 	AccordionSummary,
-	AccordionDetails
+	AccordionDetails,
 } from "@material-ui/core";
 import { ArrowBack, ArrowForward, ExpandMore } from "@material-ui/icons";
 
@@ -30,7 +30,7 @@ function AccordionStats({
 	items,
 	maximum,
 	generateQuestion,
-	keyLabel
+	keyLabel,
 }: PropsStats) {
 	return (
 		<Accordion style={{ width: "100%" }}>
@@ -48,7 +48,8 @@ function AccordionStats({
 					.map((num) => (
 						<Button
 							key={keyLabel + num}
-							onClick={() => generateQuestion(num)}>
+							onClick={() => generateQuestion(num)}
+						>
 							{num + 1}
 						</Button>
 					))}
@@ -75,7 +76,9 @@ function App() {
 	const [questionID, setQuestionID] = useState(0);
 	const [hasAnswered, setHasAnswered] = useState(false);
 	const [answeredWrong, setAnsweredWrong] = useState<Array<number>>([]);
-	const [answeredQuestions, setAnsweredQuestions] = useState<Array<number>>([]);
+	const [answeredQuestions, setAnsweredQuestions] = useState<Array<number>>(
+		[]
+	);
 	//#endregion
 
 	//#region functions
@@ -123,7 +126,7 @@ function App() {
 
 		let que: Question = {
 			title: Questions[n].title,
-			options: Questions[n].options.sort(() => Math.random() - 0.5)
+			options: Questions[n].options.sort(() => Math.random() - 0.5),
 		};
 		setQuestion(que);
 		setQuestionID(n);
@@ -153,7 +156,7 @@ function App() {
 		<>
 			<AppBar position="static" color="secondary">
 				<Toolbar>
-					<Typography variant="h4">Drill - rozhodčí úrovně E</Typography>
+					{/* <Typography variant="h4">Drill - rozhodčí úrovně E</Typography> */}
 				</Toolbar>
 			</AppBar>
 			<Container>
@@ -175,10 +178,11 @@ function App() {
 										: "red",
 									width: "100%",
 									margin: "0.5rem 0 0.5rem 0",
-									textTransform: "none"
+									textTransform: "none",
 								}}
 								disabled={hasAnswered}
-								onClick={() => checkAnswer(idx)}>
+								onClick={() => checkAnswer(idx)}
+							>
 								{opt.title}
 							</Button>
 						))}
@@ -187,19 +191,22 @@ function App() {
 							<Button
 								variant="contained"
 								color="secondary"
-								onClick={() => generateQuestion(questionID - 1)}>
+								onClick={() => generateQuestion(questionID - 1)}
+							>
 								<ArrowBack />
 							</Button>
 							<Button
 								variant="contained"
 								color="secondary"
-								onClick={() => generateQuestion()}>
+								onClick={() => generateQuestion()}
+							>
 								Náhodná
 							</Button>
 							<Button
 								variant="contained"
 								color="secondary"
-								onClick={() => generateQuestion(questionID + 1)}>
+								onClick={() => generateQuestion(questionID + 1)}
+							>
 								<ArrowForward />
 							</Button>
 						</Grid>
@@ -210,11 +217,13 @@ function App() {
 							container
 							direction="column"
 							alignContent="center"
-							style={{ paddingTop: "2rem", display: "flex" }}>
+							style={{ paddingTop: "2rem", display: "flex" }}
+						>
 							<Button
 								variant="contained"
 								color="secondary"
-								onClick={() => resetAnswers()}>
+								onClick={() => resetAnswers()}
+							>
 								Reset
 							</Button>
 
