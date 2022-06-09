@@ -1,5 +1,8 @@
 # QuestionsDrill-ts-react-pwa
+
 Drill for remembering questions from dataset.
 
-## Description
-Questions are from test for E level referees in Czech Republic.
+## TODO
+
+1. Multichoice questions
+2. Import own JSON dataset
