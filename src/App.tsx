@@ -11,10 +11,9 @@ import {
 } from "@material-ui/core";
 import { ArrowBack, ArrowForward } from "@material-ui/icons";
 
-import AccordionStats from "./components/AccordionStats";
-
 import { IQuestion } from "./models/Question";
 import { dataset } from "./data/dataset";
+import GridStats from "./components/GridStats";
 
 function App() {
 	const questionsCount = dataset.questions.length;
@@ -27,6 +26,8 @@ function App() {
 	// TODO: move into atoms
 	const [answeredWrong, setAnsweredWrong] = useState<number[]>([]);
 	const [answeredQuestions, setAnsweredQuestions] = useState<number[]>([]);
+	// ENDTODO
+
 	//#endregion
 
 	//#region functions
@@ -47,11 +48,6 @@ function App() {
 		insertID(answeredQuestions, setAnsweredQuestions, questionID);
 
 		setHasAnswered(true);
-	};
-
-	const resetAnswers = () => {
-		setAnsweredWrong([]);
-		setAnsweredQuestions([]);
 	};
 
 	const randomNumber = (maximum: number) => {
@@ -143,37 +139,13 @@ function App() {
 						</Grid>
 					</Grid>
 
-					<Grid item sm={5} style={{ flex: 1 }}>
-						<Grid
-							container
-							direction="column"
-							alignContent="center"
-							style={{ paddingTop: "2rem", display: "flex" }}
-						>
-							<Button
-								variant="contained"
-								color="secondary"
-								onClick={() => resetAnswers()}
-							>
-								Reset
-							</Button>
-
-							<AccordionStats
-								title="Zle zodpovedané"
-								items={answeredWrong}
-								maximum={answeredQuestions.length}
-								generateQuestion={generateQuestion}
-								keyLabel="wrong-"
-							/>
-							<AccordionStats
-								title="Zodpovedané"
-								items={answeredQuestions}
-								maximum={questionsCount}
-								generateQuestion={generateQuestion}
-								keyLabel="answered-"
-							/>
-						</Grid>
-					</Grid>
+					<GridStats
+						answeredWrong={answeredWrong}
+						setAnsweredWrong={setAnsweredWrong}
+						answeredQuestions={answeredQuestions}
+						setAnsweredQuestions={setAnsweredQuestions}
+						generateQuestion={generateQuestion}
+					/>
 				</Grid>
 			</Container>
 		</>
