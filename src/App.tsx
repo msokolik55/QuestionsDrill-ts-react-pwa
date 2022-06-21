@@ -10,18 +10,6 @@ import { Question } from "./models/Question";
 import { Questions } from "./data/questions";
 
 function App() {
-	//#region DELETE
-	// const gen = () => {
-	// 	let arr: Array<number> = [];
-	// 	for (let i = 0; i < Questions.length - 1; i++) {
-	// 		arr.push(i);
-	// 	}
-	// 	return arr;
-	// };
-
-	// const [answeredQuestions, setAnsweredQuestions] = useState<Array<number>>(gen());
-	//#endregion
-
 	//#region useState
 	const [question, setQuestion] = useState(Questions[0]);
 	const [questionID, setQuestionID] = useState(0);
