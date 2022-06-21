@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { SetStateAction, useState } from "react";
 import "./App.css";
 
 import {
@@ -6,85 +6,36 @@ import {
 	Grid,
 	AppBar,
 	Toolbar,
-	Typography,
 	Button,
-	Accordion,
-	AccordionSummary,
-	AccordionDetails,
+	Typography,
 } from "@material-ui/core";
-import { ArrowBack, ArrowForward, ExpandMore } from "@material-ui/icons";
+import { ArrowBack, ArrowForward } from "@material-ui/icons";
 
-import { Question } from "./data/interfaces";
-import { Questions } from "./data/questions";
+import { IQuestion } from "./models/Question";
 
-interface PropsStats {
-	title: string;
-	items: Array<number>;
-	maximum: number;
-	generateQuestion: (id?: number | undefined) => void;
-	keyLabel: string;
-}
-
-function AccordionStats({
-	title,
-	items,
-	maximum,
-	generateQuestion,
-	keyLabel,
-}: PropsStats) {
-	return (
-		<Accordion style={{ width: "100%" }}>
-			<AccordionSummary expandIcon={<ExpandMore />}>
-				<Grid container justifyContent="space-between">
-					<Typography variant="subtitle1">{title}</Typography>
-					<Typography style={{ color: "grey" }}>
-						{items.length + " / " + maximum}
-					</Typography>
-				</Grid>
-			</AccordionSummary>
-			<AccordionDetails style={{ flexWrap: "wrap" }}>
-				{items
-					.sort((a, b) => a - b)
-					.map((num) => (
-						<Button
-							key={keyLabel + num}
-							onClick={() => generateQuestion(num)}
-						>
-							{num + 1}
-						</Button>
-					))}
-			</AccordionDetails>
-		</Accordion>
-	);
-}
+// TODO: add into atom
+import { dataset } from "./data/dataset";
+import GridStats from "./components/GridStats";
 
 function App() {
-	//#region DELETE
-	// const gen = () => {
-	// 	let arr: Array<number> = [];
-	// 	for (let i = 0; i < Questions.length - 1; i++) {
-	// 		arr.push(i);
-	// 	}
-	// 	return arr;
-	// };
-
-	// const [answeredQuestions, setAnsweredQuestions] = useState<Array<number>>(gen());
-	//#endregion
+	const questionsCount = dataset.questions.length;
 
 	//#region useState
-	const [question, setQuestion] = useState(Questions[0]);
+	const [question, setQuestion] = useState(dataset.questions[0]);
 	const [questionID, setQuestionID] = useState(0);
 	const [hasAnswered, setHasAnswered] = useState(false);
-	const [answeredWrong, setAnsweredWrong] = useState<Array<number>>([]);
-	const [answeredQuestions, setAnsweredQuestions] = useState<Array<number>>(
-		[]
-	);
+
+	// TODO: move into atoms
+	const [answeredWrong, setAnsweredWrong] = useState<number[]>([]);
+	const [answeredQuestions, setAnsweredQuestions] = useState<number[]>([]);
+	// ENDTODO
+
 	//#endregion
 
 	//#region functions
 	const insertID = (
-		items: Array<number>,
-		setter: (value: React.SetStateAction<number[]>) => void,
+		items: number[],
+		setter: (value: SetStateAction<number[]>) => void,
 		id: number
 	) => {
 		if (!items.includes(id)) {
@@ -101,69 +52,47 @@ function App() {
 		setHasAnswered(true);
 	};
 
-	const resetAnswers = () => {
-		setAnsweredWrong([]);
-		setAnsweredQuestions([]);
-	};
-
 	const randomNumber = (maximum: number) => {
 		return Math.floor(Math.random() * maximum);
 	};
 
 	const generateQuestion = (id: number | undefined = undefined) => {
 		let n: number;
+
 		if (id !== undefined) {
-			n = (id + Questions.length) % Questions.length;
+			n = (id + questionsCount) % questionsCount;
 		} else {
-			if (answeredQuestions.length >= Questions.length) {
-				n = randomNumber(Questions.length);
+			if (answeredQuestions.length >= questionsCount) {
+				n = randomNumber(questionsCount);
 			} else {
 				do {
-					n = randomNumber(Questions.length);
+					n = randomNumber(questionsCount);
 				} while (answeredQuestions.includes(n));
 			}
 		}
 
-		let que: Question = {
-			title: Questions[n].title,
-			options: Questions[n].options.sort(() => Math.random() - 0.5),
+		const question: IQuestion = {
+			title: dataset.questions[n].title,
+			options: dataset.questions[n].options.sort(() => Math.random() - 0.5),
 		};
-		setQuestion(que);
+		setQuestion(question);
 		setQuestionID(n);
 		setHasAnswered(false);
 	};
-
-	// const shuffle = (opts: Array<Option>) => {
-	// 	let size = opts.length;
-	// 	let res: Array<Option> = [];
-	// 	let used: Array<number> = [];
-
-	// 	while (used.length < size) {
-	// 		let i = Math.floor(Math.random() * size);
-	// 		if (used.includes(i)) continue;
-
-	// 		res.push(opts[i]);
-	// 		used.push(i);
-	// 	}
-
-	// 	// setOptions(opts);
-	// 	return res;
-	// };
-
 	//#endregion
 
 	return (
 		<>
 			<AppBar position="static" color="secondary">
 				<Toolbar>
-					{/* <Typography variant="h4">Drill - rozhodčí úrovně E</Typography> */}
+					<Typography variant="h4">{dataset.name}</Typography>
 				</Toolbar>
 			</AppBar>
 			<Container>
 				<Grid container direction="row" spacing={4}>
 					<Grid item sm={7} style={{ width: "100%" }}>
 						<h4>
-							{questionID + 1} / {Questions.length}
+							{questionID + 1} / {questionsCount}
 						</h4>
 						<h4>{question.title}</h4>
 						{question.options.map((opt, idx) => (
@@ -212,37 +141,13 @@ function App() {
 						</Grid>
 					</Grid>
 
-					<Grid item sm={5} style={{ flex: 1 }}>
-						<Grid
-							container
-							direction="column"
-							alignContent="center"
-							style={{ paddingTop: "2rem", display: "flex" }}
-						>
-							<Button
-								variant="contained"
-								color="secondary"
-								onClick={() => resetAnswers()}
-							>
-								Reset
-							</Button>
-
-							<AccordionStats
-								title="Zle zodpovedané"
-								items={answeredWrong}
-								maximum={answeredQuestions.length}
-								generateQuestion={generateQuestion}
-								keyLabel="wrong-"
-							/>
-							<AccordionStats
-								title="Zodpovedané"
-								items={answeredQuestions}
-								maximum={Questions.length}
-								generateQuestion={generateQuestion}
-								keyLabel="answered-"
-							/>
-						</Grid>
-					</Grid>
+					<GridStats
+						answeredWrong={answeredWrong}
+						setAnsweredWrong={setAnsweredWrong}
+						answeredQuestions={answeredQuestions}
+						setAnsweredQuestions={setAnsweredQuestions}
+						generateQuestion={generateQuestion}
+					/>
 				</Grid>
 			</Container>
 		</>
