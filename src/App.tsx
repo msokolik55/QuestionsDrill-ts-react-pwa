@@ -61,11 +61,11 @@ function App() {
 			}
 		}
 
-		const que: IQuestion = {
+		const question: IQuestion = {
 			title: Questions[n].title,
 			options: Questions[n].options.sort(() => Math.random() - 0.5),
 		};
-		setQuestion(que);
+		setQuestion(question);
 		setQuestionID(n);
 		setHasAnswered(false);
 	};
