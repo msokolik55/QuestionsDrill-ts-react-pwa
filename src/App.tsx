@@ -1,19 +1,30 @@
 import React, { SetStateAction, useState } from "react";
 import "./App.css";
 
-import { Container, Grid, AppBar, Toolbar, Button } from "@material-ui/core";
+import {
+	Container,
+	Grid,
+	AppBar,
+	Toolbar,
+	Button,
+	Typography,
+} from "@material-ui/core";
 import { ArrowBack, ArrowForward } from "@material-ui/icons";
 
 import AccordionStats from "./components/AccordionStats";
 
 import { IQuestion } from "./models/Question";
-import { questions } from "./data/questions";
+import { dataset } from "./data/dataset";
 
 function App() {
+	const questionsCount = dataset.questions.length;
+
 	//#region useState
-	const [question, setQuestion] = useState(questions[0]);
+	const [question, setQuestion] = useState(dataset.questions[0]);
 	const [questionID, setQuestionID] = useState(0);
 	const [hasAnswered, setHasAnswered] = useState(false);
+
+	// TODO: move into atoms
 	const [answeredWrong, setAnsweredWrong] = useState<number[]>([]);
 	const [answeredQuestions, setAnsweredQuestions] = useState<number[]>([]);
 	//#endregion
@@ -49,21 +60,22 @@ function App() {
 
 	const generateQuestion = (id: number | undefined = undefined) => {
 		let n: number;
+
 		if (id !== undefined) {
-			n = (id + questions.length) % questions.length;
+			n = (id + questionsCount) % questionsCount;
 		} else {
-			if (answeredQuestions.length >= questions.length) {
-				n = randomNumber(questions.length);
+			if (answeredQuestions.length >= questionsCount) {
+				n = randomNumber(questionsCount);
 			} else {
 				do {
-					n = randomNumber(questions.length);
+					n = randomNumber(questionsCount);
 				} while (answeredQuestions.includes(n));
 			}
 		}
 
 		const question: IQuestion = {
-			title: questions[n].title,
-			options: questions[n].options.sort(() => Math.random() - 0.5),
+			title: dataset.questions[n].title,
+			options: dataset.questions[n].options.sort(() => Math.random() - 0.5),
 		};
 		setQuestion(question);
 		setQuestionID(n);
@@ -75,14 +87,14 @@ function App() {
 		<>
 			<AppBar position="static" color="secondary">
 				<Toolbar>
-					{/* <Typography variant="h4">Drill - rozhodčí úrovně E</Typography> */}
+					<Typography variant="h4">{dataset.name}</Typography>
 				</Toolbar>
 			</AppBar>
 			<Container>
 				<Grid container direction="row" spacing={4}>
 					<Grid item sm={7} style={{ width: "100%" }}>
 						<h4>
-							{questionID + 1} / {questions.length}
+							{questionID + 1} / {questionsCount}
 						</h4>
 						<h4>{question.title}</h4>
 						{question.options.map((opt, idx) => (
@@ -156,7 +168,7 @@ function App() {
 							<AccordionStats
 								title="Zodpovedané"
 								items={answeredQuestions}
-								maximum={questions.length}
+								maximum={questionsCount}
 								generateQuestion={generateQuestion}
 								keyLabel="answered-"
 							/>
