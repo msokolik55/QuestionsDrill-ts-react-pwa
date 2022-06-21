@@ -61,7 +61,7 @@ function App() {
 			}
 		}
 
-		let que: Question = {
+		const que: Question = {
 			title: Questions[n].title,
 			options: Questions[n].options.sort(() => Math.random() - 0.5),
 		};
