@@ -12,6 +12,8 @@ import {
 import { ArrowBack, ArrowForward } from "@material-ui/icons";
 
 import { IQuestion } from "./models/Question";
+
+// TODO: add into atom
 import { dataset } from "./data/dataset";
 import GridStats from "./components/GridStats";
 
