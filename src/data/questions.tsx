@@ -1622,7 +1622,7 @@ import { IQuestion } from "../models/Question";
 // 	},
 // ];
 
-export const Questions: Array<IQuestion> = [
+export const questions: IQuestion[] = [
 	{
 		title: "Cache jako obecný mechanismus přináší problém",
 		options: [

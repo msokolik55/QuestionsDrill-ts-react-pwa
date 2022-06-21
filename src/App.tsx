@@ -7,11 +7,11 @@ import { ArrowBack, ArrowForward } from "@material-ui/icons";
 import AccordionStats from "./components/AccordionStats";
 
 import { IQuestion } from "./models/Question";
-import { Questions } from "./data/questions";
+import { questions } from "./data/questions";
 
 function App() {
 	//#region useState
-	const [question, setQuestion] = useState(Questions[0]);
+	const [question, setQuestion] = useState(questions[0]);
 	const [questionID, setQuestionID] = useState(0);
 	const [hasAnswered, setHasAnswered] = useState(false);
 	const [answeredWrong, setAnsweredWrong] = useState<number[]>([]);
@@ -50,20 +50,20 @@ function App() {
 	const generateQuestion = (id: number | undefined = undefined) => {
 		let n: number;
 		if (id !== undefined) {
-			n = (id + Questions.length) % Questions.length;
+			n = (id + questions.length) % questions.length;
 		} else {
-			if (answeredQuestions.length >= Questions.length) {
-				n = randomNumber(Questions.length);
+			if (answeredQuestions.length >= questions.length) {
+				n = randomNumber(questions.length);
 			} else {
 				do {
-					n = randomNumber(Questions.length);
+					n = randomNumber(questions.length);
 				} while (answeredQuestions.includes(n));
 			}
 		}
 
 		const question: IQuestion = {
-			title: Questions[n].title,
-			options: Questions[n].options.sort(() => Math.random() - 0.5),
+			title: questions[n].title,
+			options: questions[n].options.sort(() => Math.random() - 0.5),
 		};
 		setQuestion(question);
 		setQuestionID(n);
@@ -82,7 +82,7 @@ function App() {
 				<Grid container direction="row" spacing={4}>
 					<Grid item sm={7} style={{ width: "100%" }}>
 						<h4>
-							{questionID + 1} / {Questions.length}
+							{questionID + 1} / {questions.length}
 						</h4>
 						<h4>{question.title}</h4>
 						{question.options.map((opt, idx) => (
@@ -156,7 +156,7 @@ function App() {
 							<AccordionStats
 								title="Zodpovedané"
 								items={answeredQuestions}
-								maximum={Questions.length}
+								maximum={questions.length}
 								generateQuestion={generateQuestion}
 								keyLabel="answered-"
 							/>
