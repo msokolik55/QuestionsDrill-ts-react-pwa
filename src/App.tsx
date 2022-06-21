@@ -14,7 +14,7 @@ import {
 } from "@material-ui/core";
 import { ArrowBack, ArrowForward, ExpandMore } from "@material-ui/icons";
 
-import { Question } from "./data/interfaces";
+import { Question } from "./models/Question";
 import { Questions } from "./data/questions";
 
 interface PropsStats {

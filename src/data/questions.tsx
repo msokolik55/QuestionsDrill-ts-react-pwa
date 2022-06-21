@@ -1,4 +1,4 @@
-import { Question } from "./interfaces";
+import { Question } from "../models/Question";
 
 // export const Questions: Array<Question> = [
 // 	{
