@@ -14,13 +14,13 @@ function App() {
 	const [question, setQuestion] = useState(Questions[0]);
 	const [questionID, setQuestionID] = useState(0);
 	const [hasAnswered, setHasAnswered] = useState(false);
-	const [answeredWrong, setAnsweredWrong] = useState<Array<number>>([]);
-	const [answeredQuestions, setAnsweredQuestions] = useState<Array<number>>([]);
+	const [answeredWrong, setAnsweredWrong] = useState<number[]>([]);
+	const [answeredQuestions, setAnsweredQuestions] = useState<number[]>([]);
 	//#endregion
 
 	//#region functions
 	const insertID = (
-		items: Array<number>,
+		items: number[],
 		setter: (value: React.SetStateAction<number[]>) => void,
 		id: number
 	) => {
@@ -69,24 +69,6 @@ function App() {
 		setQuestionID(n);
 		setHasAnswered(false);
 	};
-
-	// const shuffle = (opts: Array<Option>) => {
-	// 	let size = opts.length;
-	// 	let res: Array<Option> = [];
-	// 	let used: Array<number> = [];
-
-	// 	while (used.length < size) {
-	// 		let i = Math.floor(Math.random() * size);
-	// 		if (used.includes(i)) continue;
-
-	// 		res.push(opts[i]);
-	// 		used.push(i);
-	// 	}
-
-	// 	// setOptions(opts);
-	// 	return res;
-	// };
-
 	//#endregion
 
 	return (
