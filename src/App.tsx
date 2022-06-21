@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { SetStateAction, useState } from "react";
 import "./App.css";
 
 import { Container, Grid, AppBar, Toolbar, Button } from "@material-ui/core";
@@ -21,7 +21,7 @@ function App() {
 	//#region functions
 	const insertID = (
 		items: number[],
-		setter: (value: React.SetStateAction<number[]>) => void,
+		setter: (value: SetStateAction<number[]>) => void,
 		id: number
 	) => {
 		if (!items.includes(id)) {
