@@ -1,6 +1,6 @@
-import { Option } from "./Option";
+import { IOption } from "./Option";
 
-export interface Question {
+export interface IQuestion {
 	title: string;
-	options: Option[];
+	options: IOption[];
 }

@@ -6,7 +6,7 @@ import { ArrowBack, ArrowForward } from "@material-ui/icons";
 
 import AccordionStats from "./components/AccordionStats";
 
-import { Question } from "./models/Question";
+import { IQuestion } from "./models/Question";
 import { Questions } from "./data/questions";
 
 function App() {
@@ -61,7 +61,7 @@ function App() {
 			}
 		}
 
-		const que: Question = {
+		const que: IQuestion = {
 			title: Questions[n].title,
 			options: Questions[n].options.sort(() => Math.random() - 0.5),
 		};
