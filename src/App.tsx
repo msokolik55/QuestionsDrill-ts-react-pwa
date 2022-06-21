@@ -1,62 +1,13 @@
 import React, { useState } from "react";
 import "./App.css";
 
-import {
-	Container,
-	Grid,
-	AppBar,
-	Toolbar,
-	Typography,
-	Button,
-	Accordion,
-	AccordionSummary,
-	AccordionDetails,
-} from "@material-ui/core";
-import { ArrowBack, ArrowForward, ExpandMore } from "@material-ui/icons";
+import { Container, Grid, AppBar, Toolbar, Button } from "@material-ui/core";
+import { ArrowBack, ArrowForward } from "@material-ui/icons";
+
+import AccordionStats from "./components/AccordionStats";
 
 import { Question } from "./models/Question";
 import { Questions } from "./data/questions";
-
-interface PropsStats {
-	title: string;
-	items: Array<number>;
-	maximum: number;
-	generateQuestion: (id?: number | undefined) => void;
-	keyLabel: string;
-}
-
-function AccordionStats({
-	title,
-	items,
-	maximum,
-	generateQuestion,
-	keyLabel,
-}: PropsStats) {
-	return (
-		<Accordion style={{ width: "100%" }}>
-			<AccordionSummary expandIcon={<ExpandMore />}>
-				<Grid container justifyContent="space-between">
-					<Typography variant="subtitle1">{title}</Typography>
-					<Typography style={{ color: "grey" }}>
-						{items.length + " / " + maximum}
-					</Typography>
-				</Grid>
-			</AccordionSummary>
-			<AccordionDetails style={{ flexWrap: "wrap" }}>
-				{items
-					.sort((a, b) => a - b)
-					.map((num) => (
-						<Button
-							key={keyLabel + num}
-							onClick={() => generateQuestion(num)}
-						>
-							{num + 1}
-						</Button>
-					))}
-			</AccordionDetails>
-		</Accordion>
-	);
-}
 
 function App() {
 	//#region DELETE
@@ -76,9 +27,7 @@ function App() {
 	const [questionID, setQuestionID] = useState(0);
 	const [hasAnswered, setHasAnswered] = useState(false);
 	const [answeredWrong, setAnsweredWrong] = useState<Array<number>>([]);
-	const [answeredQuestions, setAnsweredQuestions] = useState<Array<number>>(
-		[]
-	);
+	const [answeredQuestions, setAnsweredQuestions] = useState<Array<number>>([]);
 	//#endregion
 
 	//#region functions
