@@ -1,21 +1,21 @@
-import { SetStateAction } from "react";
+import { useRecoilState } from "recoil";
 import { Grid, Button } from "@material-ui/core";
 import AccordionStats from "./AccordionStats";
-
-type setQuestions = (questions: SetStateAction<number[]>) => void;
+import { answeredWrongAtom, answeredQuestionsAtom } from "../state/atom";
 
 interface IGridStats {
-	answeredWrong: number[];
-	setAnsweredWrong: setQuestions;
-	answeredQuestions: number[];
-	setAnsweredQuestions: setQuestions;
 	generateQuestion: (id: number | undefined) => void;
 }
 
 const GridStats = (props: IGridStats) => {
+	const [answeredWrong, setAnsweredWrong] = useRecoilState(answeredWrongAtom);
+	const [answeredQuestions, setAnsweredQuestions] = useRecoilState(
+		answeredQuestionsAtom
+	);
+
 	const resetAnswers = () => {
-		props.setAnsweredWrong([]);
-		props.setAnsweredQuestions([]);
+		setAnsweredWrong([]);
+		setAnsweredQuestions([]);
 	};
 
 	return (
@@ -36,15 +36,15 @@ const GridStats = (props: IGridStats) => {
 
 				<AccordionStats
 					title="Zle zodpovedané"
-					items={props.answeredWrong}
-					maximum={props.answeredQuestions.length}
+					items={answeredWrong}
+					maximum={answeredQuestions.length}
 					generateQuestion={props.generateQuestion}
 					keyLabel="wrong-"
 				/>
 				<AccordionStats
 					title="Zodpovedané"
-					items={props.answeredQuestions}
-					maximum={props.answeredWrong.length}
+					items={answeredQuestions}
+					maximum={answeredWrong.length}
 					generateQuestion={props.generateQuestion}
 					keyLabel="answered-"
 				/>

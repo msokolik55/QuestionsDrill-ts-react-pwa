@@ -16,6 +16,8 @@ import { IQuestion } from "./models/Question";
 // TODO: add into atom
 import { dataset } from "./data/dataset";
 import GridStats from "./components/GridStats";
+import { useRecoilState } from "recoil";
+import { answeredQuestionsAtom, answeredWrongAtom } from "./state/atom";
 
 function App() {
 	const questionsCount = dataset.questions.length;
@@ -25,11 +27,10 @@ function App() {
 	const [questionID, setQuestionID] = useState(0);
 	const [hasAnswered, setHasAnswered] = useState(false);
 
-	// TODO: move into atoms
-	const [answeredWrong, setAnsweredWrong] = useState<number[]>([]);
-	const [answeredQuestions, setAnsweredQuestions] = useState<number[]>([]);
-	// ENDTODO
-
+	const [answeredWrong, setAnsweredWrong] = useRecoilState(answeredWrongAtom);
+	const [answeredQuestions, setAnsweredQuestions] = useRecoilState(
+		answeredQuestionsAtom
+	);
 	//#endregion
 
 	//#region functions
@@ -73,7 +74,9 @@ function App() {
 
 		const question: IQuestion = {
 			title: dataset.questions[n].title,
-			options: dataset.questions[n].options.sort(() => Math.random() - 0.5),
+			options: dataset.questions[n].options.sort(
+				() => Math.random() - 0.5
+			),
 		};
 		setQuestion(question);
 		setQuestionID(n);
@@ -142,10 +145,10 @@ function App() {
 					</Grid>
 
 					<GridStats
-						answeredWrong={answeredWrong}
-						setAnsweredWrong={setAnsweredWrong}
-						answeredQuestions={answeredQuestions}
-						setAnsweredQuestions={setAnsweredQuestions}
+						// answeredWrong={answeredWrong}
+						// setAnsweredWrong={setAnsweredWrong}
+						// answeredQuestions={answeredQuestions}
+						// setAnsweredQuestions={setAnsweredQuestions}
 						generateQuestion={generateQuestion}
 					/>
 				</Grid>

@@ -6,11 +6,14 @@ import App from "./App";
 // import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 // import reportWebVitals from './reportWebVitals';
 import ServiceWorkerWrapper from "./ServiceWorkerWrapper";
+import { RecoilRoot } from "recoil";
 
 ReactDOM.render(
 	<React.StrictMode>
-		<ServiceWorkerWrapper />
-		<App />
+		<RecoilRoot>
+			<ServiceWorkerWrapper />
+			<App />
+		</RecoilRoot>
 	</React.StrictMode>,
 	document.getElementById("root")
 );
