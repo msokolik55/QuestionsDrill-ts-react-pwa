@@ -23,8 +23,6 @@ const AccordionStats = ({
 	generateQuestion,
 	keyLabel,
 }: IPropsStats) => {
-	const sortedItems = [...items].sort((a, b) => a - b);
-
 	return (
 		<Accordion style={{ width: "100%" }}>
 			<AccordionSummary expandIcon={<ExpandMore />}>
@@ -36,14 +34,16 @@ const AccordionStats = ({
 				</Grid>
 			</AccordionSummary>
 			<AccordionDetails style={{ flexWrap: "wrap" }}>
-				{sortedItems.map((num) => (
-					<Button
-						key={keyLabel + num}
-						onClick={() => generateQuestion(num)}
-					>
-						{num + 1}
-					</Button>
-				))}
+				{[...items]
+					.sort((a, b) => a - b)
+					.map((num) => (
+						<Button
+							key={keyLabel + num}
+							onClick={() => generateQuestion(num)}
+						>
+							{num + 1}
+						</Button>
+					))}
 			</AccordionDetails>
 		</Accordion>
 	);
