@@ -14,16 +14,18 @@ import { ArrowBack, ArrowForward } from "@material-ui/icons";
 import { IQuestion } from "./models/Question";
 
 // TODO: add into atom
-import { dataset1 } from "./data/dataset1";
+// import { dataset1 } from "./data/dataset1";
 import GridStats from "./components/GridStats";
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { answeredQuestionsAtom, answeredWrongAtom } from "./state/atom";
+import { datasetLengthSelector, datasetSelector } from "./state/selector";
 
 function App() {
-	const questionsCount = dataset1.questions.length;
+	const dataset = useRecoilValue(datasetSelector);
+	const questionsCount = useRecoilValue(datasetLengthSelector);
 
 	//#region useState
-	const [question, setQuestion] = useState(dataset1.questions[0]);
+	const [question, setQuestion] = useState(dataset.questions[0]);
 	const [questionID, setQuestionID] = useState(0);
 	const [hasAnswered, setHasAnswered] = useState(false);
 
@@ -73,8 +75,8 @@ function App() {
 		}
 
 		const question: IQuestion = {
-			title: dataset1.questions[n].title,
-			options: dataset1.questions[n].options.sort(
+			title: dataset.questions[n].title,
+			options: [...dataset.questions[n].options].sort(
 				() => Math.random() - 0.5
 			),
 		};
@@ -88,7 +90,7 @@ function App() {
 		<>
 			<AppBar position="static" color="secondary">
 				<Toolbar>
-					<Typography variant="h4">{dataset1.name}</Typography>
+					<Typography variant="h4">{dataset.name}</Typography>
 				</Toolbar>
 			</AppBar>
 			<Container>
