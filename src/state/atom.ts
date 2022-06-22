@@ -1,6 +1,6 @@
 import { atom } from "recoil";
 
-// TODO: make udnefined safe
+// TODO: make undefined safe
 export const datasetIDAtom = atom<number>({
 	key: "selectedDatasetID",
 	default: 0,
