@@ -44,6 +44,7 @@ const GridStats = (props: IGridStats) => {
 				<AccordionStats
 					title="Zodpovedané"
 					items={answeredQuestions}
+					// TODO: fix maximum to all questions length
 					maximum={answeredWrong.length}
 					generateQuestion={props.generateQuestion}
 					keyLabel="answered-"
