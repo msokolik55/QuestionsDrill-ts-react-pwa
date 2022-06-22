@@ -9,11 +9,9 @@ import {
 	Typography,
 } from "@material-ui/core";
 
-import { IQuestion } from "./models/Question";
-
 import GridStats from "./components/GridStats";
-import { useRecoilState, useRecoilValue } from "recoil";
-import { answeredQuestionsAtom } from "./state/atom";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import { answeredQuestionsAtom, questionIDAtom } from "./state/atom";
 import { datasetLengthSelector, datasetSelector } from "./state/selector";
 import GridQuestion from "./components/GridQuestion";
 
@@ -22,8 +20,7 @@ function App() {
 	const dataset = useRecoilValue(datasetSelector);
 	const questionsCount = useRecoilValue(datasetLengthSelector);
 
-	const [question, setQuestion] = useState(dataset.questions[0]);
-	const [questionID, setQuestionID] = useState(0);
+	const setQuestionID = useSetRecoilState(questionIDAtom);
 	const [hasAnswered, setHasAnswered] = useState(false);
 
 	const [answeredQuestions, setAnsweredQuestions] = useRecoilState(
@@ -52,13 +49,6 @@ function App() {
 			}
 		}
 
-		const question: IQuestion = {
-			title: dataset.questions[n].title,
-			options: [...dataset.questions[n].options].sort(
-				() => Math.random() - 0.5
-			),
-		};
-		setQuestion(question);
 		setQuestionID(n);
 		setHasAnswered(false);
 	};
@@ -74,8 +64,6 @@ function App() {
 			<Container>
 				<Grid container direction="row" spacing={4}>
 					<GridQuestion
-						question={question}
-						questionID={questionID}
 						hasAnswered={hasAnswered}
 						setHasAnswered={setHasAnswered}
 						answeredQuestions={answeredQuestions}

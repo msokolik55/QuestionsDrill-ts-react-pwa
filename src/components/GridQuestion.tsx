@@ -2,13 +2,10 @@ import { Grid, Button } from "@material-ui/core";
 import { ArrowBack, ArrowForward } from "@material-ui/icons";
 import { SetStateAction } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { IQuestion } from "../models/Question";
-import { answeredWrongAtom } from "../state/atom";
-import { datasetLengthSelector } from "../state/selector";
+import { answeredWrongAtom, questionIDAtom } from "../state/atom";
+import { datasetLengthSelector, questionSelector } from "../state/selector";
 
 interface IGridQuestion {
-	questionID: number;
-	question: IQuestion;
 	hasAnswered: boolean;
 	setHasAnswered: (answered: SetStateAction<boolean>) => void;
 
@@ -22,6 +19,9 @@ const GridQuestion = (props: IGridQuestion) => {
 	const [answeredWrong, setAnsweredWrong] = useRecoilState(answeredWrongAtom);
 	const questionsCount = useRecoilValue(datasetLengthSelector);
 
+	const questionID = useRecoilValue(questionIDAtom);
+	const question = useRecoilValue(questionSelector);
+
 	const insertID = (
 		items: number[],
 		setter: (value: SetStateAction<number[]>) => void,
@@ -33,13 +33,13 @@ const GridQuestion = (props: IGridQuestion) => {
 	};
 
 	const checkAnswer = (id: number) => {
-		if (!props.question.options[id].isRight)
-			insertID(answeredWrong, setAnsweredWrong, props.questionID);
+		if (!question.options[id].isRight)
+			insertID(answeredWrong, setAnsweredWrong, questionID);
 
 		insertID(
 			props.answeredQuestions,
 			props.setAnsweredQuestions,
-			props.questionID
+			questionID
 		);
 
 		props.setHasAnswered(true);
@@ -48,10 +48,10 @@ const GridQuestion = (props: IGridQuestion) => {
 	return (
 		<Grid item sm={7} style={{ width: "100%" }}>
 			<h4>
-				{props.questionID + 1} / {questionsCount}
+				{questionID + 1} / {questionsCount}
 			</h4>
-			<h4>{props.question.title}</h4>
-			{props.question.options.map((opt, idx) => (
+			<h4>{question.title}</h4>
+			{question.options.map((opt, idx) => (
 				<Button
 					key={idx}
 					style={{
@@ -76,7 +76,7 @@ const GridQuestion = (props: IGridQuestion) => {
 				<Button
 					variant="contained"
 					color="secondary"
-					onClick={() => props.generateQuestion(props.questionID - 1)}
+					onClick={() => props.generateQuestion(questionID - 1)}
 				>
 					<ArrowBack />
 				</Button>
@@ -90,7 +90,7 @@ const GridQuestion = (props: IGridQuestion) => {
 				<Button
 					variant="contained"
 					color="secondary"
-					onClick={() => props.generateQuestion(props.questionID + 1)}
+					onClick={() => props.generateQuestion(questionID + 1)}
 				>
 					<ArrowForward />
 				</Button>

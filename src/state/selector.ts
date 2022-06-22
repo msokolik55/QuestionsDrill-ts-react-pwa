@@ -18,11 +18,17 @@ export const datasetLengthSelector = selector({
 	},
 });
 
+// TODO: randomize options
 export const questionSelector = selector({
 	key: "question",
 	get({ get }) {
 		const datasetID = get(datasetIDAtom);
 		const questionID = get(questionIDAtom);
-		return datasets[datasetID].questions[questionID];
+		const question = datasets[datasetID].questions[questionID];
+
+		return {
+			title: question.title,
+			options: [...question.options].sort(() => Math.random() - 0.5),
+		};
 	},
 });
