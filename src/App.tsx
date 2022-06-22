@@ -19,10 +19,10 @@ import { answeredQuestionsAtom, answeredWrongAtom } from "./state/atom";
 import { datasetLengthSelector, datasetSelector } from "./state/selector";
 
 function App() {
+	//#region useState
 	const dataset = useRecoilValue(datasetSelector);
 	const questionsCount = useRecoilValue(datasetLengthSelector);
 
-	//#region useState
 	const [question, setQuestion] = useState(dataset.questions[0]);
 	const [questionID, setQuestionID] = useState(0);
 	const [hasAnswered, setHasAnswered] = useState(false);
