@@ -10,8 +10,8 @@ import { RecoilRoot } from "recoil";
 
 ReactDOM.render(
 	<React.StrictMode>
+		<ServiceWorkerWrapper />
 		<RecoilRoot>
-			<ServiceWorkerWrapper />
 			<App />
 		</RecoilRoot>
 	</React.StrictMode>,
