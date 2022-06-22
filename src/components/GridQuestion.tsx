@@ -2,21 +2,24 @@ import { Grid, Button } from "@material-ui/core";
 import { ArrowBack, ArrowForward } from "@material-ui/icons";
 import { SetStateAction } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { answeredWrongAtom, questionIDAtom } from "../state/atom";
+import {
+	answeredQuestionsAtom,
+	answeredWrongAtom,
+	questionIDAtom,
+} from "../state/atom";
 import { datasetLengthSelector, questionSelector } from "../state/selector";
 
 interface IGridQuestion {
 	hasAnswered: boolean;
 	setHasAnswered: (answered: SetStateAction<boolean>) => void;
-
-	answeredQuestions: number[];
-	setAnsweredQuestions: (ids: SetStateAction<number[]>) => void;
-
 	generateQuestion: (id?: number | undefined) => void;
 }
 
 const GridQuestion = (props: IGridQuestion) => {
 	const [answeredWrong, setAnsweredWrong] = useRecoilState(answeredWrongAtom);
+	const [answeredQuestions, setAnsweredQuestions] = useRecoilState(
+		answeredQuestionsAtom
+	);
 	const questionsCount = useRecoilValue(datasetLengthSelector);
 
 	const questionID = useRecoilValue(questionIDAtom);
@@ -36,11 +39,7 @@ const GridQuestion = (props: IGridQuestion) => {
 		if (!question.options[id].isRight)
 			insertID(answeredWrong, setAnsweredWrong, questionID);
 
-		insertID(
-			props.answeredQuestions,
-			props.setAnsweredQuestions,
-			questionID
-		);
+		insertID(answeredQuestions, setAnsweredQuestions, questionID);
 
 		props.setHasAnswered(true);
 	};

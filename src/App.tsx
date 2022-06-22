@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 
 import GridStats from "./components/GridStats";
-import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import { answeredQuestionsAtom, questionIDAtom } from "./state/atom";
 import { datasetLengthSelector, datasetSelector } from "./state/selector";
 import GridQuestion from "./components/GridQuestion";
@@ -23,9 +23,7 @@ function App() {
 	const setQuestionID = useSetRecoilState(questionIDAtom);
 	const [hasAnswered, setHasAnswered] = useState(false);
 
-	const [answeredQuestions, setAnsweredQuestions] = useRecoilState(
-		answeredQuestionsAtom
-	);
+	const answeredQuestions = useRecoilValue(answeredQuestionsAtom);
 	//#endregion
 
 	//#region functions
@@ -34,6 +32,7 @@ function App() {
 		return Math.floor(Math.random() * maximum);
 	};
 
+	// TODO: move into own file
 	const generateQuestion = (id: number | undefined = undefined) => {
 		let n: number;
 
@@ -66,8 +65,6 @@ function App() {
 					<GridQuestion
 						hasAnswered={hasAnswered}
 						setHasAnswered={setHasAnswered}
-						answeredQuestions={answeredQuestions}
-						setAnsweredQuestions={setAnsweredQuestions}
 						generateQuestion={generateQuestion}
 					/>
 					<GridStats generateQuestion={generateQuestion} />
