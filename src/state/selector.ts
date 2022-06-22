@@ -1,6 +1,6 @@
 import { selector } from "recoil";
 import datasets from "../data/datasets";
-import { datasetIDAtom } from "./atom";
+import { datasetIDAtom, questionIDAtom } from "./atom";
 
 export const datasetSelector = selector({
 	key: "dataset",
@@ -15,5 +15,14 @@ export const datasetLengthSelector = selector({
 	get({ get }) {
 		const datasetID = get(datasetIDAtom);
 		return datasets[datasetID].questions.length;
+	},
+});
+
+export const questionSelector = selector({
+	key: "question",
+	get({ get }) {
+		const datasetID = get(datasetIDAtom);
+		const questionID = get(questionIDAtom);
+		return datasets[datasetID].questions[questionID];
 	},
 });
