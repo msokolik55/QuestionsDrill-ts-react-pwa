@@ -13,8 +13,6 @@ import { ArrowBack, ArrowForward } from "@material-ui/icons";
 
 import { IQuestion } from "./models/Question";
 
-// TODO: add into atom
-// import { dataset1 } from "./data/dataset1";
 import GridStats from "./components/GridStats";
 import { useRecoilState, useRecoilValue } from "recoil";
 import { answeredQuestionsAtom, answeredWrongAtom } from "./state/atom";
