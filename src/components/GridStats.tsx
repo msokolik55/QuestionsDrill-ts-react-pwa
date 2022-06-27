@@ -1,7 +1,8 @@
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { Grid, Button } from "@material-ui/core";
 import AccordionStats from "./AccordionStats";
 import { answeredWrongAtom, answeredQuestionsAtom } from "../state/atom";
+import { datasetLengthSelector } from "../state/selector";
 
 interface IGridStats {
 	generateQuestion: (id: number | undefined) => void;
@@ -12,6 +13,8 @@ const GridStats = (props: IGridStats) => {
 	const [answeredQuestions, setAnsweredQuestions] = useRecoilState(
 		answeredQuestionsAtom
 	);
+
+	const questionsCount = useRecoilValue(datasetLengthSelector);
 
 	const resetAnswers = () => {
 		setAnsweredWrong([]);
@@ -44,8 +47,7 @@ const GridStats = (props: IGridStats) => {
 				<AccordionStats
 					title="Zodpovedané"
 					items={answeredQuestions}
-					// TODO: fix maximum to all questions length
-					maximum={answeredWrong.length}
+					maximum={questionsCount}
 					generateQuestion={props.generateQuestion}
 					keyLabel="answered-"
 				/>
