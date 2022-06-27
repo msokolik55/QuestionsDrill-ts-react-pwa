@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./App.css";
 
 import {
@@ -10,15 +10,48 @@ import {
 } from "@material-ui/core";
 
 import GridStats from "./components/GridStats";
-import { useRecoilValue } from "recoil";
-import { datasetSelector } from "./state/selector";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import { datasetSelector, datasetLengthSelector } from "./state/selector";
 import GridQuestion from "./components/GridQuestion";
-import { generateQuestion } from "./utils/generate";
+import {
+	answeredQuestionsAtom,
+	hasAnsweredAtom,
+	questionIDAtom,
+} from "./state/atom";
 
 function App() {
 	//#region useState
 	const dataset = useRecoilValue(datasetSelector);
-	const [hasAnswered, setHasAnswered] = useState(false);
+	const [hasAnswered, setHasAnswered] = useRecoilState(hasAnsweredAtom);
+
+	const questionsCount = useRecoilValue(datasetLengthSelector);
+	const answeredQuestions = useRecoilValue(answeredQuestionsAtom);
+	const setQuestionID = useSetRecoilState(questionIDAtom);
+	//#endregion
+
+	//#region functions
+	const randomNumber = (maximum: number) => {
+		return Math.floor(Math.random() * maximum);
+	};
+
+	const generateQuestion = (id: number | undefined = undefined) => {
+		let n: number;
+
+		if (id !== undefined) {
+			n = (id + questionsCount) % questionsCount;
+		} else {
+			if (answeredQuestions.length >= questionsCount) {
+				n = randomNumber(questionsCount);
+			} else {
+				do {
+					n = randomNumber(questionsCount);
+				} while (answeredQuestions.includes(n));
+			}
+		}
+
+		setQuestionID(n);
+		setHasAnswered(false);
+	};
 	//#endregion
 
 	return (

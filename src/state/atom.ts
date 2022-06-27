@@ -21,3 +21,8 @@ export const answeredQuestionsAtom = atom<number[]>({
 	key: "answeredQuestions",
 	default: [],
 });
+
+export const hasAnsweredAtom = atom<boolean>({
+	key: "hasAnswered",
+	default: false,
+});
