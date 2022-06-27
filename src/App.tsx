@@ -22,7 +22,6 @@ import {
 } from "./state/atom";
 import { datasetLengthSelector, datasetSelector } from "./state/selector";
 
-// TODO: reorder all imports (set in Prettier)
 function App() {
 	//#region useState
 	const dataset = useRecoilValue(datasetSelector);
