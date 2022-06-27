@@ -23,6 +23,7 @@ import {
 import { datasetLengthSelector, datasetSelector } from "./state/selector";
 
 // TODO: rename ID -> Id
+// TODO: move all inline into separate files
 function App() {
 	//#region useState
 	const dataset = useRecoilValue(datasetSelector);
