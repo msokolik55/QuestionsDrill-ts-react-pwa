@@ -1,21 +1,22 @@
-import { useRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 
 import {
 	Button,
 	Divider,
 	IconButton,
-	List,
 	ListItem,
-	ListItemIcon,
 	ListItemText,
 	SwipeableDrawer,
 } from "@material-ui/core";
-import { ChevronLeft, ListAlt } from "@material-ui/icons";
+import { ChevronLeft } from "@material-ui/icons";
 
-import { isDrawerOpenAtom } from "../../state/atom";
+import datasets from "../../data/datasets";
+import { datasetIDAtom, isDrawerOpenAtom } from "../../state/atom";
+import AccordionDrawer from "./AccordionDrawer";
 
 const MainDrawer = () => {
 	const [isDrawerOpen, setIsDrawerOpen] = useRecoilState(isDrawerOpenAtom);
+	const setDatasetID = useSetRecoilState(datasetIDAtom);
 
 	return (
 		<SwipeableDrawer
@@ -31,19 +32,21 @@ const MainDrawer = () => {
 				</IconButton>
 			</div>
 			<Divider />
-			{/* TODO: openable sublists */}
-			<List>
-				{["Datasets"].map((text) => (
-					<ListItem key={text}>
-						<Button>
-							<ListItemIcon>
-								<ListAlt />
-							</ListItemIcon>
-							<ListItemText primary={text} />
+			<AccordionDrawer title="datasets">
+				{/* TODO: choose dataset based on its uuid */}
+				{datasets.map((dataset, index) => (
+					<ListItem key={dataset.name}>
+						<Button
+							onClick={() => {
+								setDatasetID(index);
+								setIsDrawerOpen(false);
+							}}
+						>
+							<ListItemText primary={dataset.name} />
 						</Button>
 					</ListItem>
 				))}
-			</List>
+			</AccordionDrawer>
 		</SwipeableDrawer>
 	);
 };
