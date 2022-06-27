@@ -5,13 +5,12 @@ import { useRecoilState, useRecoilValue } from "recoil";
 import {
 	answeredQuestionsAtom,
 	answeredWrongAtom,
+	hasAnsweredAtom,
 	questionIDAtom,
 } from "../state/atom";
 import { datasetLengthSelector, questionSelector } from "../state/selector";
 
 interface IGridQuestion {
-	hasAnswered: boolean;
-	setHasAnswered: (answered: SetStateAction<boolean>) => void;
 	generateQuestion: (id?: number | undefined) => void;
 }
 
@@ -24,6 +23,8 @@ const GridQuestion = (props: IGridQuestion) => {
 
 	const questionID = useRecoilValue(questionIDAtom);
 	const question = useRecoilValue(questionSelector);
+
+	const [hasAnswered, setHasAnswered] = useRecoilState(hasAnsweredAtom);
 
 	const insertID = (
 		items: number[],
@@ -41,7 +42,7 @@ const GridQuestion = (props: IGridQuestion) => {
 
 		insertID(answeredQuestions, setAnsweredQuestions, questionID);
 
-		props.setHasAnswered(true);
+		setHasAnswered(true);
 	};
 
 	return (
@@ -55,7 +56,7 @@ const GridQuestion = (props: IGridQuestion) => {
 					key={idx}
 					style={{
 						color: "black",
-						backgroundColor: !props.hasAnswered
+						backgroundColor: !hasAnswered
 							? "#EFEFEF"
 							: opt.isRight
 							? "green"
@@ -64,7 +65,7 @@ const GridQuestion = (props: IGridQuestion) => {
 						margin: "0.5rem 0 0.5rem 0",
 						textTransform: "none",
 					}}
-					disabled={props.hasAnswered}
+					disabled={hasAnswered}
 					onClick={() => checkAnswer(idx)}
 				>
 					{opt.title}

@@ -63,11 +63,7 @@ function App() {
 			</AppBar>
 			<Container>
 				<Grid container direction="row" spacing={4}>
-					<GridQuestion
-						hasAnswered={hasAnswered}
-						setHasAnswered={setHasAnswered}
-						generateQuestion={generateQuestion}
-					/>
+					<GridQuestion generateQuestion={generateQuestion} />
 					<GridStats generateQuestion={generateQuestion} />
 				</Grid>
 			</Container>
