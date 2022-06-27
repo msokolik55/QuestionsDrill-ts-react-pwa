@@ -27,12 +27,39 @@ import { datasetLengthSelector, datasetSelector } from "./state/selector";
 function App() {
 	//#region useState
 	const dataset = useRecoilValue(datasetSelector);
+
 	const setHasAnswered = useSetRecoilState(hasAnsweredAtom);
 	const setIsDrawerOpen = useSetRecoilState(isDrawerOpenAtom);
 
 	const questionsCount = useRecoilValue(datasetLengthSelector);
 	const answeredQuestions = useRecoilValue(answeredQuestionsAtom);
 	const setQuestionId = useSetRecoilState(questionIdAtom);
+	//#endregion
+
+	//#region no dataset
+	if (!dataset || !questionsCount)
+		return (
+			<>
+				<AppBar position="static" color="secondary">
+					<Toolbar>
+						<IconButton
+							color="inherit"
+							onClick={() => setIsDrawerOpen(true)}
+							edge="start"
+						>
+							<Menu />
+						</IconButton>
+						<Typography style={{ fontWeight: "bold" }}>Drill otázok</Typography>
+					</Toolbar>
+				</AppBar>
+
+				<MainDrawer />
+
+				<Container style={{ marginTop: "1em" }}>
+					<Typography>Vyberte si ľubovoľný drill z bočného menu.</Typography>
+				</Container>
+			</>
+		);
 	//#endregion
 
 	//#region functions

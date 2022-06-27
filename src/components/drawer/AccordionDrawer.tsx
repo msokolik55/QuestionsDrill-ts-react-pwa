@@ -15,7 +15,7 @@ interface IAccordionDrawerProps {
 
 const AccordionDrawer = (props: IAccordionDrawerProps) => {
 	return (
-		<Accordion style={{ margin: "0em" }}>
+		<Accordion style={{ margin: "0em" }} disabled={props.children.length === 0}>
 			<AccordionSummary expandIcon={<ExpandMore />}>
 				<ListItem>
 					<ListItemIcon>

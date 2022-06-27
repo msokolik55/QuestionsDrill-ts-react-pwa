@@ -39,7 +39,7 @@ const GridQuestion = (props: IGridQuestion) => {
 	};
 
 	const checkAnswer = (id: number) => {
-		if (!question.options[id].isRight)
+		if (!question?.options[id].isRight)
 			insertId(answeredWrong, setAnsweredWrong, questionId);
 
 		insertId(answeredQuestions, setAnsweredQuestions, questionId);
@@ -52,8 +52,8 @@ const GridQuestion = (props: IGridQuestion) => {
 			<h4>
 				{questionId + 1} / {questionsCount}
 			</h4>
-			<h4>{question.title}</h4>
-			{question.options.map((opt, idx) => (
+			<h4>{question?.title}</h4>
+			{question?.options.map((opt, idx) => (
 				<Button
 					key={idx}
 					style={{

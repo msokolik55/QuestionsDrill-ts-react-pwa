@@ -11,7 +11,7 @@ import { ExpandMore } from "@material-ui/icons";
 interface IPropsStats {
 	title: string;
 	items: number[];
-	maximum: number;
+	maximum: number | undefined;
 	generateQuestion: (id?: number | undefined) => void;
 	keyLabel: string;
 }
