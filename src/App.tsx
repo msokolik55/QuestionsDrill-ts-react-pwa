@@ -10,7 +10,7 @@ import {
 } from "@material-ui/core";
 
 import GridStats from "./components/GridStats";
-import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 import { datasetSelector, datasetLengthSelector } from "./state/selector";
 import GridQuestion from "./components/GridQuestion";
 import {
