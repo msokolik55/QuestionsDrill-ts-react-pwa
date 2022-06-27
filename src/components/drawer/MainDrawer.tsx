@@ -29,6 +29,7 @@ const MainDrawer = () => {
 				</IconButton>
 			</div>
 			<Divider />
+			{/* TODO: openable sublists */}
 			<List>
 				{["Datasets"].map((text) => (
 					<ListItem key={text}>
