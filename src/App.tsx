@@ -70,7 +70,7 @@ function App() {
 					>
 						<Menu />
 					</IconButton>
-					<Typography variant="h4">{dataset.name}</Typography>
+					<Typography style={{ fontWeight: "bold" }}>{dataset.name}</Typography>
 				</Toolbar>
 			</AppBar>
 
