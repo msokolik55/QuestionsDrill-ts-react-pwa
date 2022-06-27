@@ -1,23 +1,14 @@
 import { useRecoilValue, useSetRecoilState } from "recoil";
 
-import {
-	AppBar,
-	Container,
-	Grid,
-	IconButton,
-	Toolbar,
-	Typography,
-} from "@material-ui/core";
-import { Menu } from "@material-ui/icons";
+import { Container, Grid, Typography } from "@material-ui/core";
 
 import "./App.css";
 import GridQuestion from "./components/GridQuestion";
-import MainDrawer from "./components/drawer/MainDrawer";
+import MainPage from "./components/MainPage";
 import GridStats from "./components/stats/GridStats";
 import {
 	answeredQuestionsAtom,
 	hasAnsweredAtom,
-	isDrawerOpenAtom,
 	questionIdAtom,
 } from "./state/atom";
 import { datasetLengthSelector, datasetSelector } from "./state/selector";
@@ -29,7 +20,6 @@ function App() {
 	const dataset = useRecoilValue(datasetSelector);
 
 	const setHasAnswered = useSetRecoilState(hasAnsweredAtom);
-	const setIsDrawerOpen = useSetRecoilState(isDrawerOpenAtom);
 
 	const questionsCount = useRecoilValue(datasetLengthSelector);
 	const answeredQuestions = useRecoilValue(answeredQuestionsAtom);
@@ -39,26 +29,13 @@ function App() {
 	//#region no dataset
 	if (!dataset || !questionsCount)
 		return (
-			<>
-				<AppBar position="static" color="secondary">
-					<Toolbar>
-						<IconButton
-							color="inherit"
-							onClick={() => setIsDrawerOpen(true)}
-							edge="start"
-						>
-							<Menu />
-						</IconButton>
-						<Typography style={{ fontWeight: "bold" }}>Drill otázok</Typography>
-					</Toolbar>
-				</AppBar>
-
-				<MainDrawer />
-
-				<Container style={{ marginTop: "1em" }}>
-					<Typography>Vyberte si ľubovoľný drill z bočného menu.</Typography>
-				</Container>
-			</>
+			<MainPage
+				content={
+					<Container style={{ marginTop: "1em" }}>
+						<Typography>Vyberte si ľubovoľný drill z bočného menu.</Typography>
+					</Container>
+				}
+			/>
 		);
 	//#endregion
 
@@ -88,29 +65,16 @@ function App() {
 	//#endregion
 
 	return (
-		<>
-			<AppBar position="static" color="secondary">
-				<Toolbar>
-					<IconButton
-						color="inherit"
-						onClick={() => setIsDrawerOpen(true)}
-						edge="start"
-					>
-						<Menu />
-					</IconButton>
-					<Typography style={{ fontWeight: "bold" }}>{dataset.name}</Typography>
-				</Toolbar>
-			</AppBar>
-
-			<MainDrawer />
-
-			<Container>
-				<Grid container direction="row" spacing={4}>
-					<GridQuestion generateQuestion={generateQuestion} />
-					<GridStats generateQuestion={generateQuestion} />
-				</Grid>
-			</Container>
-		</>
+		<MainPage
+			content={
+				<Container>
+					<Grid container direction="row" spacing={4}>
+						<GridQuestion generateQuestion={generateQuestion} />
+						<GridStats generateQuestion={generateQuestion} />
+					</Grid>
+				</Container>
+			}
+		/>
 	);
 }
 
