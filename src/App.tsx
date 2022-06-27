@@ -18,11 +18,10 @@ import {
 	answeredQuestionsAtom,
 	hasAnsweredAtom,
 	isDrawerOpenAtom,
-	questionIDAtom,
+	questionIdAtom,
 } from "./state/atom";
 import { datasetLengthSelector, datasetSelector } from "./state/selector";
 
-// TODO: rename ID -> Id
 // TODO: move all inline into separate files
 function App() {
 	//#region useState
@@ -32,7 +31,7 @@ function App() {
 
 	const questionsCount = useRecoilValue(datasetLengthSelector);
 	const answeredQuestions = useRecoilValue(answeredQuestionsAtom);
-	const setQuestionID = useSetRecoilState(questionIDAtom);
+	const setQuestionId = useSetRecoilState(questionIdAtom);
 	//#endregion
 
 	//#region functions
@@ -55,7 +54,7 @@ function App() {
 			}
 		}
 
-		setQuestionID(n);
+		setQuestionId(n);
 		setHasAnswered(false);
 	};
 	//#endregion

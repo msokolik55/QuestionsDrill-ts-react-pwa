@@ -2,14 +2,14 @@ import { atom } from "recoil";
 
 // TODO: make undefined safe
 // TODO: save last answered dataset
-export const datasetIDAtom = atom<number>({
-	key: "selectedDatasetID",
+export const datasetIdAtom = atom<number>({
+	key: "selectedDatasetId",
 	default: 0,
 });
 
 // TODO: make undefined safe
-export const questionIDAtom = atom<number>({
-	key: "questionID",
+export const questionIdAtom = atom<number>({
+	key: "questionId",
 	default: 0,
 });
 

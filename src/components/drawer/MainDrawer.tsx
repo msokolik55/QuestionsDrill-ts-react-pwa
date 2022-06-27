@@ -11,12 +11,12 @@ import {
 import { ChevronLeft } from "@material-ui/icons";
 
 import datasets from "../../data/datasets";
-import { datasetIDAtom, isDrawerOpenAtom } from "../../state/atom";
+import { datasetIdAtom, isDrawerOpenAtom } from "../../state/atom";
 import AccordionDrawer from "./AccordionDrawer";
 
 const MainDrawer = () => {
 	const [isDrawerOpen, setIsDrawerOpen] = useRecoilState(isDrawerOpenAtom);
-	const setDatasetID = useSetRecoilState(datasetIDAtom);
+	const setDatasetId = useSetRecoilState(datasetIdAtom);
 
 	return (
 		<SwipeableDrawer
@@ -38,7 +38,7 @@ const MainDrawer = () => {
 					<ListItem key={dataset.name}>
 						<Button
 							onClick={() => {
-								setDatasetID(index);
+								setDatasetId(index);
 								setIsDrawerOpen(false);
 							}}
 						>

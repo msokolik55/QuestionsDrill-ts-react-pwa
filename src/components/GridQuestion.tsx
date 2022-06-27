@@ -8,7 +8,7 @@ import {
 	answeredQuestionsAtom,
 	answeredWrongAtom,
 	hasAnsweredAtom,
-	questionIDAtom,
+	questionIdAtom,
 } from "../state/atom";
 import { datasetLengthSelector, questionSelector } from "../state/selector";
 
@@ -23,12 +23,12 @@ const GridQuestion = (props: IGridQuestion) => {
 	);
 	const questionsCount = useRecoilValue(datasetLengthSelector);
 
-	const questionID = useRecoilValue(questionIDAtom);
+	const questionId = useRecoilValue(questionIdAtom);
 	const question = useRecoilValue(questionSelector);
 
 	const [hasAnswered, setHasAnswered] = useRecoilState(hasAnsweredAtom);
 
-	const insertID = (
+	const insertId = (
 		items: number[],
 		setter: (value: SetStateAction<number[]>) => void,
 		id: number
@@ -40,9 +40,9 @@ const GridQuestion = (props: IGridQuestion) => {
 
 	const checkAnswer = (id: number) => {
 		if (!question.options[id].isRight)
-			insertID(answeredWrong, setAnsweredWrong, questionID);
+			insertId(answeredWrong, setAnsweredWrong, questionId);
 
-		insertID(answeredQuestions, setAnsweredQuestions, questionID);
+		insertId(answeredQuestions, setAnsweredQuestions, questionId);
 
 		setHasAnswered(true);
 	};
@@ -50,7 +50,7 @@ const GridQuestion = (props: IGridQuestion) => {
 	return (
 		<Grid item sm={7} style={{ width: "100%" }}>
 			<h4>
-				{questionID + 1} / {questionsCount}
+				{questionId + 1} / {questionsCount}
 			</h4>
 			<h4>{question.title}</h4>
 			{question.options.map((opt, idx) => (
@@ -78,7 +78,7 @@ const GridQuestion = (props: IGridQuestion) => {
 				<Button
 					variant="contained"
 					color="secondary"
-					onClick={() => props.generateQuestion(questionID - 1)}
+					onClick={() => props.generateQuestion(questionId - 1)}
 				>
 					<ArrowBack />
 				</Button>
@@ -92,7 +92,7 @@ const GridQuestion = (props: IGridQuestion) => {
 				<Button
 					variant="contained"
 					color="secondary"
-					onClick={() => props.generateQuestion(questionID + 1)}
+					onClick={() => props.generateQuestion(questionId + 1)}
 				>
 					<ArrowForward />
 				</Button>
