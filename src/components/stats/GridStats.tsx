@@ -1,8 +1,10 @@
 import { useRecoilState, useRecoilValue } from "recoil";
-import { Grid, Button } from "@material-ui/core";
-import AccordionStats from "./AccordionStats";
-import { answeredWrongAtom, answeredQuestionsAtom } from "../../state/atom";
+
+import { Button, Grid } from "@material-ui/core";
+
+import { answeredQuestionsAtom, answeredWrongAtom } from "../../state/atom";
 import { datasetLengthSelector } from "../../state/selector";
+import AccordionStats from "./AccordionStats";
 
 interface IGridStats {
 	generateQuestion: (id: number | undefined) => void;

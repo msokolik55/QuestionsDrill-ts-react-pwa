@@ -1,27 +1,26 @@
-import React, { useState } from "react";
-import "./App.css";
+import { useRecoilValue, useSetRecoilState } from "recoil";
 
 import {
+	AppBar,
 	Container,
 	Grid,
-	AppBar,
+	IconButton,
 	Toolbar,
 	Typography,
-	IconButton,
 } from "@material-ui/core";
 import { Menu } from "@material-ui/icons";
 
-import GridStats from "./components/stats/GridStats";
-import { useRecoilValue, useSetRecoilState } from "recoil";
-import { datasetSelector, datasetLengthSelector } from "./state/selector";
+import "./App.css";
 import GridQuestion from "./components/GridQuestion";
+import MainDrawer from "./components/drawer/MainDrawer";
+import GridStats from "./components/stats/GridStats";
 import {
 	answeredQuestionsAtom,
 	hasAnsweredAtom,
 	isDrawerOpenAtom,
 	questionIDAtom,
 } from "./state/atom";
-import MainDrawer from "./components/drawer/MainDrawer";
+import { datasetLengthSelector, datasetSelector } from "./state/selector";
 
 // TODO: reorder all imports (set in Prettier)
 function App() {

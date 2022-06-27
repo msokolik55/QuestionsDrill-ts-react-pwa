@@ -1,10 +1,10 @@
 import {
 	Accordion,
+	AccordionDetails,
 	AccordionSummary,
+	Button,
 	Grid,
 	Typography,
-	AccordionDetails,
-	Button,
 } from "@material-ui/core";
 import { ExpandMore } from "@material-ui/icons";
 
@@ -37,10 +37,7 @@ const AccordionStats = ({
 				{[...items]
 					.sort((a, b) => a - b)
 					.map((num) => (
-						<Button
-							key={keyLabel + num}
-							onClick={() => generateQuestion(num)}
-						>
+						<Button key={keyLabel + num} onClick={() => generateQuestion(num)}>
 							{num + 1}
 						</Button>
 					))}

@@ -15,7 +15,8 @@ export const dataset2: IDataset = {
 					isRight: false,
 				},
 				{
-					title: "Se nesmí účastnit utkání, dokud krvácení není zcela zastaveno.",
+					title:
+						"Se nesmí účastnit utkání, dokud krvácení není zcela zastaveno.",
 					isRight: false,
 				},
 				{
@@ -30,29 +31,34 @@ export const dataset2: IDataset = {
 			options: [
 				{ title: "Rozhodčí nechá pokračovat ve hře.", isRight: true },
 				{
-					title: "Rozhodčí nařídí volný úder z místa, kde hráč přijal přihrávku.",
+					title:
+						"Rozhodčí nařídí volný úder z místa, kde hráč přijal přihrávku.",
 					isRight: false,
 				},
 				{
-					title: "Rozhodčí nařídí volný úder z místa, odkud bylo hráči nahráno.",
+					title:
+						"Rozhodčí nařídí volný úder z místa, odkud bylo hráči nahráno.",
 					isRight: false,
 				},
 				{
-					title: "Rozhodčí nechá pokračovat ve hře, pokud se nejednalo o úmyslnou přihrávku.",
+					title:
+						"Rozhodčí nechá pokračovat ve hře, pokud se nejednalo o úmyslnou přihrávku.",
 					isRight: false,
 				},
 			],
 		},
 
 		{
-			title: "Hráč je v ponechané výhodě zastaven dalším přestupkem na volný úder podobného charakteru:",
+			title:
+				"Hráč je v ponechané výhodě zastaven dalším přestupkem na volný úder podobného charakteru:",
 			options: [
 				{
 					title: "Rozhodčí nařídí volný úder za druhý přestupek.",
 					isRight: true,
 				},
 				{
-					title: "Rozhodčí udělí druhému faulujícímu hráči 2 minutový trest za opakované přestupky.",
+					title:
+						"Rozhodčí udělí druhému faulujícímu hráči 2 minutový trest za opakované přestupky.",
 					isRight: false,
 				},
 				{ title: "Rozhodčí nechá pokračovat ve hře.", isRight: false },
@@ -77,7 +83,8 @@ export const dataset2: IDataset = {
 		},
 
 		{
-			title: "Míček přejde brankovou čáru během signálu oznamujícího konec třetiny. Rozhodčí:",
+			title:
+				"Míček přejde brankovou čáru během signálu oznamujícího konec třetiny. Rozhodčí:",
 			options: [
 				{ title: "Branku neuzná.", isRight: true },
 				{ title: "Branku uzná.", isRight: false },
@@ -109,7 +116,8 @@ export const dataset2: IDataset = {
 		},
 
 		{
-			title: "Hráč vstřelí gól, ale při došvihu trefí soupeře holí do hlavy. Rozhodčí:",
+			title:
+				"Hráč vstřelí gól, ale při došvihu trefí soupeře holí do hlavy. Rozhodčí:",
 			options: [
 				{
 					title: "Branku neuzná a udělí hráči pětiminutový trest.",
@@ -125,7 +133,8 @@ export const dataset2: IDataset = {
 		},
 
 		{
-			title: "Branka v základní hrací době je považována za uznanou, jestliže byla vstřelena správným způsobem a potvrzena:",
+			title:
+				"Branka v základní hrací době je považována za uznanou, jestliže byla vstřelena správným způsobem a potvrzena:",
 			options: [
 				{ title: "Vhazováním na středovém bodě.", isRight: true },
 				{ title: "Zapsáním do zápisu o utkání.", isRight: false },
@@ -138,7 +147,8 @@ export const dataset2: IDataset = {
 			title: "Komu bude připsána vlastní branka?",
 			options: [
 				{
-					title: "Hráči, který ji vstřelil a označena v zápise o utkání kódem „V“.",
+					title:
+						"Hráči, který ji vstřelil a označena v zápise o utkání kódem „V“.",
 					isRight: true,
 				},
 				{ title: "Nikomu - nebude uznána.", isRight: false },
@@ -147,14 +157,16 @@ export const dataset2: IDataset = {
 					isRight: false,
 				},
 				{
-					title: "Poslednímu útočícímu hráči, který se dotkl míče a v zápise o utkání označena kódem „V“.",
+					title:
+						"Poslednímu útočícímu hráči, který se dotkl míče a v zápise o utkání označena kódem „V“.",
 					isRight: false,
 				},
 			],
 		},
 
 		{
-			title: "Hráč bránícího družstva posunul bránu mimo její místo a míč překročil brankovou zepředu mezi značkami umístění brány a pod pomyslným břevnem. Rozhodčí:",
+			title:
+				"Hráč bránícího družstva posunul bránu mimo její místo a míč překročil brankovou zepředu mezi značkami umístění brány a pod pomyslným břevnem. Rozhodčí:",
 			options: [
 				{ title: "Uzná branku.", isRight: true },
 				{ title: "Nařídí vhazování v rohu hřiště.", isRight: false },
@@ -167,7 +179,8 @@ export const dataset2: IDataset = {
 		},
 
 		{
-			title: "Míč přešel celým objemem brankovou čáru poté, co ho neúmyslně usměrnil svým tělem hráč útočícího družstva. Rozhodčí:",
+			title:
+				"Míč přešel celým objemem brankovou čáru poté, co ho neúmyslně usměrnil svým tělem hráč útočícího družstva. Rozhodčí:",
 			options: [
 				{ title: "Uzná branku.", isRight: true },
 				{
@@ -183,7 +196,8 @@ export const dataset2: IDataset = {
 			title: "Hráč nebo člen realizačního týmu vyloučený do konce utkání musí:",
 			options: [
 				{
-					title: "Okamžitě odejít do šaten a nesmí se dále žádným způsobem podílet na utkání.",
+					title:
+						"Okamžitě odejít do šaten a nesmí se dále žádným způsobem podílet na utkání.",
 					isRight: true,
 				},
 				{
@@ -195,7 +209,8 @@ export const dataset2: IDataset = {
 					isRight: false,
 				},
 				{
-					title: "Odsloužit pětiminutový trest na trestné lavici a poté odejít do šaten.",
+					title:
+						"Odsloužit pětiminutový trest na trestné lavici a poté odejít do šaten.",
 					isRight: false,
 				},
 			],
@@ -205,19 +220,23 @@ export const dataset2: IDataset = {
 			title: "Vyloučení do konce utkání 1:",
 			options: [
 				{
-					title: "Vede k postihu pro zbytek utkání a nemá žádné další následky.",
+					title:
+						"Vede k postihu pro zbytek utkání a nemá žádné další následky.",
 					isRight: true,
 				},
 				{
-					title: "Vede k nemožnosti účastnit se následujícího utkání stejné soutěže.",
+					title:
+						"Vede k nemožnosti účastnit se následujícího utkání stejné soutěže.",
 					isRight: false,
 				},
 				{
-					title: "Vede k nemožnosti účastnit se nejbližšího následujícího utkání bez ohledu na soutěž.",
+					title:
+						"Vede k nemožnosti účastnit se nejbližšího následujícího utkání bez ohledu na soutěž.",
 					isRight: false,
 				},
 				{
-					title: "Vede k nemožnosti účastnit se dalšího utkání stejné soutěže a dále k potrestání, které určí disciplinární orgán.",
+					title:
+						"Vede k nemožnosti účastnit se dalšího utkání stejné soutěže a dále k potrestání, které určí disciplinární orgán.",
 					isRight: false,
 				},
 			],
@@ -227,11 +246,13 @@ export const dataset2: IDataset = {
 			title: "Vyloučení do konce utkání 3:",
 			options: [
 				{
-					title: "Vede k nemožnosti účastnit se dalších utkání do projednání přestupku disciplinárním orgánem a dále k potrestání, které určí disciplinární orgán.",
+					title:
+						"Vede k nemožnosti účastnit se dalších utkání do projednání přestupku disciplinárním orgánem a dále k potrestání, které určí disciplinární orgán.",
 					isRight: true,
 				},
 				{
-					title: "Vede k nemožnosti účastnit se následujícího utkání, v jiné soutěži hráč může startovat.",
+					title:
+						"Vede k nemožnosti účastnit se následujícího utkání, v jiné soutěži hráč může startovat.",
 					isRight: false,
 				},
 				{
@@ -239,22 +260,26 @@ export const dataset2: IDataset = {
 					isRight: false,
 				},
 				{
-					title: "Vede k nemožnosti účastnit se utkání stejné soutěže do konce sezóny.",
+					title:
+						"Vede k nemožnosti účastnit se utkání stejné soutěže do konce sezóny.",
 					isRight: false,
 				},
 			],
 		},
 
 		{
-			title: "Balón poskakuje ve velkém brankovišti. Brankář domácích kopne do balónu přímo do běhu spoluhráči a ten balón na vlastní polovině hřiště zpracuje. Co bude následovat?",
+			title:
+				"Balón poskakuje ve velkém brankovišti. Brankář domácích kopne do balónu přímo do běhu spoluhráči a ten balón na vlastní polovině hřiště zpracuje. Co bude následovat?",
 			options: [
 				{ title: "Hra bude pokračovat.", isRight: true },
 				{
-					title: "Volný úder pro hostující družstvo 3,5m od malého brankoviště.",
+					title:
+						"Volný úder pro hostující družstvo 3,5m od malého brankoviště.",
 					isRight: false,
 				},
 				{
-					title: "Volný úder pro hostující družstvo na místě přijetí přihrávky.",
+					title:
+						"Volný úder pro hostující družstvo na místě přijetí přihrávky.",
 					isRight: false,
 				},
 				{
@@ -281,7 +306,8 @@ export const dataset2: IDataset = {
 		},
 
 		{
-			title: "Bránící hráč při snaze získat balón kopne do útočníkovy čepele. Rozhodčí:",
+			title:
+				"Bránící hráč při snaze získat balón kopne do útočníkovy čepele. Rozhodčí:",
 			options: [
 				{ title: "Nařídí volný úder.", isRight: true },
 				{
@@ -293,7 +319,8 @@ export const dataset2: IDataset = {
 					isRight: false,
 				},
 				{
-					title: "Zapíská trojitý hvizd a zkontroluje, zda se bránící hráč nezranil.",
+					title:
+						"Zapíská trojitý hvizd a zkontroluje, zda se bránící hráč nezranil.",
 					isRight: false,
 				},
 			],
@@ -303,7 +330,8 @@ export const dataset2: IDataset = {
 			title: "Hráč provádějící volný úder:",
 			options: [
 				{
-					title: "Se nesmí dotknout míče podruhé, dokud se míče nedotkne jiný hráč nebo výstroj jiného hráče.",
+					title:
+						"Se nesmí dotknout míče podruhé, dokud se míče nedotkne jiný hráč nebo výstroj jiného hráče.",
 					isRight: true,
 				},
 				{ title: "Může rozehrát nohou.", isRight: false },
@@ -312,7 +340,8 @@ export const dataset2: IDataset = {
 					isRight: false,
 				},
 				{
-					title: "Musí upozornit soupeře, aby dodržel vzdálenost 3 metry od místa rozehrání.",
+					title:
+						"Musí upozornit soupeře, aby dodržel vzdálenost 3 metry od místa rozehrání.",
 					isRight: false,
 				},
 			],
@@ -331,23 +360,27 @@ export const dataset2: IDataset = {
 					isRight: false,
 				},
 				{
-					title: "Během přestávky v normální hrací době i během přestávky mezi normální hrací dobou a prodloužením.",
+					title:
+						"Během přestávky v normální hrací době i během přestávky mezi normální hrací dobou a prodloužením.",
 					isRight: false,
 				},
 			],
 		},
 
 		{
-			title: "Pokud je za předčasné vpuštění trestaného hráče na hřiště zodpovědný zapisovatelský stolek:",
+			title:
+				"Pokud je za předčasné vpuštění trestaného hráče na hřiště zodpovědný zapisovatelský stolek:",
 			options: [
 				{
-					title: "Vrátí se hráč na trestnou lavici a žádné další tresty nebudou uděleny.",
+					title:
+						"Vrátí se hráč na trestnou lavici a žádné další tresty nebudou uděleny.",
 					isRight: true,
 				},
 				{ title: "Hráč nastoupí ihned zpět do hry.", isRight: false },
 				{ title: "Hráč bude vyškrtnut ze zápisu.", isRight: false },
 				{
-					title: "Hráč se vrátí do hry a pořádajícímu oddílu bude následně udělena pokuta.",
+					title:
+						"Hráč se vrátí do hry a pořádajícímu oddílu bude následně udělena pokuta.",
 					isRight: false,
 				},
 			],
@@ -373,7 +406,8 @@ export const dataset2: IDataset = {
 		},
 
 		{
-			title: "Má družstvo mající více jak dva vyloučené hráče na trestné lavici právo hrát stále se čtyřmi hráči na hrací ploše?",
+			title:
+				"Má družstvo mající více jak dva vyloučené hráče na trestné lavici právo hrát stále se čtyřmi hráči na hrací ploše?",
 			options: [
 				{ title: "Ano.", isRight: true },
 				{ title: "Ne.", isRight: false },
@@ -402,10 +436,12 @@ export const dataset2: IDataset = {
 		},
 
 		{
-			title: "Je-li hráč potrestán osobním trestem, kdy se tento trest začne měřit?",
+			title:
+				"Je-li hráč potrestán osobním trestem, kdy se tento trest začne měřit?",
 			options: [
 				{
-					title: "Poté, co uplynou nebo jsou zrušena všechna jeho vyloučení na trestnou lavici.",
+					title:
+						"Poté, co uplynou nebo jsou zrušena všechna jeho vyloučení na trestnou lavici.",
 					isRight: true,
 				},
 				{ title: "Na pokyn rozhodčího.", isRight: false },
@@ -418,41 +454,50 @@ export const dataset2: IDataset = {
 			title: "Padne-li branka během dvouminutového trestu:",
 			options: [
 				{
-					title: "Trest se ruší, pokud branku vstřelilo družstvo, které nebylo trestáno.",
+					title:
+						"Trest se ruší, pokud branku vstřelilo družstvo, které nebylo trestáno.",
 					isRight: true,
 				},
 				{
-					title: "Trest se ruší, pokud branku vstřelilo družstvo, které nebylo trestáno, nebo pokud týmy hrály ve stejném počtu hráčů na hřišti.",
+					title:
+						"Trest se ruší, pokud branku vstřelilo družstvo, které nebylo trestáno, nebo pokud týmy hrály ve stejném počtu hráčů na hřišti.",
 					isRight: false,
 				},
 				{
-					title: "Trest pokračuje, i pokud branku vstřelilo družstvo, které nebylo trestáno a trestané družstvo nadále hraje s méně hráči v poli.",
+					title:
+						"Trest pokračuje, i pokud branku vstřelilo družstvo, které nebylo trestáno a trestané družstvo nadále hraje s méně hráči v poli.",
 					isRight: false,
 				},
 				{
-					title: "Trest pro hráče pokračuje, ale trestané družstvo bude hrát v plném počtu hráčů.",
+					title:
+						"Trest pro hráče pokračuje, ale trestané družstvo bude hrát v plném počtu hráčů.",
 					isRight: false,
 				},
 			],
 		},
 
 		{
-			title: "Během odloženého vyloučení je neproviněným družstvem vstřelena branka:",
+			title:
+				"Během odloženého vyloučení je neproviněným družstvem vstřelena branka:",
 			options: [
 				{
-					title: "Odložené vyloučení se ruší a všechny udělené probíhající tresty budou pokračovat.",
+					title:
+						"Odložené vyloučení se ruší a všechny udělené probíhající tresty budou pokračovat.",
 					isRight: true,
 				},
 				{
-					title: "Odložené vyloučení je uděleno a je zrušen trest, ze kterého zbývá nejkratší čas.",
+					title:
+						"Odložené vyloučení je uděleno a je zrušen trest, ze kterého zbývá nejkratší čas.",
 					isRight: false,
 				},
 				{
-					title: "Trest se neruší v případě, že byl neproviněnému mužstvu v té chvíli měřen právě jeden trest.",
+					title:
+						"Trest se neruší v případě, že byl neproviněnému mužstvu v té chvíli měřen právě jeden trest.",
 					isRight: false,
 				},
 				{
-					title: "Odložené vyloučení je uděleno a zrušen je předchozí udělený dvouminutový trest.",
+					title:
+						"Odložené vyloučení je uděleno a zrušen je předchozí udělený dvouminutový trest.",
 					isRight: false,
 				},
 			],
@@ -474,7 +519,8 @@ export const dataset2: IDataset = {
 					isRight: false,
 				},
 				{
-					title: "Družstvo, které není trestáno, bude rozehrávat volný úder z místa, kde došlo k přerušení hry.",
+					title:
+						"Družstvo, které není trestáno, bude rozehrávat volný úder z místa, kde došlo k přerušení hry.",
 					isRight: false,
 				},
 			],
@@ -526,15 +572,18 @@ export const dataset2: IDataset = {
 			title: "Vhazování se provádí:",
 			options: [
 				{
-					title: "Na nejbližším bodě pro vhazování, dle polohy míče při přerušení.",
+					title:
+						"Na nejbližším bodě pro vhazování, dle polohy míče při přerušení.",
 					isRight: true,
 				},
 				{
-					title: "Na nejvzdálenějším bodě pro vhazování, dle polohy míče při přerušení.",
+					title:
+						"Na nejvzdálenějším bodě pro vhazování, dle polohy míče při přerušení.",
 					isRight: false,
 				},
 				{
-					title: "Na útočné polovině družstva, pokud druhé družstvo bylo potrestáno vyloučením.",
+					title:
+						"Na útočné polovině družstva, pokud druhé družstvo bylo potrestáno vyloučením.",
 					isRight: false,
 				},
 				{ title: "Vždy na středovém bodě.", isRight: false },
@@ -545,7 +594,8 @@ export const dataset2: IDataset = {
 			title: "Pokud je hra přerušena, pokračuje se vhazováním:",
 			options: [
 				{
-					title: "Pokud nelze žádnému družstvu udělit rozehrání, volný úder nebo trestné střílení.",
+					title:
+						"Pokud nelze žádnému družstvu udělit rozehrání, volný úder nebo trestné střílení.",
 					isRight: true,
 				},
 				{ title: "Ve všech případech.", isRight: false },
@@ -561,7 +611,8 @@ export const dataset2: IDataset = {
 		},
 
 		{
-			title: "Při provádění vhazování musí ostatní hráči (mimo hráčů provádějící vhazování) být ve vzdálenosti:",
+			title:
+				"Při provádění vhazování musí ostatní hráči (mimo hráčů provádějící vhazování) být ve vzdálenosti:",
 			options: [
 				{
 					title: "Minimálně 3m od míče včetně florbalky.",
@@ -602,7 +653,8 @@ export const dataset2: IDataset = {
 			title: "Během trestného střílení může být na hřišti:",
 			options: [
 				{
-					title: "Brankář jednoho družstva a hráč druhého družstva, provádějící trestné střílení.",
+					title:
+						"Brankář jednoho družstva a hráč druhého družstva, provádějící trestné střílení.",
 					isRight: true,
 				},
 				{
@@ -610,11 +662,13 @@ export const dataset2: IDataset = {
 					isRight: false,
 				},
 				{
-					title: "Tolik hráčů, kolik povolují pravidla florbalu při zahájení hry.",
+					title:
+						"Tolik hráčů, kolik povolují pravidla florbalu při zahájení hry.",
 					isRight: false,
 				},
 				{
-					title: "Brankář jednoho družstva, hráč provádějící trestné střílení a hráč, který bude trestné střílení provádět jako následující.",
+					title:
+						"Brankář jednoho družstva, hráč provádějící trestné střílení a hráč, který bude trestné střílení provádět jako následující.",
 					isRight: false,
 				},
 			],
@@ -631,19 +685,23 @@ export const dataset2: IDataset = {
 		},
 
 		{
-			title: "Při trestném střílení míč zasáhne konstrukci brány, poté zasáhne brankáře a přejde zepředu brankovou čáru. Branka:",
+			title:
+				"Při trestném střílení míč zasáhne konstrukci brány, poté zasáhne brankáře a přejde zepředu brankovou čáru. Branka:",
 			options: [
 				{ title: "Bude uznána.", isRight: true },
 				{
-					title: "Nebude uznána, jelikož se míček již dotknul brankáře, tudíž trestné střílení bylo ukončeno.",
+					title:
+						"Nebude uznána, jelikož se míček již dotknul brankáře, tudíž trestné střílení bylo ukončeno.",
 					isRight: false,
 				},
 				{
-					title: "Bude uznána pouze v případě, že se hráč poté znovu dotkne míčku.",
+					title:
+						"Bude uznána pouze v případě, že se hráč poté znovu dotkne míčku.",
 					isRight: false,
 				},
 				{
-					title: "Nebude uznána, protože míček se během trestného střílení nesmí zastavit ani vrátit zpět.",
+					title:
+						"Nebude uznána, protože míček se během trestného střílení nesmí zastavit ani vrátit zpět.",
 					isRight: false,
 				},
 			],
@@ -657,7 +715,8 @@ export const dataset2: IDataset = {
 					isRight: true,
 				},
 				{
-					title: "Pokud družstvo, které se provinilo, nebude mít míček pod kontrolou.",
+					title:
+						"Pokud družstvo, které se provinilo, nebude mít míček pod kontrolou.",
 					isRight: false,
 				},
 				{
@@ -665,7 +724,8 @@ export const dataset2: IDataset = {
 					isRight: false,
 				},
 				{
-					title: "Ihned, protože trestné střílení nelze za žádné situace odložit.",
+					title:
+						"Ihned, protože trestné střílení nelze za žádné situace odložit.",
 					isRight: false,
 				},
 			],
@@ -683,18 +743,21 @@ export const dataset2: IDataset = {
 					isRight: false,
 				},
 				{
-					title: "Vedou automaticky k nařízení trestného střílení, pokud brankář není v brance.",
+					title:
+						"Vedou automaticky k nařízení trestného střílení, pokud brankář není v brance.",
 					isRight: false,
 				},
 				{
-					title: "Vedou k nařízení trestného střílení, pokud je přestupkem sekání.",
+					title:
+						"Vedou k nařízení trestného střílení, pokud je přestupkem sekání.",
 					isRight: false,
 				},
 			],
 		},
 
 		{
-			title: "Vhazuje-li se na středovém bodě, kdo pokládá florbalku jako první?",
+			title:
+				"Vhazuje-li se na středovém bodě, kdo pokládá florbalku jako první?",
 			options: [
 				{ title: "Hostující hráč.", isRight: true },
 				{ title: "Domácí hráč.", isRight: false },
@@ -707,7 +770,8 @@ export const dataset2: IDataset = {
 		},
 
 		{
-			title: "Vhazuje-li se na bodě pro vhazování v rohu hřiště, kdo pokládá florbalku jako první?",
+			title:
+				"Vhazuje-li se na bodě pro vhazování v rohu hřiště, kdo pokládá florbalku jako první?",
 			options: [
 				{ title: "Bránící hráč.", isRight: true },
 				{ title: "Útočící hráč.", isRight: false },
@@ -730,26 +794,30 @@ export const dataset2: IDataset = {
 		},
 
 		{
-			title: "Míč zasáhl rozhodčího, čímž byla značně ovlivněna hra. Co bude následovat?",
+			title:
+				"Míč zasáhl rozhodčího, čímž byla značně ovlivněna hra. Co bude následovat?",
 			options: [
 				{
 					title: "Vhazování na nejbližším bodě pro vhazování.",
 					isRight: true,
 				},
 				{
-					title: "Volný úder pro družstvo, které bylo jako poslední v držení míče.",
+					title:
+						"Volný úder pro družstvo, které bylo jako poslední v držení míče.",
 					isRight: false,
 				},
 				{ title: "Hra bude pokračovat.", isRight: false },
 				{
-					title: "Volný úder proti družstvu, které bylo jako poslední v držení míče.",
+					title:
+						"Volný úder proti družstvu, které bylo jako poslední v držení míče.",
 					isRight: false,
 				},
 			],
 		},
 
 		{
-			title: "Míč opustí hřiště poté, co bránící hráč zasáhl florbalkou síťku u branky, aniž by se míče dotknul. Co bude následovat?",
+			title:
+				"Míč opustí hřiště poté, co bránící hráč zasáhl florbalkou síťku u branky, aniž by se míče dotknul. Co bude následovat?",
 			options: [
 				{ title: "Rozehrání pro útočící družstvo.", isRight: true },
 				{ title: "Rozehrání pro bránící družstvo.", isRight: false },
@@ -762,7 +830,8 @@ export const dataset2: IDataset = {
 		},
 
 		{
-			title: "Při rozehrání hráči bránícího družstva zaujmou postavení od míče alespoň:",
+			title:
+				"Při rozehrání hráči bránícího družstva zaujmou postavení od míče alespoň:",
 			options: [
 				{ title: "3 m.", isRight: true },
 				{ title: "3,5 m.", isRight: false },
@@ -772,7 +841,8 @@ export const dataset2: IDataset = {
 		},
 
 		{
-			title: "Rozhodčí udělí dvouminutový trest za vysokou hůl, pokud hráč v poli hraje míč jakoukoliv částí florbalky nad úrovní pasu:",
+			title:
+				"Rozhodčí udělí dvouminutový trest za vysokou hůl, pokud hráč v poli hraje míč jakoukoliv částí florbalky nad úrovní pasu:",
 			options: [
 				{ title: "Ve vlastním vzpřímeném postoji.", isRight: true },
 				{ title: "V libovolném postoji.", isRight: false },
@@ -781,14 +851,16 @@ export const dataset2: IDataset = {
 					isRight: false,
 				},
 				{
-					title: "Ve vlastním vzpřímeném postoji na útočné polovině, v libovolném postoji na obranné polovině.",
+					title:
+						"Ve vlastním vzpřímeném postoji na útočné polovině, v libovolném postoji na obranné polovině.",
 					isRight: false,
 				},
 			],
 		},
 
 		{
-			title: "Nekontrolovaný nápřah, došvih nebo zvedání florbalky přes soupeřovu hlavu jsou potrestány dvouminutovým trestem:",
+			title:
+				"Nekontrolovaný nápřah, došvih nebo zvedání florbalky přes soupeřovu hlavu jsou potrestány dvouminutovým trestem:",
 			options: [
 				{
 					title: "Je-li to považováno za nebezpečné či rušivé pro soupeře.",
@@ -800,36 +872,43 @@ export const dataset2: IDataset = {
 					isRight: false,
 				},
 				{
-					title: "Nikdy. Vždy je udělen buď volný úder, nebo pětiminutový trest.",
+					title:
+						"Nikdy. Vždy je udělen buď volný úder, nebo pětiminutový trest.",
 					isRight: false,
 				},
 			],
 		},
 
 		{
-			title: "Hráč vloží florbalku do střely soupeře, přičemž se florbalka zlomí a vyletí mu z ruky. Následně:",
+			title:
+				"Hráč vloží florbalku do střely soupeře, přičemž se florbalka zlomí a vyletí mu z ruky. Následně:",
 			options: [
 				{
-					title: "Hráč, jehož florbalka odletěla, musí tuto florbalku ze hřiště sebrat a odnést do vlastního prostoru pro střídání, jinak mu bude uložen dvouminutový trest.",
+					title:
+						"Hráč, jehož florbalka odletěla, musí tuto florbalku ze hřiště sebrat a odnést do vlastního prostoru pro střídání, jinak mu bude uložen dvouminutový trest.",
 					isRight: true,
 				},
 				{
-					title: "Oba hráči mohou vystřídat bez zájmu o na hřišti ležící florbalku.",
+					title:
+						"Oba hráči mohou vystřídat bez zájmu o na hřišti ležící florbalku.",
 					isRight: false,
 				},
 				{
-					title: "Hráč, jehož florbalka odletěla, musí tuto florbalku sebrat a položit ji kdekoliv za mantinel, jinak mu bude uložen dvouminutový trest.",
+					title:
+						"Hráč, jehož florbalka odletěla, musí tuto florbalku sebrat a položit ji kdekoliv za mantinel, jinak mu bude uložen dvouminutový trest.",
 					isRight: false,
 				},
 				{
-					title: "Nejbližší hráč týmu, jehož hráči patřila florbalka a k němuž tato florbalka doletěla, má povinnost odklidit ji ze hřiště.",
+					title:
+						"Nejbližší hráč týmu, jehož hráči patřila florbalka a k němuž tato florbalka doletěla, má povinnost odklidit ji ze hřiště.",
 					isRight: false,
 				},
 			],
 		},
 
 		{
-			title: "Pokud hráč úmyslně blokuje míč proti mantinelu nebo bráně a nebo úmyslně zničí míč, rozhodčí:",
+			title:
+				"Pokud hráč úmyslně blokuje míč proti mantinelu nebo bráně a nebo úmyslně zničí míč, rozhodčí:",
 			options: [
 				{
 					title: "Udělí tomuto hráči dvouminutový trest za zdržování hry.",
@@ -840,18 +919,21 @@ export const dataset2: IDataset = {
 					isRight: false,
 				},
 				{
-					title: "Udělí tomuto hráči ČK 2 za nesportovní chování (sabotáž hry).",
+					title:
+						"Udělí tomuto hráči ČK 2 za nesportovní chování (sabotáž hry).",
 					isRight: false,
 				},
 				{
-					title: "Udělí tomuto hráči dvouminutový trest za nesportovní chování.",
+					title:
+						"Udělí tomuto hráči dvouminutový trest za nesportovní chování.",
 					isRight: false,
 				},
 			],
 		},
 
 		{
-			title: "Vyloučení na 2 minuty je uděleno, hraje-li nebo zastavuje-li hráč míč:",
+			title:
+				"Vyloučení na 2 minuty je uděleno, hraje-li nebo zastavuje-li hráč míč:",
 			options: [
 				{ title: "Vsedě.", isRight: true },
 				{ title: "Stehnem.", isRight: false },
@@ -873,7 +955,8 @@ export const dataset2: IDataset = {
 					isRight: false,
 				},
 				{
-					title: "Bude potrestán, přičemž výši trestu posoudí rozhodčí podle možnosti rychlé rozehrávky neprovinivšího se družstva.",
+					title:
+						"Bude potrestán, přičemž výši trestu posoudí rozhodčí podle možnosti rychlé rozehrávky neprovinivšího se družstva.",
 					isRight: false,
 				},
 			],
@@ -891,11 +974,13 @@ export const dataset2: IDataset = {
 					isRight: false,
 				},
 				{
-					title: "Opomenutí hráče v poli sebrat si zlomenou florbalku ze hřiště.",
+					title:
+						"Opomenutí hráče v poli sebrat si zlomenou florbalku ze hřiště.",
 					isRight: false,
 				},
 				{
-					title: "Vyzvednutí si florbalky pro hru v poli z jiného místa než z vlastního prostoru pro střídání.",
+					title:
+						"Vyzvednutí si florbalky pro hru v poli z jiného místa než z vlastního prostoru pro střídání.",
 					isRight: false,
 				},
 			],
@@ -917,7 +1002,8 @@ export const dataset2: IDataset = {
 					isRight: false,
 				},
 				{
-					title: "Jedná se o hrubost, hráči bude vždy udělen trest vyloučení na 5 minut.",
+					title:
+						"Jedná se o hrubost, hráči bude vždy udělen trest vyloučení na 5 minut.",
 					isRight: false,
 				},
 			],
@@ -957,7 +1043,8 @@ export const dataset2: IDataset = {
 					isRight: false,
 				},
 				{
-					title: "Triko, trenýrky a štulpny odlišné barevné kombinace, než mají družstva.",
+					title:
+						"Triko, trenýrky a štulpny odlišné barevné kombinace, než mají družstva.",
 					isRight: false,
 				},
 				{
@@ -976,7 +1063,8 @@ export const dataset2: IDataset = {
 				},
 				{ title: "Musí jít neprodleně vystřídat.", isRight: false },
 				{
-					title: "Může pokračovat libovolně, ale musí botu sebrat a hodit za mantinel.",
+					title:
+						"Může pokračovat libovolně, ale musí botu sebrat a hodit za mantinel.",
 					isRight: false,
 				},
 				{
@@ -1000,11 +1088,13 @@ export const dataset2: IDataset = {
 			title: "Co musí mít na sobě brankář?",
 			options: [
 				{
-					title: "Obličejovou masku odpovídající pravidlům, dlouhé kalhoty, triko a sportovní obuv.",
+					title:
+						"Obličejovou masku odpovídající pravidlům, dlouhé kalhoty, triko a sportovní obuv.",
 					isRight: true,
 				},
 				{
-					title: "Obličejovou masku odpovídající pravidlům, dlouhé kalhoty a triko s dlouhým rukávem.",
+					title:
+						"Obličejovou masku odpovídající pravidlům, dlouhé kalhoty a triko s dlouhým rukávem.",
 					isRight: false,
 				},
 				{
@@ -1026,7 +1116,8 @@ export const dataset2: IDataset = {
 					isRight: true,
 				},
 				{
-					title: "Helmu, suspenzor, hokejovou vestu s ramenními vycpávkami a rukavice.",
+					title:
+						"Helmu, suspenzor, hokejovou vestu s ramenními vycpávkami a rukavice.",
 					isRight: false,
 				},
 				{
@@ -1082,7 +1173,8 @@ export const dataset2: IDataset = {
 					isRight: false,
 				},
 				{
-					title: "Píšťalkou, měřícím vybavením, vybavením na měření času a červenou kartou.",
+					title:
+						"Píšťalkou, měřícím vybavením, vybavením na měření času a červenou kartou.",
 					isRight: false,
 				},
 			],
@@ -1094,7 +1186,8 @@ export const dataset2: IDataset = {
 				{ title: "Rozhodčí.", isRight: true },
 				{ title: "Kapitáni obou družstev.", isRight: false },
 				{
-					title: "Trenér nebo kapitán družstva, které na nesprávné vybavení upozornilo.",
+					title:
+						"Trenér nebo kapitán družstva, které na nesprávné vybavení upozornilo.",
 					isRight: false,
 				},
 				{
@@ -1105,7 +1198,8 @@ export const dataset2: IDataset = {
 		},
 
 		{
-			title: "Kdo může požádat o přeměření čepele nebo kontrolu kombinace hole s čepelí?",
+			title:
+				"Kdo může požádat o přeměření čepele nebo kontrolu kombinace hole s čepelí?",
 			options: [
 				{ title: "Kapitán.", isRight: true },
 				{ title: "Trenér.", isRight: false },
@@ -1115,12 +1209,14 @@ export const dataset2: IDataset = {
 		},
 
 		{
-			title: "Maximálně kolik hráčů z jednoho družstva se může účastnit jednoho utkání?",
+			title:
+				"Maximálně kolik hráčů z jednoho družstva se může účastnit jednoho utkání?",
 			options: [
 				{ title: "20.", isRight: true },
 				{ title: "15.", isRight: false },
 				{
-					title: "20 (standardně); 25 (v případě, že se hraje na zjednodušený ZOU).",
+					title:
+						"20 (standardně); 25 (v případě, že se hraje na zjednodušený ZOU).",
 					isRight: false,
 				},
 				{ title: "Počet není omezen.", isRight: false },
@@ -1133,11 +1229,13 @@ export const dataset2: IDataset = {
 				{ title: "Nechá pokračovat ve hře.", isRight: true },
 				{ title: "Nařídí volný úder za výskok.", isRight: false },
 				{
-					title: "Nařídí trestné střílení, jelikož se jedná o přerušení brankové situace.",
+					title:
+						"Nařídí trestné střílení, jelikož se jedná o přerušení brankové situace.",
 					isRight: false,
 				},
 				{
-					title: "Brankáře vyloučí na 2 minuty za hru rukou mimo malé brankoviště.",
+					title:
+						"Brankáře vyloučí na 2 minuty za hru rukou mimo malé brankoviště.",
 					isRight: false,
 				},
 			],
@@ -1164,7 +1262,8 @@ export const dataset2: IDataset = {
 		},
 
 		{
-			title: "Zadní čára malého brankoviště slouží také jako branková čára. Značky pro umístění branek musí být vyznačeny na zadní čáře malého brankoviště tak, aby vzdálenost mezi těmito body byla:",
+			title:
+				"Zadní čára malého brankoviště slouží také jako branková čára. Značky pro umístění branek musí být vyznačeny na zadní čáře malého brankoviště tak, aby vzdálenost mezi těmito body byla:",
 			options: [
 				{ title: "1,6 m.", isRight: true },
 				{ title: "1,2 m.", isRight: false },
@@ -1174,7 +1273,8 @@ export const dataset2: IDataset = {
 		},
 
 		{
-			title: "Za nápravu nedostatků zjištěných při kontrole hrací plochy a její udržování v řádném stavu během utkání jsou zodpovědní:",
+			title:
+				"Za nápravu nedostatků zjištěných při kontrole hrací plochy a její udržování v řádném stavu během utkání jsou zodpovědní:",
 			options: [
 				{ title: "Pořadatelé.", isRight: true },
 				{ title: "Rozhodčí.", isRight: false },
@@ -1213,16 +1313,19 @@ export const dataset2: IDataset = {
 			title: "Vyžádaný time-out musí být vždy zahájen:",
 			options: [
 				{
-					title: "Pouze pokud družstvo vstřelí branku, může vzít svou žádost o time-out zpět.",
+					title:
+						"Pouze pokud družstvo vstřelí branku, může vzít svou žádost o time-out zpět.",
 					isRight: true,
 				},
 				{ title: "Bez výjimek.", isRight: false },
 				{
-					title: "Pouze pokud družstvo dostane branku, může vzít svou žádost o time-out zpět.",
+					title:
+						"Pouze pokud družstvo dostane branku, může vzít svou žádost o time-out zpět.",
 					isRight: false,
 				},
 				{
-					title: "Pouze pokud je pro družstvo nařízeno trestné střílení, může vzít svou žádost o time-out zpět.",
+					title:
+						"Pouze pokud je pro družstvo nařízeno trestné střílení, může vzít svou žádost o time-out zpět.",
 					isRight: false,
 				},
 			],
@@ -1247,7 +1350,8 @@ export const dataset2: IDataset = {
 				},
 				{ title: "Dle potřeby.", isRight: false },
 				{
-					title: "V každé třetině a v prodloužení má družstvo nárok na jeden time-out.",
+					title:
+						"V každé třetině a v prodloužení má družstvo nárok na jeden time-out.",
 					isRight: false,
 				},
 				{ title: "Družstvo nemá nárok na time-out.", isRight: false },
@@ -1258,15 +1362,18 @@ export const dataset2: IDataset = {
 			title: "Pokud se během utkání pokazí časomíra:",
 			options: [
 				{
-					title: "Zbytek utkání se dohraje na stopky a rozhodčí tuto skutečnost zaznamená do zápisu o utkání.",
+					title:
+						"Zbytek utkání se dohraje na stopky a rozhodčí tuto skutečnost zaznamená do zápisu o utkání.",
 					isRight: true,
 				},
 				{
-					title: "Zápas se přeruší až do opravy časomíry, případně se dohraje v jiném termínu.",
+					title:
+						"Zápas se přeruší až do opravy časomíry, případně se dohraje v jiném termínu.",
 					isRight: false,
 				},
 				{
-					title: "Zápas se ukončí a jako konečný výsledek zápasu se zapíše aktuální stav.",
+					title:
+						"Zápas se ukončí a jako konečný výsledek zápasu se zapíše aktuální stav.",
 					isRight: false,
 				},
 				{
@@ -1286,7 +1393,8 @@ export const dataset2: IDataset = {
 					isRight: false,
 				},
 				{
-					title: "Čas běží, zastavuje se pouze tehdy, pokud se jedná o trestné střílení v prodloužení.",
+					title:
+						"Čas běží, zastavuje se pouze tehdy, pokud se jedná o trestné střílení v prodloužení.",
 					isRight: false,
 				},
 			],
@@ -1296,7 +1404,8 @@ export const dataset2: IDataset = {
 			title: "Dojde-li k rozpojení mantinelů:",
 			options: [
 				{
-					title: "Hra může pokračovat, dokud se míček nedostane do blízkosti tohoto místa.",
+					title:
+						"Hra může pokračovat, dokud se míček nedostane do blízkosti tohoto místa.",
 					isRight: true,
 				},
 				{
@@ -1308,7 +1417,8 @@ export const dataset2: IDataset = {
 					isRight: false,
 				},
 				{
-					title: "Hra se okamžitě přeruší a po nápravě pokračuje rozehráním pro družstvo, které bylo právě u míčku.",
+					title:
+						"Hra se okamžitě přeruší a po nápravě pokračuje rozehráním pro družstvo, které bylo právě u míčku.",
 					isRight: false,
 				},
 			],
@@ -1334,7 +1444,8 @@ export const dataset2: IDataset = {
 		},
 
 		{
-			title: "Střídající hráč nepřekročil mantinel dříve, než nastoupivší nový hráč. Toto nastalo v situaci, kdy se u střídačky hrálo. Co bude následovat?",
+			title:
+				"Střídající hráč nepřekročil mantinel dříve, než nastoupivší nový hráč. Toto nastalo v situaci, kdy se u střídačky hrálo. Co bude následovat?",
 			options: [
 				{
 					title: "Trest vyloučení na 2 minuty za špatné střídání.",
@@ -1353,7 +1464,8 @@ export const dataset2: IDataset = {
 		},
 
 		{
-			title: "Hráč, jenž byl už dvakrát v utkání potrestán dvouminutovým trestem za vrážení, se provinil stejným přestupkem potřetí, co bude následovat?",
+			title:
+				"Hráč, jenž byl už dvakrát v utkání potrestán dvouminutovým trestem za vrážení, se provinil stejným přestupkem potřetí, co bude následovat?",
 			options: [
 				{ title: "Vyloučení na 2 minuty.", isRight: true },
 				{ title: "Vyloučení na 5 minut.", isRight: false },
@@ -1363,10 +1475,12 @@ export const dataset2: IDataset = {
 		},
 
 		{
-			title: "Hráč z družstva A byl vyloučen na 5 minut, družstvo B v průběhu vyloučení vstřelí branku, co bude následovat?",
+			title:
+				"Hráč z družstva A byl vyloučen na 5 minut, družstvo B v průběhu vyloučení vstřelí branku, co bude následovat?",
 			options: [
 				{
-					title: "Hráč dále zůstává na trestné lavici, pětiminutový trest se neruší.",
+					title:
+						"Hráč dále zůstává na trestné lavici, pětiminutový trest se neruší.",
 					isRight: true,
 				},
 				{
@@ -1374,18 +1488,21 @@ export const dataset2: IDataset = {
 					isRight: false,
 				},
 				{
-					title: "Pokud nezbývá do konce trestu více než 2 minuty, změní se mu trest na dvouminutový.",
+					title:
+						"Pokud nezbývá do konce trestu více než 2 minuty, změní se mu trest na dvouminutový.",
 					isRight: false,
 				},
 				{
-					title: "Družstvo A může tohoto hráče nahradit na hrací ploše, ale potrestaný hráč musí zůstat dále na trestné lavici.",
+					title:
+						"Družstvo A může tohoto hráče nahradit na hrací ploše, ale potrestaný hráč musí zůstat dále na trestné lavici.",
 					isRight: false,
 				},
 			],
 		},
 
 		{
-			title: "Hráč byl vyloučen na 2+10 minut za nesportovní chování, kdo odsedí dvouminutový trest?",
+			title:
+				"Hráč byl vyloučen na 2+10 minut za nesportovní chování, kdo odsedí dvouminutový trest?",
 			options: [
 				{ title: "Hráč, kterého vybere kapitán.", isRight: true },
 				{
@@ -1401,7 +1518,8 @@ export const dataset2: IDataset = {
 		},
 
 		{
-			title: "Pro útočící družstvo bylo nařízeno trestné střílení. Hráči provádějícímu trestné střílení se nepodařilo vstřelit branku. Jak bude pokračovat hra?",
+			title:
+				"Pro útočící družstvo bylo nařízeno trestné střílení. Hráči provádějícímu trestné střílení se nepodařilo vstřelit branku. Jak bude pokračovat hra?",
 			options: [
 				{ title: "Vhazováním v rohu hřiště.", isRight: true },
 				{
@@ -1417,18 +1535,21 @@ export const dataset2: IDataset = {
 		},
 
 		{
-			title: "Útočící hráč rozehrávající volný úder se po rozehrání dotkl míčku podruhé dříve než některý z jeho spoluhráčů. Rozhodčí:",
+			title:
+				"Útočící hráč rozehrávající volný úder se po rozehrání dotkl míčku podruhé dříve než některý z jeho spoluhráčů. Rozhodčí:",
 			options: [
 				{
 					title: "Nařídí volný úder pro bránící družstvo ze stejného místa.",
 					isRight: true,
 				},
 				{
-					title: "Nechá pokračovat ve hře, protože k porušení pravidel nedošlo.",
+					title:
+						"Nechá pokračovat ve hře, protože k porušení pravidel nedošlo.",
 					isRight: false,
 				},
 				{
-					title: "Přeruší hru a nechá útočící družstvo rozehrát volný úder znovu.",
+					title:
+						"Přeruší hru a nechá útočící družstvo rozehrát volný úder znovu.",
 					isRight: false,
 				},
 				{
@@ -1439,7 +1560,8 @@ export const dataset2: IDataset = {
 		},
 
 		{
-			title: "Bránící hráč srazí míček mimo hřiště do „autu“. Útočící hráč přímo z rozehrání bez nahrávky se spoluhráčem vystřelí a vstřelí branku. Rozhodčí:",
+			title:
+				"Bránící hráč srazí míček mimo hřiště do „autu“. Útočící hráč přímo z rozehrání bez nahrávky se spoluhráčem vystřelí a vstřelí branku. Rozhodčí:",
 			options: [
 				{ title: "Uzná branku.", isRight: true },
 				{
@@ -1447,7 +1569,8 @@ export const dataset2: IDataset = {
 					isRight: false,
 				},
 				{
-					title: "Neuzná branku a nařídí volný úder pro bránící družstvo v rohu hřiště.",
+					title:
+						"Neuzná branku a nařídí volný úder pro bránící družstvo v rohu hřiště.",
 					isRight: false,
 				},
 				{
@@ -1458,18 +1581,22 @@ export const dataset2: IDataset = {
 		},
 
 		{
-			title: "Míček se od florbalky bránícího hráče odrazí vysoko do vzduchu a dotkne se stropu haly. Rozhodčí:",
+			title:
+				"Míček se od florbalky bránícího hráče odrazí vysoko do vzduchu a dotkne se stropu haly. Rozhodčí:",
 			options: [
 				{
-					title: "Nařídí rozehrání pro útočící družstvo 1,5m od mantinelu ve stejné vzdálenosti od středové čáry, kde se míček stropu dotkl.",
+					title:
+						"Nařídí rozehrání pro útočící družstvo 1,5m od mantinelu ve stejné vzdálenosti od středové čáry, kde se míček stropu dotkl.",
 					isRight: true,
 				},
 				{
-					title: "Nechá pokračovat ve hře, protože k porušení pravidel nedošlo.",
+					title:
+						"Nechá pokračovat ve hře, protože k porušení pravidel nedošlo.",
 					isRight: false,
 				},
 				{
-					title: "Nařídí volný úder pro útočící družstvo z místa na hřišti, které je přímo pod místem, kde se míček stropu dotkl.",
+					title:
+						"Nařídí volný úder pro útočící družstvo z místa na hřišti, které je přímo pod místem, kde se míček stropu dotkl.",
 					isRight: false,
 				},
 				{
@@ -1480,14 +1607,16 @@ export const dataset2: IDataset = {
 		},
 
 		{
-			title: "Útočící hráč těsně přestřelí branku a míček přímo bez doteku dalších hráčů opustí hřiště do „autu“ na krátké straně hřiště. Rozhodčí:",
+			title:
+				"Útočící hráč těsně přestřelí branku a míček přímo bez doteku dalších hráčů opustí hřiště do „autu“ na krátké straně hřiště. Rozhodčí:",
 			options: [
 				{
 					title: "Nařídí rozehrání pro bránící družstvo v rohu hřiště.",
 					isRight: true,
 				},
 				{
-					title: "Nařídí rozehrání pro bránící družstvo z místa, kde míček opustil hrací plochu a rozehrání posune 1,5m od mantinelu.",
+					title:
+						"Nařídí rozehrání pro bránící družstvo z místa, kde míček opustil hrací plochu a rozehrání posune 1,5m od mantinelu.",
 					isRight: false,
 				},
 				{ title: "Nařídí vhazování v rohu hřiště.", isRight: false },
@@ -1499,10 +1628,12 @@ export const dataset2: IDataset = {
 		},
 
 		{
-			title: "Rozhodčí posoudil zákrok bránícího hráče ve velkém brankovišti jako nedovolený přestupek a nařídil volný úder. Z jakého místa bude volný úder zahrán?",
+			title:
+				"Rozhodčí posoudil zákrok bránícího hráče ve velkém brankovišti jako nedovolený přestupek a nařídil volný úder. Z jakého místa bude volný úder zahrán?",
 			options: [
 				{
-					title: "3,5m od malého brankoviště na pomyslné prodloužené spojnici středu brankové čáry a místa, kde k přestupku došlo.",
+					title:
+						"3,5m od malého brankoviště na pomyslné prodloužené spojnici středu brankové čáry a místa, kde k přestupku došlo.",
 					isRight: true,
 				},
 				{
@@ -1515,14 +1646,16 @@ export const dataset2: IDataset = {
 		},
 
 		{
-			title: "Hráč s míčkem se široce rozkročí, aby si pokryl míček tělem. Bránící hráč mu míč chytře sebere svou nohou mezi jeho nohama. Rozhodčí:",
+			title:
+				"Hráč s míčkem se široce rozkročí, aby si pokryl míček tělem. Bránící hráč mu míč chytře sebere svou nohou mezi jeho nohama. Rozhodčí:",
 			options: [
 				{
 					title: "Nařídí volný úder pro útočící družstvo za hru mezi nohama.",
 					isRight: true,
 				},
 				{
-					title: "Nechá pokračovat ve hře, protože mezi nohama se nesmí hrát pouze florbalkou.",
+					title:
+						"Nechá pokračovat ve hře, protože mezi nohama se nesmí hrát pouze florbalkou.",
 					isRight: false,
 				},
 				{
@@ -1530,21 +1663,24 @@ export const dataset2: IDataset = {
 					isRight: false,
 				},
 				{
-					title: "Nechá pokračovat ve hře, protože hru mezi nohama pravidla florbalu nezakazují.",
+					title:
+						"Nechá pokračovat ve hře, protože hru mezi nohama pravidla florbalu nezakazují.",
 					isRight: false,
 				},
 			],
 		},
 
 		{
-			title: "Bránící hráč nártem odkopne padající míček, přičemž ho zasáhne v úrovni stehen. Rozhodčí:",
+			title:
+				"Bránící hráč nártem odkopne padající míček, přičemž ho zasáhne v úrovni stehen. Rozhodčí:",
 			options: [
 				{
 					title: "Nařídí volný úder pro útočící družstvo za vysoký kop.",
 					isRight: true,
 				},
 				{
-					title: "Nechá pokračovat ve hře, protože nártem se nesmí do míče kopnout jen nad úrovní pasu.",
+					title:
+						"Nechá pokračovat ve hře, protože nártem se nesmí do míče kopnout jen nad úrovní pasu.",
 					isRight: false,
 				},
 				{
@@ -1552,25 +1688,30 @@ export const dataset2: IDataset = {
 					isRight: false,
 				},
 				{
-					title: "Nechá pokračovat ve hře, protože vysoký kop pravidla florbalu nezakazují.",
+					title:
+						"Nechá pokračovat ve hře, protože vysoký kop pravidla florbalu nezakazují.",
 					isRight: false,
 				},
 			],
 		},
 
 		{
-			title: "Útočící hráč vstřelí z dorážky branku, přičemž v okamžiku dorážky stojí nohou na čáře vyznačující malé brankoviště. Rozhodčí:",
+			title:
+				"Útočící hráč vstřelí z dorážky branku, přičemž v okamžiku dorážky stojí nohou na čáře vyznačující malé brankoviště. Rozhodčí:",
 			options: [
 				{
-					title: "Branku neuzná a nařídí volný úder pro bránící družstvo pro postavení hráče v brankovišti.",
+					title:
+						"Branku neuzná a nařídí volný úder pro bránící družstvo pro postavení hráče v brankovišti.",
 					isRight: true,
 				},
 				{
-					title: "Branku uzná, protože v malém brankovišti nesmí hrát pouze bránící hráč.",
+					title:
+						"Branku uzná, protože v malém brankovišti nesmí hrát pouze bránící hráč.",
 					isRight: false,
 				},
 				{
-					title: "Branku uzná, protože hráč stál pouze na čáře a ta není součástí malého brankoviště.",
+					title:
+						"Branku uzná, protože hráč stál pouze na čáře a ta není součástí malého brankoviště.",
 					isRight: false,
 				},
 				{
@@ -1581,7 +1722,8 @@ export const dataset2: IDataset = {
 		},
 
 		{
-			title: "Bránící hráč stojí v rohu hřiště a sleduje k němu padající míček. Rozhodne se před dobíhajícím útočníkem míček odhlavičkovat. Rozhodčí:",
+			title:
+				"Bránící hráč stojí v rohu hřiště a sleduje k němu padající míček. Rozhodne se před dobíhajícím útočníkem míček odhlavičkovat. Rozhodčí:",
 			options: [
 				{
 					title: "Nařídí volný úder pro útočící družstvo za hru hlavou.",
@@ -1596,17 +1738,20 @@ export const dataset2: IDataset = {
 					isRight: false,
 				},
 				{
-					title: "Přeruší hru, zjistí, zda není hlavičkující hráč zraněn a nařídí vhazování.",
+					title:
+						"Přeruší hru, zjistí, zda není hlavičkující hráč zraněn a nařídí vhazování.",
 					isRight: false,
 				},
 			],
 		},
 
 		{
-			title: "Bránící hráč hlídá před brankou clonícího útočníka a plně se věnuje tomuto hráči. V ten moment dojde ke střele z poloviny hřiště, která je zblokována a zasáhne bránícího hráče z boku do hlavy. Rozhodčí:",
+			title:
+				"Bránící hráč hlídá před brankou clonícího útočníka a plně se věnuje tomuto hráči. V ten moment dojde ke střele z poloviny hřiště, která je zblokována a zasáhne bránícího hráče z boku do hlavy. Rozhodčí:",
 			options: [
 				{
-					title: "Nechá pokračovat ve hře, protože bránící hráč nehrál hlavou úmyslně.",
+					title:
+						"Nechá pokračovat ve hře, protože bránící hráč nehrál hlavou úmyslně.",
 					isRight: true,
 				},
 				{
@@ -1618,51 +1763,62 @@ export const dataset2: IDataset = {
 					isRight: false,
 				},
 				{
-					title: "Nařídí trestné střílení, protože se jednalo o přestupek, který přerušil brankovou situaci.",
+					title:
+						"Nařídí trestné střílení, protože se jednalo o přestupek, který přerušil brankovou situaci.",
 					isRight: false,
 				},
 			],
 		},
 
 		{
-			title: "Hráč provádějící trestné střílení je neustále tělem v pohybu vpřed, ale těsně před brankářem si stáhne špičkou čepele míček mírně zpět a vstřelí branku. Rozhodčí:",
+			title:
+				"Hráč provádějící trestné střílení je neustále tělem v pohybu vpřed, ale těsně před brankářem si stáhne špičkou čepele míček mírně zpět a vstřelí branku. Rozhodčí:",
 			options: [
 				{
-					title: "Uzná branku, protože míček se může během trestného střílení vrátit zpět, pokud je v pohybu vpřed tělo hráče.",
+					title:
+						"Uzná branku, protože míček se může během trestného střílení vrátit zpět, pokud je v pohybu vpřed tělo hráče.",
 					isRight: true,
 				},
 				{
-					title: "Neuzná branku, ale nařídí opakování trestného střílení, protože se míček vrátil zpět pouze mírně.",
+					title:
+						"Neuzná branku, ale nařídí opakování trestného střílení, protože se míček vrátil zpět pouze mírně.",
 					isRight: false,
 				},
 				{
-					title: "Neuzná branku, protože míček se během trestného střílení za žádných okolností nesmí vrátit ani mírně zpět.",
+					title:
+						"Neuzná branku, protože míček se během trestného střílení za žádných okolností nesmí vrátit ani mírně zpět.",
 					isRight: false,
 				},
 				{
-					title: "Neuzná branku, protože míček se během trestného střílení může vrátit zpět pouze na vlastní polovině hřiště.",
+					title:
+						"Neuzná branku, protože míček se během trestného střílení může vrátit zpět pouze na vlastní polovině hřiště.",
 					isRight: false,
 				},
 			],
 		},
 
 		{
-			title: "Hráč provádějící trestné střílení je zaskočen rychlým vyjetím brankáře, udělá kličku do strany, přičemž se současně vrátí mírně zpět svým tělem i s míčkem. Rozhodčí:",
+			title:
+				"Hráč provádějící trestné střílení je zaskočen rychlým vyjetím brankáře, udělá kličku do strany, přičemž se současně vrátí mírně zpět svým tělem i s míčkem. Rozhodčí:",
 			options: [
 				{
-					title: "Neuzná branku, protože během trestného střílení se nesmí hráč a míček současně zastavit nebo vrátit zpět.",
+					title:
+						"Neuzná branku, protože během trestného střílení se nesmí hráč a míček současně zastavit nebo vrátit zpět.",
 					isRight: true,
 				},
 				{
-					title: "Neuzná branku, ale nařídí opakování trestného střílení, protože se hráč i míček vrátili zpět pouze mírně.",
+					title:
+						"Neuzná branku, ale nařídí opakování trestného střílení, protože se hráč i míček vrátili zpět pouze mírně.",
 					isRight: false,
 				},
 				{
-					title: "Uzná branku, protože pohyb hráče a míčku není během trestného střílení nijak omezen.",
+					title:
+						"Uzná branku, protože pohyb hráče a míčku není během trestného střílení nijak omezen.",
 					isRight: false,
 				},
 				{
-					title: "Uzná branku, protože brankář nesmí vyjet proti hráči provádějícímu trestné střílení.",
+					title:
+						"Uzná branku, protože brankář nesmí vyjet proti hráči provádějícímu trestné střílení.",
 					isRight: false,
 				},
 			],

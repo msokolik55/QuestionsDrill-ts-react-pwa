@@ -1,15 +1,17 @@
+import { useRecoilState } from "recoil";
+
 import {
-	SwipeableDrawer,
-	IconButton,
+	Button,
 	Divider,
+	IconButton,
 	List,
 	ListItem,
-	Button,
 	ListItemIcon,
 	ListItemText,
+	SwipeableDrawer,
 } from "@material-ui/core";
 import { ChevronLeft, ListAlt } from "@material-ui/icons";
-import { useRecoilState } from "recoil";
+
 import { isDrawerOpenAtom } from "../../state/atom";
 
 const MainDrawer = () => {
