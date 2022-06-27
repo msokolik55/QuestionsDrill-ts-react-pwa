@@ -22,7 +22,7 @@ import {
 function App() {
 	//#region useState
 	const dataset = useRecoilValue(datasetSelector);
-	const [hasAnswered, setHasAnswered] = useRecoilState(hasAnsweredAtom);
+	const setHasAnswered = useSetRecoilState(hasAnsweredAtom);
 
 	const questionsCount = useRecoilValue(datasetLengthSelector);
 	const answeredQuestions = useRecoilValue(answeredQuestionsAtom);
