@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 import {
@@ -7,7 +7,16 @@ import {
 	AppBar,
 	Toolbar,
 	Typography,
+	IconButton,
+	Divider,
+	SwipeableDrawer,
+	List,
+	ListItem,
+	ListItemIcon,
+	ListItemText,
+	Button,
 } from "@material-ui/core";
+import { Menu, ListAlt, ChevronLeft } from "@material-ui/icons";
 
 import GridStats from "./components/GridStats";
 import { useRecoilValue, useSetRecoilState } from "recoil";
@@ -27,6 +36,8 @@ function App() {
 	const questionsCount = useRecoilValue(datasetLengthSelector);
 	const answeredQuestions = useRecoilValue(answeredQuestionsAtom);
 	const setQuestionID = useSetRecoilState(questionIDAtom);
+
+	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 	//#endregion
 
 	//#region functions
@@ -52,15 +63,58 @@ function App() {
 		setQuestionID(n);
 		setHasAnswered(false);
 	};
+
+	const handleOpenDrawer = () => {
+		setIsDrawerOpen(true);
+	};
+
+	const handleCloseDrawer = () => {
+		setIsDrawerOpen(false);
+	};
 	//#endregion
 
 	return (
 		<>
 			<AppBar position="static" color="secondary">
 				<Toolbar>
+					<IconButton
+						color="inherit"
+						onClick={handleOpenDrawer}
+						edge="start"
+					>
+						<Menu />
+					</IconButton>
 					<Typography variant="h4">{dataset.name}</Typography>
 				</Toolbar>
 			</AppBar>
+
+			<SwipeableDrawer
+				variant="persistent"
+				anchor="left"
+				open={isDrawerOpen}
+				onOpen={handleOpenDrawer}
+				onClose={handleCloseDrawer}
+			>
+				<div>
+					<IconButton onClick={handleCloseDrawer}>
+						<ChevronLeft />
+					</IconButton>
+				</div>
+				<Divider />
+				<List>
+					{["Datasets"].map((text) => (
+						<ListItem key={text}>
+							<Button>
+								<ListItemIcon>
+									<ListAlt />
+								</ListItemIcon>
+								<ListItemText primary={text} />
+							</Button>
+						</ListItem>
+					))}
+				</List>
+			</SwipeableDrawer>
+
 			<Container>
 				<Grid container direction="row" spacing={4}>
 					<GridQuestion generateQuestion={generateQuestion} />
