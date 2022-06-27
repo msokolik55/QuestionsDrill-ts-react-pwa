@@ -26,3 +26,8 @@ export const hasAnsweredAtom = atom<boolean>({
 	key: "hasAnswered",
 	default: false,
 });
+
+export const isDrawerOpenAtom = atom<boolean>({
+	key: "isDrawerOpen",
+	default: false,
+});

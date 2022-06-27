@@ -8,15 +8,8 @@ import {
 	Toolbar,
 	Typography,
 	IconButton,
-	Divider,
-	SwipeableDrawer,
-	List,
-	ListItem,
-	ListItemIcon,
-	ListItemText,
-	Button,
 } from "@material-ui/core";
-import { Menu, ListAlt, ChevronLeft } from "@material-ui/icons";
+import { Menu } from "@material-ui/icons";
 
 import GridStats from "./components/stats/GridStats";
 import { useRecoilValue, useSetRecoilState } from "recoil";
@@ -25,20 +18,21 @@ import GridQuestion from "./components/GridQuestion";
 import {
 	answeredQuestionsAtom,
 	hasAnsweredAtom,
+	isDrawerOpenAtom,
 	questionIDAtom,
 } from "./state/atom";
+import MainDrawer from "./components/drawer/MainDrawer";
 
 // TODO: reorder all imports (set in Prettier)
 function App() {
 	//#region useState
 	const dataset = useRecoilValue(datasetSelector);
 	const setHasAnswered = useSetRecoilState(hasAnsweredAtom);
+	const setIsDrawerOpen = useSetRecoilState(isDrawerOpenAtom);
 
 	const questionsCount = useRecoilValue(datasetLengthSelector);
 	const answeredQuestions = useRecoilValue(answeredQuestionsAtom);
 	const setQuestionID = useSetRecoilState(questionIDAtom);
-
-	const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 	//#endregion
 
 	//#region functions
@@ -64,14 +58,6 @@ function App() {
 		setQuestionID(n);
 		setHasAnswered(false);
 	};
-
-	const handleOpenDrawer = () => {
-		setIsDrawerOpen(true);
-	};
-
-	const handleCloseDrawer = () => {
-		setIsDrawerOpen(false);
-	};
 	//#endregion
 
 	return (
@@ -80,7 +66,7 @@ function App() {
 				<Toolbar>
 					<IconButton
 						color="inherit"
-						onClick={handleOpenDrawer}
+						onClick={() => setIsDrawerOpen(true)}
 						edge="start"
 					>
 						<Menu />
@@ -89,32 +75,7 @@ function App() {
 				</Toolbar>
 			</AppBar>
 
-			<SwipeableDrawer
-				variant="persistent"
-				anchor="left"
-				open={isDrawerOpen}
-				onOpen={handleOpenDrawer}
-				onClose={handleCloseDrawer}
-			>
-				<div>
-					<IconButton onClick={handleCloseDrawer}>
-						<ChevronLeft />
-					</IconButton>
-				</div>
-				<Divider />
-				<List>
-					{["Datasets"].map((text) => (
-						<ListItem key={text}>
-							<Button>
-								<ListItemIcon>
-									<ListAlt />
-								</ListItemIcon>
-								<ListItemText primary={text} />
-							</Button>
-						</ListItem>
-					))}
-				</List>
-			</SwipeableDrawer>
+			<MainDrawer />
 
 			<Container>
 				<Grid container direction="row" spacing={4}>
