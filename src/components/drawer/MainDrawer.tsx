@@ -11,12 +11,17 @@ import {
 import { ChevronLeft } from "@material-ui/icons";
 
 import datasets from "../../data/datasets";
-import { datasetIdAtom, isDrawerOpenAtom } from "../../state/atom";
+import {
+	datasetIdAtom,
+	isDrawerOpenAtom,
+	questionIdAtom,
+} from "../../state/atom";
 import AccordionDrawer from "./AccordionDrawer";
 
 const MainDrawer = () => {
 	const [isDrawerOpen, setIsDrawerOpen] = useRecoilState(isDrawerOpenAtom);
 	const setDatasetId = useSetRecoilState(datasetIdAtom);
+	const setQuestionId = useSetRecoilState(questionIdAtom);
 
 	return (
 		<SwipeableDrawer
@@ -33,12 +38,12 @@ const MainDrawer = () => {
 			</div>
 			<Divider />
 			<AccordionDrawer title="datasets">
-				{/* TODO: choose dataset based on its uuid */}
 				{datasets.map((dataset) => (
 					<ListItem key={dataset.id}>
 						<Button
 							onClick={() => {
 								setDatasetId(dataset.id);
+								setQuestionId(0);
 								setIsDrawerOpen(false);
 							}}
 						>
