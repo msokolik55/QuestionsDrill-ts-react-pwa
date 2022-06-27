@@ -7,7 +7,7 @@ export const datasetSelector = selector({
 	key: "dataset",
 	get({ get }) {
 		const datasetId = get(datasetIdAtom);
-		return datasets[datasetId];
+		return datasets.filter((dataset) => dataset.id === datasetId)[0];
 	},
 });
 
@@ -15,7 +15,8 @@ export const datasetLengthSelector = selector({
 	key: "datasetLength",
 	get({ get }) {
 		const datasetId = get(datasetIdAtom);
-		return datasets[datasetId].questions.length;
+		return datasets.filter((dataset) => dataset.id === datasetId)[0].questions
+			.length;
 	},
 });
 
@@ -25,7 +26,8 @@ export const questionSelector = selector({
 	get({ get }) {
 		const datasetId = get(datasetIdAtom);
 		const questionId = get(questionIdAtom);
-		const question = datasets[datasetId].questions[questionId];
+		const question = datasets.filter((dataset) => dataset.id === datasetId)[0]
+			.questions[questionId];
 
 		return {
 			title: question.title,

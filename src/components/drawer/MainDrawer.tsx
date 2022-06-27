@@ -34,11 +34,11 @@ const MainDrawer = () => {
 			<Divider />
 			<AccordionDrawer title="datasets">
 				{/* TODO: choose dataset based on its uuid */}
-				{datasets.map((dataset, index) => (
-					<ListItem key={dataset.name}>
+				{datasets.map((dataset) => (
+					<ListItem key={dataset.id}>
 						<Button
 							onClick={() => {
-								setDatasetId(index);
+								setDatasetId(dataset.id);
 								setIsDrawerOpen(false);
 							}}
 						>
