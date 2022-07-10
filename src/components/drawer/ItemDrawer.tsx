@@ -7,7 +7,7 @@ import {
 	isDrawerOpenAtom,
 	questionIdAtom,
 } from "../../state/atom";
-import styles from "./MainDrawer.module.css";
+import styles from "./ItemDrawer.module.css";
 
 interface IItemDrawerProps {
 	title: string;
