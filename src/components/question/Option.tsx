@@ -3,14 +3,14 @@ import { useRecoilState, useRecoilValue } from "recoil";
 
 import { Button } from "@material-ui/core";
 
-import { IOption } from "../models/Option";
+import { IOption } from "../../models/Option";
 import {
 	answeredQuestionsAtom,
 	answeredWrongAtom,
 	hasAnsweredAtom,
 	questionIdAtom,
-} from "../state/atom";
-import { questionSelector } from "../state/selector";
+} from "../../state/atom";
+import { questionSelector } from "../../state/selector";
 
 interface IOptionProps {
 	option: IOption;

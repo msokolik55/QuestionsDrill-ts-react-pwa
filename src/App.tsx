@@ -5,8 +5,8 @@ import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { Container, Grid, Typography } from "@material-ui/core";
 
 import "./App.css";
-import GridQuestion from "./components/GridQuestion";
 import MainPage from "./components/MainPage";
+import GridQuestion from "./components/question/GridQuestion";
 import GridStats from "./components/stats/GridStats";
 import { dbKeys } from "./data/dbKeys";
 import {
