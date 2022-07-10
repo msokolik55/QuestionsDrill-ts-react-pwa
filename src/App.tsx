@@ -1,4 +1,6 @@
-import { useRecoilValue, useSetRecoilState } from "recoil";
+import { get, set } from "idb-keyval";
+import { useEffect } from "react";
+import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 
 import { Container, Grid, Typography } from "@material-ui/core";
 
@@ -6,8 +8,10 @@ import "./App.css";
 import GridQuestion from "./components/GridQuestion";
 import MainPage from "./components/MainPage";
 import GridStats from "./components/stats/GridStats";
+import { dbKeys } from "./data/dbKeys";
 import {
 	answeredQuestionsAtom,
+	datasetIdAtom,
 	hasAnsweredAtom,
 	questionIdAtom,
 } from "./state/atom";
@@ -17,6 +21,7 @@ import { datasetLengthSelector, datasetSelector } from "./state/selector";
 // TODO: locale language
 function App() {
 	//#region useState
+	const [datasetId, setDatasetId] = useRecoilState(datasetIdAtom);
 	const dataset = useRecoilValue(datasetSelector);
 
 	const setHasAnswered = useSetRecoilState(hasAnsweredAtom);
@@ -24,6 +29,18 @@ function App() {
 	const questionsCount = useRecoilValue(datasetLengthSelector);
 	const answeredQuestions = useRecoilValue(answeredQuestionsAtom);
 	const setQuestionId = useSetRecoilState(questionIdAtom);
+	//#endregion
+
+	//#region useEffect
+	useEffect(() => {
+		get(dbKeys.lastDatasetId).then((lastDatasetId) => {
+			if (lastDatasetId) setDatasetId(lastDatasetId);
+		});
+	}, [setDatasetId]);
+
+	useEffect(() => {
+		set(dbKeys.lastDatasetId, datasetId);
+	}, [datasetId]);
 	//#endregion
 
 	//#region no dataset
