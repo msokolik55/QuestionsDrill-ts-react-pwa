@@ -2,13 +2,14 @@ import { useRecoilValue } from "recoil";
 
 import { Grid } from "@material-ui/core";
 
+import { TGenerateQuestion } from "../../models/generateQuestion";
 import { questionIdAtom } from "../../state/atom";
 import { datasetLengthSelector, questionSelector } from "../../state/selector";
 import FooterQuestion from "./FooterQuestion";
 import Option from "./Option";
 
 interface IGridQuestionProps {
-	generateQuestion: (id?: number | undefined) => void;
+	generateQuestion: TGenerateQuestion;
 }
 
 const GridQuestion = (props: IGridQuestionProps) => {

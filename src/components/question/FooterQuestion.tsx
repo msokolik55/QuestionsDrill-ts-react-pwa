@@ -3,10 +3,11 @@ import { useRecoilValue } from "recoil";
 import { Button, Grid } from "@material-ui/core";
 import { ArrowBack, ArrowForward } from "@material-ui/icons";
 
+import { TGenerateQuestion } from "../../models/generateQuestion";
 import { questionIdAtom } from "../../state/atom";
 
 interface IFooterButtonProps {
-	newQuestion: (id?: number | undefined) => void;
+	newQuestion: TGenerateQuestion;
 	content: JSX.Element | string;
 }
 
@@ -23,7 +24,7 @@ const FooterButton = (props: IFooterButtonProps) => {
 };
 
 interface IFooterQuestionProps {
-	generateQuestion: (id?: number | undefined) => void;
+	generateQuestion: TGenerateQuestion;
 }
 
 const FooterQuestion = (props: IFooterQuestionProps) => {

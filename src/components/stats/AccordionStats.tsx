@@ -8,11 +8,13 @@ import {
 } from "@material-ui/core";
 import { ExpandMore } from "@material-ui/icons";
 
+import { TGenerateQuestion } from "../../models/generateQuestion";
+
 interface IStatsProps {
 	title: string;
 	items: number[];
 	maximum: number | undefined;
-	generateQuestion: (id?: number | undefined) => void;
+	generateQuestion: TGenerateQuestion;
 	keyLabel: string;
 }
 
