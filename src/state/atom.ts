@@ -1,6 +1,5 @@
 import { atom } from "recoil";
 
-// TODO: save last answered dataset
 export const datasetIdAtom = atom<string>({
 	key: "selectedDatasetId",
 	default: "",
