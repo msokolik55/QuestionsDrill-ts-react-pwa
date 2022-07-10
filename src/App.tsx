@@ -17,7 +17,6 @@ import {
 } from "./state/atom";
 import { datasetLengthSelector, datasetSelector } from "./state/selector";
 
-// TODO: move all inline into separate files
 // TODO: locale language
 function App() {
 	//#region useState
