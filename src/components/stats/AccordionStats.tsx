@@ -8,7 +8,7 @@ import {
 } from "@material-ui/core";
 import { ExpandMore } from "@material-ui/icons";
 
-interface IPropsStats {
+interface IStatsProps {
 	title: string;
 	items: number[];
 	maximum: number | undefined;
@@ -22,7 +22,7 @@ const AccordionStats = ({
 	maximum,
 	generateQuestion,
 	keyLabel,
-}: IPropsStats) => {
+}: IStatsProps) => {
 	return (
 		<Accordion style={{ width: "100%" }}>
 			<AccordionSummary expandIcon={<ExpandMore />}>

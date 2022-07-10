@@ -7,11 +7,11 @@ import { questionIdAtom } from "../state/atom";
 import { datasetLengthSelector, questionSelector } from "../state/selector";
 import Option from "./Option";
 
-interface IGridQuestion {
+interface IGridQuestionProps {
 	generateQuestion: (id?: number | undefined) => void;
 }
 
-const GridQuestion = (props: IGridQuestion) => {
+const GridQuestion = (props: IGridQuestionProps) => {
 	const questionsCount = useRecoilValue(datasetLengthSelector);
 
 	const questionId = useRecoilValue(questionIdAtom);

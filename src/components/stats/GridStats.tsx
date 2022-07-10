@@ -6,11 +6,11 @@ import { answeredQuestionsAtom, answeredWrongAtom } from "../../state/atom";
 import { datasetLengthSelector } from "../../state/selector";
 import AccordionStats from "./AccordionStats";
 
-interface IGridStats {
+interface IGridStatsProps {
 	generateQuestion: (id: number | undefined) => void;
 }
 
-const GridStats = (props: IGridStats) => {
+const GridStats = (props: IGridStatsProps) => {
 	const [answeredWrong, setAnsweredWrong] = useRecoilState(answeredWrongAtom);
 	const [answeredQuestions, setAnsweredQuestions] = useRecoilState(
 		answeredQuestionsAtom
