@@ -24,7 +24,6 @@ export const datasetLengthSelector = selector({
 	},
 });
 
-// TODO: randomize options
 export const questionSelector = selector({
 	key: "question",
 	get({ get }) {
