@@ -26,7 +26,7 @@ const MainDrawer = () => {
 			</div>
 			<Divider />
 			<ItemDrawer title="Domov" datasetId="" />
-			<AccordionDrawer title="datasets">
+			<AccordionDrawer title="drilly">
 				{datasets.map((dataset) => (
 					<ItemDrawer
 						key={dataset.id}

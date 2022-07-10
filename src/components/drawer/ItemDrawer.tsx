@@ -1,8 +1,10 @@
-import { useSetRecoilState } from "recoil";
+import { useRecoilState, useSetRecoilState } from "recoil";
 
 import { ListItem, ListItemText } from "@material-ui/core";
 
 import {
+	answeredQuestionsAtom,
+	answeredWrongAtom,
 	datasetIdAtom,
 	isDrawerOpenAtom,
 	questionIdAtom,
@@ -16,13 +18,24 @@ interface IItemDrawerProps {
 
 const ItemDrawer = (props: IItemDrawerProps) => {
 	const setIsDrawerOpen = useSetRecoilState(isDrawerOpenAtom);
-	const setDatasetId = useSetRecoilState(datasetIdAtom);
+	const [datasetId, setDatasetId] = useRecoilState(datasetIdAtom);
 	const setQuestionId = useSetRecoilState(questionIdAtom);
 
+	const setAnsweredWrongAtom = useSetRecoilState(answeredWrongAtom);
+	const setAnsweredQuestionsAtom = useSetRecoilState(answeredQuestionsAtom);
+
 	const selectItem = (id: string) => {
+		setIsDrawerOpen(false);
+
+		if (datasetId === id) {
+			return;
+		}
+
 		setDatasetId(id);
 		setQuestionId(0);
-		setIsDrawerOpen(false);
+
+		setAnsweredWrongAtom([]);
+		setAnsweredQuestionsAtom([]);
 	};
 
 	return (
