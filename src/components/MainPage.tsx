@@ -1,7 +1,7 @@
 import { useSetRecoilState } from "recoil";
 
 import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
-import { Menu } from "@material-ui/icons";
+import { Menu } from "@mui/icons-material";
 
 import { isDrawerOpenAtom } from "../state/atom";
 import MainDrawer from "./drawer/MainDrawer";

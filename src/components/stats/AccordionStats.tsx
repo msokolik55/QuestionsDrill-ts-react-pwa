@@ -6,7 +6,7 @@ import {
 	Grid,
 	Typography,
 } from "@mui/material";
-import { ExpandMore } from "@material-ui/icons";
+import { ExpandMore } from "@mui/icons-material";
 
 import { TGenerateQuestion } from "../../models/generateQuestion";
 

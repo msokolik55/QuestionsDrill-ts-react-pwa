@@ -6,7 +6,7 @@ import {
 	ListItemIcon,
 	ListItemText,
 } from "@mui/material";
-import { ExpandMore, ListAlt } from "@material-ui/icons";
+import { ExpandMore, ListAlt } from "@mui/icons-material";
 
 interface IAccordionDrawerProps {
 	title: string;

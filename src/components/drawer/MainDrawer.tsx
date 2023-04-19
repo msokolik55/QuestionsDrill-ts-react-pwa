@@ -1,7 +1,7 @@
 import { useRecoilState } from "recoil";
 
 import { Divider, IconButton, SwipeableDrawer } from "@mui/material";
-import { ChevronLeft } from "@material-ui/icons";
+import { ChevronLeft } from "@mui/icons-material";
 
 import datasets from "../../data/datasets";
 import { isDrawerOpenAtom } from "../../state/atom";

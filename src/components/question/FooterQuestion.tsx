@@ -1,7 +1,7 @@
 import { useRecoilValue } from "recoil";
 
 import { Button, Grid } from "@mui/material";
-import { ArrowBack, ArrowForward } from "@material-ui/icons";
+import { ArrowBack, ArrowForward } from "@mui/icons-material";
 
 import { TGenerateQuestion } from "../../models/generateQuestion";
 import { questionIdAtom } from "../../state/atom";
