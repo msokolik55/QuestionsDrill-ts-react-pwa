@@ -1,5 +1,10 @@
-import { get, set } from "idb-keyval";
 import { useEffect } from "react";
+import {
+	ThemeProvider,
+	createMuiTheme,
+	makeStyles,
+} from "@material-ui/core/styles";
+import { get, set } from "idb-keyval";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 
 import { Container, Grid, Typography } from "@material-ui/core";
@@ -16,6 +21,8 @@ import {
 	questionIdAtom,
 } from "./state/atom";
 import { datasetLengthSelector, datasetSelector } from "./state/selector";
+
+const theme = createMuiTheme();
 
 // TODO: locale language
 function App() {
@@ -81,16 +88,18 @@ function App() {
 	//#endregion
 
 	return (
-		<MainPage
-			content={
-				<Container>
-					<Grid container direction="row" spacing={4}>
-						<GridQuestion generateQuestion={generateQuestion} />
-						<GridStats generateQuestion={generateQuestion} />
-					</Grid>
-				</Container>
-			}
-		/>
+		<ThemeProvider theme={theme}>
+			<MainPage
+				content={
+					<Container>
+						<Grid container direction="row" spacing={4}>
+							<GridQuestion generateQuestion={generateQuestion} />
+							<GridStats generateQuestion={generateQuestion} />
+						</Grid>
+					</Container>
+				}
+			/>
+		</ThemeProvider>
 	);
 }
 
