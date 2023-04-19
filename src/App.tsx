@@ -1,9 +1,5 @@
 import { useEffect } from "react";
-import {
-	ThemeProvider,
-	createMuiTheme,
-	makeStyles,
-} from "@material-ui/core/styles";
+import { ThemeProvider, createTheme } from "@material-ui/core/styles";
 import { get, set } from "idb-keyval";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 
@@ -22,7 +18,7 @@ import {
 } from "./state/atom";
 import { datasetLengthSelector, datasetSelector } from "./state/selector";
 
-const theme = createMuiTheme();
+const theme = createTheme();
 
 // TODO: locale language
 function App() {
