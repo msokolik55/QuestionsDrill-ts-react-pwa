@@ -1,6 +1,6 @@
 import { useRecoilValue } from "recoil";
 
-import { Button, Grid } from "@material-ui/core";
+import { Button, Grid } from "@mui/material";
 import { ArrowBack, ArrowForward } from "@material-ui/icons";
 
 import { TGenerateQuestion } from "../../models/generateQuestion";

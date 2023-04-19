@@ -1,6 +1,6 @@
 import { useRecoilState, useSetRecoilState } from "recoil";
 
-import { ListItem, ListItemText } from "@material-ui/core";
+import { ListItem, ListItemText } from "@mui/material";
 
 import {
 	answeredQuestionsAtom,

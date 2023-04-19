@@ -1,6 +1,6 @@
 import { useRecoilState } from "recoil";
 
-import { Divider, IconButton, SwipeableDrawer } from "@material-ui/core";
+import { Divider, IconButton, SwipeableDrawer } from "@mui/material";
 import { ChevronLeft } from "@material-ui/icons";
 
 import datasets from "../../data/datasets";

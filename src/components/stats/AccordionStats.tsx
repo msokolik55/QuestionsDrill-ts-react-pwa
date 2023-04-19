@@ -5,7 +5,7 @@ import {
 	Button,
 	Grid,
 	Typography,
-} from "@material-ui/core";
+} from "@mui/material";
 import { ExpandMore } from "@material-ui/icons";
 
 import { TGenerateQuestion } from "../../models/generateQuestion";

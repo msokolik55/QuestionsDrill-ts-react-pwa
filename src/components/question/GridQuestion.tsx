@@ -1,6 +1,6 @@
 import { useRecoilValue } from "recoil";
 
-import { Grid } from "@material-ui/core";
+import { Grid } from "@mui/material";
 
 import { TGenerateQuestion } from "../../models/generateQuestion";
 import { questionIdAtom } from "../../state/atom";

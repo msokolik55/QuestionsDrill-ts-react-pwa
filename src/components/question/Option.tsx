@@ -1,7 +1,7 @@
 import { SetStateAction } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
 
-import { Button } from "@material-ui/core";
+import { Button } from "@mui/material";
 
 import { IOption } from "../../models/Option";
 import {

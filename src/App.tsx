@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import { ThemeProvider, createTheme } from "@material-ui/core/styles";
+import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { get, set } from "idb-keyval";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 
-import { Container, Grid, Typography } from "@material-ui/core";
+import { Container, Grid, Typography } from "@mui/material";
 
 import "./App.css";
 import MainPage from "./components/MainPage";

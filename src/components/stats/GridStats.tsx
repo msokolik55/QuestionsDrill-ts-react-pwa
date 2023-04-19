@@ -1,6 +1,6 @@
 import { useRecoilState, useRecoilValue } from "recoil";
 
-import { Button, Grid } from "@material-ui/core";
+import { Button, Grid } from "@mui/material";
 
 import { answeredQuestionsAtom, answeredWrongAtom } from "../../state/atom";
 import { datasetLengthSelector } from "../../state/selector";
