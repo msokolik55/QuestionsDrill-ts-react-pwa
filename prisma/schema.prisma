@@ -9,3 +9,28 @@ datasource db {
   provider = "cockroachdb"
   url      = env("DATABASE_URL")
 }
+
+model Dataset {
+  id        Int        @id @default(sequence())
+  name      String     @unique
+  questions Question[]
+}
+
+model Question {
+  id    Int    @id @default(sequence())
+  title String @unique
+
+  datasetId Int
+  dataset   Dataset @relation(fields: [datasetId], references: [id])
+
+  options Option[]
+}
+
+model Option {
+  id      Int     @id @default(sequence())
+  title   String
+  isRight Boolean @default(false)
+
+  questionId Int
+  question   Question @relation(fields: [questionId], references: [id])
+}
