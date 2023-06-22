@@ -51,7 +51,7 @@ function App() {
 		fetch("/.netlify/functions/getDatasets")
 			.then((response) => response.json())
 			.then((data) => setDatasets(data));
-	}, []);
+	}, [setDatasets]);
 	//#endregion
 
 	//#region no dataset
