@@ -1,15 +1,16 @@
-import { useRecoilState } from "recoil";
+import { useRecoilState, useRecoilValue } from "recoil";
 
 import { Divider, IconButton, SwipeableDrawer } from "@mui/material";
 import { ChevronLeft } from "@mui/icons-material";
 
-import datasets from "../../data/datasets";
-import { isDrawerOpenAtom } from "../../state/atom";
+// import datasets from "../../data/datasets";
+import { datasetsAtom, isDrawerOpenAtom } from "../../state/atom";
 import AccordionDrawer from "./AccordionDrawer";
 import ItemDrawer from "./ItemDrawer";
 
 const MainDrawer = () => {
 	const [isDrawerOpen, setIsDrawerOpen] = useRecoilState(isDrawerOpenAtom);
+	const datasets = useRecoilValue(datasetsAtom);
 
 	return (
 		<SwipeableDrawer
