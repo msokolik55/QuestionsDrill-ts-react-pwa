@@ -43,6 +43,12 @@ function App() {
 	useEffect(() => {
 		set(dbKeys.lastDatasetId, datasetId);
 	}, [datasetId]);
+
+	useEffect(() => {
+		fetch("/.netlify/functions/getDatasets")
+			.then((response) => response.json())
+			.then((data) => console.log(data));
+	}, []);
 	//#endregion
 
 	//#region no dataset
