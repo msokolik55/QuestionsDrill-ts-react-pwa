@@ -1,11 +1,12 @@
 import { atom } from "recoil";
+import { IDataset } from "../models/Dataset";
 
 export const datasetIdAtom = atom<string>({
 	key: "selectedDatasetId",
 	default: "",
 });
 
-export const datasetsAtom = atom<string>({
+export const datasetsAtom = atom<IDataset[]>({
 	key: "datasets",
 	default: [],
 });
