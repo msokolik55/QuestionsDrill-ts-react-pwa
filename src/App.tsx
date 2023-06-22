@@ -17,7 +17,6 @@ import {
 	questionIdAtom,
 } from "./state/atom";
 import { datasetLengthSelector, datasetSelector } from "./state/selector";
-import { getDatasets } from "./dataset/add";
 
 const theme = createTheme();
 
