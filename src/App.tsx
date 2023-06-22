@@ -17,6 +17,7 @@ import {
 	questionIdAtom,
 } from "./state/atom";
 import { datasetLengthSelector, datasetSelector } from "./state/selector";
+import { getDatasets } from "./dataset/add";
 
 const theme = createTheme();
 
@@ -51,7 +52,9 @@ function App() {
 			<MainPage
 				content={
 					<Container style={{ marginTop: "1em" }}>
-						<Typography>Vyberte si ľubovoľný drill z bočného menu.</Typography>
+						<Typography>
+							Vyberte si ľubovoľný drill z bočného menu.
+						</Typography>
 					</Container>
 				}
 			/>
@@ -82,6 +85,8 @@ function App() {
 		setHasAnswered(false);
 	};
 	//#endregion
+
+	getDatasets().then((res) => console.log(res));
 
 	return (
 		<ThemeProvider theme={theme}>
