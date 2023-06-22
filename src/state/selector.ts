@@ -4,7 +4,7 @@ import { selector } from "recoil";
 import { IDataset } from "../models/Dataset";
 import { datasetIdAtom, datasetsAtom, questionIdAtom } from "./atom";
 
-const getDataset = (get, datasetId: string): IDataset | undefined => {
+const getDataset = (get: any, datasetId: string): IDataset | undefined => {
 	const datasets = get(datasetsAtom);
 	return datasets.filter((dataset) => dataset.id === datasetId)[0];
 };
