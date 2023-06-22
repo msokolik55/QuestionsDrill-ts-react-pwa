@@ -86,8 +86,6 @@ function App() {
 	};
 	//#endregion
 
-	getDatasets().then((res) => console.log(res));
-
 	return (
 		<ThemeProvider theme={theme}>
 			<MainPage
