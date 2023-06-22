@@ -50,7 +50,7 @@ function App() {
 	useEffect(() => {
 		fetch("/.netlify/functions/getDatasets")
 			.then((response) => response.json())
-			.then((data) => console.log(data));
+			.then((data) => setDatasets(data));
 	}, []);
 	//#endregion
 

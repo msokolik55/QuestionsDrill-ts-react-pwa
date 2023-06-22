@@ -5,6 +5,7 @@ const prisma = new PrismaClient();
 
 const handler: Handler = async (_event, _context) => {
 	const datasets = await prisma.dataset.findMany();
+	console.log(datasets);
 
 	return {
 		statusCode: 200,
