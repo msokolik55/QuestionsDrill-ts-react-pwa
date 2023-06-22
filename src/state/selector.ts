@@ -4,7 +4,7 @@ import { selector } from "recoil";
 import { IDataset } from "../models/Dataset";
 import { datasetIdAtom, datasetsAtom, questionIdAtom } from "./atom";
 
-const getDataset = (datasetId: string): IDataset | undefined => {
+const getDataset = (get, datasetId: string): IDataset | undefined => {
 	const datasets = get(datasetsAtom);
 	return datasets.filter((dataset) => dataset.id === datasetId)[0];
 };
@@ -13,7 +13,7 @@ export const datasetSelector = selector({
 	key: "dataset",
 	get({ get }) {
 		const datasetId = get(datasetIdAtom);
-		return getDataset(datasetId);
+		return getDataset(get, datasetId);
 	},
 });
 
@@ -21,7 +21,7 @@ export const datasetLengthSelector = selector({
 	key: "datasetLength",
 	get({ get }) {
 		const datasetId = get(datasetIdAtom);
-		return getDataset(datasetId)?.questions.length;
+		return getDataset(get, datasetId)?.questions.length;
 	},
 });
 
@@ -30,7 +30,7 @@ export const questionSelector = selector({
 	get({ get }) {
 		const datasetId = get(datasetIdAtom);
 		const questionId = get(questionIdAtom);
-		const question = getDataset(datasetId)?.questions[questionId];
+		const question = getDataset(get, datasetId)?.questions[questionId];
 
 		return question
 			? {
