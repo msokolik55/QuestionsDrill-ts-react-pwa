@@ -6,7 +6,7 @@ import { datasetIdAtom, datasetsAtom, questionIdAtom } from "./atom";
 
 const getDataset = (get: any, datasetId: string): IDataset | undefined => {
 	const datasets = get(datasetsAtom);
-	return datasets.filter((dataset) => dataset.id === datasetId)[0];
+	return datasets.filter((dataset: any) => dataset.id === datasetId)[0];
 };
 
 export const datasetSelector = selector({
