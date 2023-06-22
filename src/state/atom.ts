@@ -5,6 +5,11 @@ export const datasetIdAtom = atom<string>({
 	default: "",
 });
 
+export const datasetsAtom = atom<string>({
+	key: "datasets",
+	default: [],
+});
+
 export const questionIdAtom = atom<number>({
 	key: "questionId",
 	default: 0,

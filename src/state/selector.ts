@@ -1,10 +1,11 @@
 import { selector } from "recoil";
 
-import datasets from "../data/datasets";
+// import datasets from "../data/datasets";
 import { IDataset } from "../models/Dataset";
-import { datasetIdAtom, questionIdAtom } from "./atom";
+import { datasetIdAtom, datasetsAtom, questionIdAtom } from "./atom";
 
 const getDataset = (datasetId: string): IDataset | undefined => {
+	const datasets = get(datasetsAtom);
 	return datasets.filter((dataset) => dataset.id === datasetId)[0];
 };
 
@@ -34,7 +35,9 @@ export const questionSelector = selector({
 		return question
 			? {
 					title: question.title,
-					options: [...question.options].sort(() => Math.random() - 0.5),
+					options: [...question.options].sort(
+						() => Math.random() - 0.5
+					),
 			  }
 			: undefined;
 	},

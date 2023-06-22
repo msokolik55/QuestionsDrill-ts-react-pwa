@@ -13,6 +13,7 @@ import { dbKeys } from "./data/dbKeys";
 import {
 	answeredQuestionsAtom,
 	datasetIdAtom,
+	datasetsAtom,
 	hasAnsweredAtom,
 	questionIdAtom,
 } from "./state/atom";
@@ -23,6 +24,8 @@ const theme = createTheme();
 // TODO: locale language
 function App() {
 	//#region useState
+	const setDatasets = useSetRecoilState(datasetsAtom);
+
 	const [datasetId, setDatasetId] = useRecoilState(datasetIdAtom);
 	const dataset = useRecoilValue(datasetSelector);
 
