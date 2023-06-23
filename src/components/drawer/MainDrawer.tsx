@@ -36,6 +36,7 @@ const MainDrawer = () => {
 					/>
 				))}
 			</AccordionDrawer>
+			<ItemDrawer title="Add" datasetId="" />
 		</SwipeableDrawer>
 	);
 };
