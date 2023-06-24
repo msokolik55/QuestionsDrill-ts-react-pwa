@@ -2,6 +2,13 @@
 	"name": "questionsdrill-ts-react-pwa",
 	"version": "0.1.0",
 	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "prisma generate && tsc && vite build",
+		"lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+		"preview": "vite preview"
+	},
 	"dependencies": {
 		"@emotion/react": "^11.10.6",
 		"@emotion/styled": "^11.10.6",
@@ -11,61 +18,25 @@
 		"@netlify/functions": "^1.6.0",
 		"@prisma/client": "4.16.0",
 		"@prisma/engines-version": "4.17.0-2.2b04ac1c2af3bc5a845ff7a83ab8be8e0230cb43",
-		"@testing-library/react": "^12.1.5",
-		"@testing-library/user-event": "^14.4.3",
-		"@types/jest": "^29.5.1",
-		"@types/node": "^18.15.11",
-		"@types/react": "^17.0.58",
-		"@types/react-dom": "^18.0.11",
 		"idb-keyval": "^6.2.0",
 		"react": "^17.0.0",
 		"react-dom": "^17.0.0",
-		"react-scripts": "^5.0.1",
 		"recoil": "^0.7.7",
-		"typescript": "^4.9.5",
-		"uuid": "^9.0.0",
-		"web-vitals": "^3.3.1",
-		"workbox-background-sync": "^6.5.4",
-		"workbox-broadcast-update": "^6.5.4",
-		"workbox-cacheable-response": "^6.5.4",
-		"workbox-core": "^6.5.4",
-		"workbox-expiration": "^6.5.4",
-		"workbox-google-analytics": "^6.5.4",
-		"workbox-navigation-preload": "^6.5.4",
-		"workbox-precaching": "^6.5.4",
-		"workbox-range-requests": "^6.5.4",
-		"workbox-routing": "^6.5.4",
-		"workbox-strategies": "^6.5.4",
-		"workbox-streams": "^6.5.4"
-	},
-	"scripts": {
-		"start": "react-scripts start",
-		"build": "prisma generate && react-scripts build",
-		"test": "react-scripts test",
-		"eject": "react-scripts eject"
-	},
-	"eslintConfig": {
-		"extends": [
-			"react-app",
-			"react-app/jest"
-		]
-	},
-	"browserslist": {
-		"production": [
-			">0.2%",
-			"not dead",
-			"not op_mini all"
-		],
-		"development": [
-			"last 1 chrome version",
-			"last 1 firefox version",
-			"last 1 safari version"
-		]
+		"uuid": "^9.0.0"
 	},
 	"devDependencies": {
-		"@testing-library/jest-dom": "^5.16.5",
 		"@trivago/prettier-plugin-sort-imports": "^4.1.1",
-		"@types/testing-library__jest-dom": "^5.14.5",
-		"prisma": "^4.16.0"
+		"@types/node": "^18.15.11",
+		"@types/react": "^17.0.58",
+		"@types/react-dom": "^18.0.11",
+		"@typescript-eslint/eslint-plugin": "^5.59.0",
+		"@typescript-eslint/parser": "^5.59.0",
+		"@vitejs/plugin-react": "^4.0.0",
+		"eslint": "^8.38.0",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"eslint-plugin-react-refresh": "^0.3.4",
+		"prisma": "^4.16.0",
+		"typescript": "^4.9.5",
+		"vite": "^4.3.9"
 	}
 }
