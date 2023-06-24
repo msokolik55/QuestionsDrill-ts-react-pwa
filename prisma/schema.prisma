@@ -8,29 +8,35 @@ generator client {
 datasource db {
   provider = "cockroachdb"
   url      = env("DATABASE_URL")
+
+  relationMode = "prisma"
 }
 
 model Dataset {
-  id        Int        @id @default(sequence())
+  id        String     @id @default(uuid())
   name      String     @unique
   questions Question[]
 }
 
 model Question {
-  id    Int    @id @default(sequence())
+  id    String @id @default(uuid())
   title String @unique
 
-  datasetId Int
+  datasetId String
   dataset   Dataset @relation(fields: [datasetId], references: [id])
 
   options Option[]
+
+  @@index([datasetId])
 }
 
 model Option {
-  id      Int     @id @default(sequence())
+  id      String  @id @default(uuid())
   title   String
   isRight Boolean @default(false)
 
-  questionId Int
+  questionId String
   question   Question @relation(fields: [questionId], references: [id])
+
+  @@index([questionId])
 }
