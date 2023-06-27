@@ -1,12 +1,15 @@
-import { selector } from "recoil";
+import { GetRecoilValue, selector } from "recoil";
 
 // import datasets from "../data/datasets";
 import { IDataset } from "../models/Dataset";
 import { datasetIdAtom, datasetsAtom, questionIdAtom } from "./atom";
 
-const getDataset = (get: any, datasetId: string): IDataset | undefined => {
+const getDataset = (
+	get: GetRecoilValue,
+	datasetId: string
+): IDataset | undefined => {
 	const datasets = get(datasetsAtom);
-	return datasets.filter((dataset: any) => dataset.id === datasetId)[0];
+	return datasets.filter((dataset: IDataset) => dataset.id === datasetId)[0];
 };
 
 export const datasetSelector = selector({
