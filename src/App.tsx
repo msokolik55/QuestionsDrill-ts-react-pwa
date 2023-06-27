@@ -50,21 +50,6 @@ function App() {
 						<Typography>
 							Vyberte si ľubovoľný drill z bočného menu.
 						</Typography>
-						<button
-							onClick={() =>
-								fetch("/.netlify/functions/addDataset", {
-									body: "Name 1",
-								})
-									.then((response) =>
-										response
-											.json()
-											.then((data) => console.log(data))
-									)
-									.catch((err) => console.error(err))
-							}
-						>
-							Add
-						</button>
 					</Container>
 				}
 			/>
