@@ -1,6 +1,5 @@
 import React, { FC, useEffect } from "react";
 import { Snackbar, Button } from "@mui/material";
-// import * as serviceWorker from "./serviceWorker";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 
 const ServiceWorkerWrapper: FC = () => {
@@ -14,7 +13,6 @@ const ServiceWorkerWrapper: FC = () => {
 	};
 
 	useEffect(() => {
-		// serviceWorker.register({ onUpdate: onSWUpdate });
 		serviceWorkerRegistration.register({ onUpdate: onSWUpdate });
 	}, []);
 
