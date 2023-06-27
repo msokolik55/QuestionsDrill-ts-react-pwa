@@ -95,13 +95,12 @@ function App() {
 		if (id !== undefined) {
 			n = (id + questionsCount) % questionsCount;
 		} else {
-			if (answeredQuestions.length >= questionsCount) {
+			do {
 				n = randomNumber(questionsCount);
-			} else {
-				do {
-					n = randomNumber(questionsCount);
-				} while (answeredQuestions.includes(n));
-			}
+			} while (
+				answeredQuestions.length < questionsCount &&
+				answeredQuestions.includes(n)
+			);
 		}
 
 		setQuestionId(n);
