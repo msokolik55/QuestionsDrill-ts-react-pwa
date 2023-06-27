@@ -65,10 +65,15 @@ function App() {
 						</Typography>
 						<button
 							onClick={() =>
-								fetch("/.netlify/functions/addDataset")
-									.then((response) => response.json())
-									.then((data) => console.log(data))
-									.catch((err) => console.log(err))
+								fetch("/.netlify/functions/addDataset", {
+									body: "Name 1",
+								})
+									.then((response) =>
+										response
+											.json()
+											.then((data) => console.log(data))
+									)
+									.catch((err) => console.error(err))
 							}
 						>
 							Add
