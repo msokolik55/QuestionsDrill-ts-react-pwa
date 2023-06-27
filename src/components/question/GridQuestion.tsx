@@ -2,17 +2,12 @@ import { useRecoilValue } from "recoil";
 
 import { Grid } from "@mui/material";
 
-import { TGenerateQuestion } from "../../models/generateQuestion";
 import { questionIdAtom } from "../../state/atom";
 import { datasetLengthSelector, questionSelector } from "../../state/selector";
 import FooterQuestion from "./FooterQuestion";
 import Option from "./Option";
 
-interface IGridQuestionProps {
-	generateQuestion: TGenerateQuestion;
-}
-
-const GridQuestion = (props: IGridQuestionProps) => {
+const GridQuestion = () => {
 	const questionsCount = useRecoilValue(datasetLengthSelector);
 
 	const questionId = useRecoilValue(questionIdAtom);
@@ -28,7 +23,7 @@ const GridQuestion = (props: IGridQuestionProps) => {
 				<Option key={idx} option={option} index={idx} />
 			))}
 
-			<FooterQuestion generateQuestion={props.generateQuestion} />
+			<FooterQuestion />
 		</Grid>
 	);
 };

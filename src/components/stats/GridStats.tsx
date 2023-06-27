@@ -5,12 +5,9 @@ import { Button, Grid } from "@mui/material";
 import { answeredQuestionsAtom, answeredWrongAtom } from "../../state/atom";
 import { datasetLengthSelector } from "../../state/selector";
 import AccordionStats from "./AccordionStats";
+import { GenerateQuestion } from "../generator";
 
-interface IGridStatsProps {
-	generateQuestion: (id: number | undefined) => void;
-}
-
-const GridStats = (props: IGridStatsProps) => {
+const GridStats = () => {
 	const [answeredWrong, setAnsweredWrong] = useRecoilState(answeredWrongAtom);
 	const [answeredQuestions, setAnsweredQuestions] = useRecoilState(
 		answeredQuestionsAtom
@@ -43,14 +40,14 @@ const GridStats = (props: IGridStatsProps) => {
 					title="Zle zodpovedané"
 					items={answeredWrong}
 					maximum={answeredQuestions.length}
-					generateQuestion={props.generateQuestion}
+					generateQuestion={GenerateQuestion}
 					keyLabel="wrong-"
 				/>
 				<AccordionStats
 					title="Zodpovedané"
 					items={answeredQuestions}
 					maximum={questionsCount}
-					generateQuestion={props.generateQuestion}
+					generateQuestion={GenerateQuestion}
 					keyLabel="answered-"
 				/>
 			</Grid>

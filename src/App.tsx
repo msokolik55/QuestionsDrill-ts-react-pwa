@@ -10,13 +10,7 @@ import MainPage from "./components/MainPage";
 import GridQuestion from "./components/question/GridQuestion";
 import GridStats from "./components/stats/GridStats";
 import { dbKeys } from "./data/dbKeys";
-import {
-	answeredQuestionsAtom,
-	datasetIdAtom,
-	datasetsAtom,
-	hasAnsweredAtom,
-	questionIdAtom,
-} from "./state/atom";
+import { datasetIdAtom, datasetsAtom } from "./state/atom";
 import { datasetLengthSelector, datasetSelector } from "./state/selector";
 
 const theme = createTheme();
@@ -29,11 +23,7 @@ function App() {
 	const [datasetId, setDatasetId] = useRecoilState(datasetIdAtom);
 	const dataset = useRecoilValue(datasetSelector);
 
-	const setHasAnswered = useSetRecoilState(hasAnsweredAtom);
-
 	const questionsCount = useRecoilValue(datasetLengthSelector);
-	const answeredQuestions = useRecoilValue(answeredQuestionsAtom);
-	const setQuestionId = useSetRecoilState(questionIdAtom);
 	//#endregion
 
 	//#region useEffect
@@ -84,38 +74,14 @@ function App() {
 		);
 	//#endregion
 
-	//#region functions
-	const randomNumber = (maximum: number) => {
-		return Math.floor(Math.random() * maximum);
-	};
-
-	const generateQuestion = (id: number | undefined = undefined) => {
-		let n: number;
-
-		if (id !== undefined) {
-			n = (id + questionsCount) % questionsCount;
-		} else {
-			do {
-				n = randomNumber(questionsCount);
-			} while (
-				answeredQuestions.length < questionsCount &&
-				answeredQuestions.includes(n)
-			);
-		}
-
-		setQuestionId(n);
-		setHasAnswered(false);
-	};
-	//#endregion
-
 	return (
 		<ThemeProvider theme={theme}>
 			<MainPage
 				content={
 					<Container>
 						<Grid container direction="row" spacing={4}>
-							<GridQuestion generateQuestion={generateQuestion} />
-							<GridStats generateQuestion={generateQuestion} />
+							<GridQuestion />
+							<GridStats />
 						</Grid>
 					</Container>
 				}
