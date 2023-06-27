@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { get, set } from "idb-keyval";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 
@@ -12,8 +11,6 @@ import GridStats from "./components/stats/GridStats";
 import { dbKeys } from "./data/dbKeys";
 import { datasetIdAtom, datasetsAtom } from "./state/atom";
 import { datasetLengthSelector, datasetSelector } from "./state/selector";
-
-const theme = createTheme();
 
 // TODO: locale language
 function App() {
@@ -75,18 +72,16 @@ function App() {
 	//#endregion
 
 	return (
-		<ThemeProvider theme={theme}>
-			<MainPage
-				content={
-					<Container>
-						<Grid container direction="row" spacing={4}>
-							<GridQuestion />
-							<GridStats />
-						</Grid>
-					</Container>
-				}
-			/>
-		</ThemeProvider>
+		<MainPage
+			content={
+				<Container>
+					<Grid container direction="row" spacing={4}>
+						<GridQuestion />
+						<GridStats />
+					</Grid>
+				</Container>
+			}
+		/>
 	);
 }
 
