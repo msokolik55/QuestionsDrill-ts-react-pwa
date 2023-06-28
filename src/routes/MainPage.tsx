@@ -1,35 +1,10 @@
-import { useSetRecoilState } from "recoil";
+import { Container, Typography } from "@mui/material";
 
-import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
-import { Menu } from "@mui/icons-material";
-
-import { isDrawerOpenAtom } from "../state/atom";
-import MainDrawer from "../components/drawer/MainDrawer";
-
-const MainPage = (props: { content?: JSX.Element }) => {
-	const setIsDrawerOpen = useSetRecoilState(isDrawerOpenAtom);
-
+const MainPage = () => {
 	return (
-		<>
-			<AppBar position="static" color="secondary">
-				<Toolbar>
-					<IconButton
-						color="inherit"
-						onClick={() => setIsDrawerOpen(true)}
-						edge="start"
-					>
-						<Menu />
-					</IconButton>
-					<Typography style={{ fontWeight: "bold" }}>
-						Drill otázok
-					</Typography>
-				</Toolbar>
-			</AppBar>
-
-			<MainDrawer />
-
-			{props?.content}
-		</>
+		<Container style={{ marginTop: "1em" }}>
+			<Typography>Vyberte si ľubovoľný drill z bočného menu.</Typography>
+		</Container>
 	);
 };
 

@@ -8,14 +8,21 @@ import App from "./App";
 // import reportWebVitals from './reportWebVitals';
 import ServiceWorkerWrapper from "./ServiceWorkerWrapper";
 import "./index.css";
-import MainPage from "./routes/MainPage";
+import LandingPage from "./routes/LandingPage";
 import ErrorPage from "./routes/ErrorPage";
+import DatasetPage from "./routes/DatasetPage";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
-		element: <MainPage />,
+		element: <LandingPage />,
 		errorElement: <ErrorPage />,
+		children: [
+			{
+				path: "datasets/:datasetId",
+				element: <DatasetPage />,
+			},
+		],
 	},
 ]);
 
