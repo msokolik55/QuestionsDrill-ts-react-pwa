@@ -19,7 +19,7 @@ const router = createBrowserRouter([
 		errorElement: <ErrorPage />,
 		children: [
 			{
-				path: "datasets/:datasetId",
+				path: "dataset/:datasetId",
 				element: <DatasetPage />,
 			},
 		],

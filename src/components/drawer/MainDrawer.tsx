@@ -1,4 +1,5 @@
 import { useRecoilState, useRecoilValue } from "recoil";
+import { Link } from "react-router-dom";
 
 import { Divider, IconButton, SwipeableDrawer } from "@mui/material";
 import { ChevronLeft } from "@mui/icons-material";
@@ -26,14 +27,18 @@ const MainDrawer = () => {
 				</IconButton>
 			</div>
 			<Divider />
-			<ItemDrawer title="Domov" datasetId="" />
+			<Link to="/">
+				<ItemDrawer title="Home" datasetId="" />
+			</Link>
 			<AccordionDrawer title="drilly">
 				{datasets.map((dataset) => (
-					<ItemDrawer
-						key={dataset.id}
-						title={dataset.name}
-						datasetId={dataset.id}
-					/>
+					<Link to={`dataset/${dataset.id}`}>
+						<ItemDrawer
+							key={dataset.id}
+							title={dataset.name}
+							datasetId={dataset.id}
+						/>
+					</Link>
 				))}
 			</AccordionDrawer>
 		</SwipeableDrawer>
