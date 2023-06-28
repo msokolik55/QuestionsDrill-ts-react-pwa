@@ -8,14 +8,13 @@ import App from "./App";
 // import reportWebVitals from './reportWebVitals';
 import ServiceWorkerWrapper from "./ServiceWorkerWrapper";
 import "./index.css";
-import LandingPage from "./routes/LandingPage";
 import ErrorPage from "./routes/ErrorPage";
 import DatasetPage from "./routes/DatasetPage";
 
 const router = createBrowserRouter([
 	{
 		path: "/",
-		element: <LandingPage />,
+		element: <App />,
 		errorElement: <ErrorPage />,
 		children: [
 			{
@@ -31,7 +30,6 @@ ReactDOM.render(
 		<ServiceWorkerWrapper />
 		<RecoilRoot>
 			<RouterProvider router={router} />
-			<App />
 		</RecoilRoot>
 	</React.StrictMode>,
 	document.getElementById("root")
