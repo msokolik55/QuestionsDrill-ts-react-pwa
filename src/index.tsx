@@ -1,34 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { RecoilRoot } from "recoil";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 
-import App from "./App";
 // import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 // import reportWebVitals from './reportWebVitals';
 import ServiceWorkerWrapper from "./ServiceWorkerWrapper";
 import "./index.css";
-import ErrorPage from "./routes/ErrorPage";
-import DatasetPage from "./routes/DatasetPage";
-import MainPage from "./routes/MainPage";
-
-const router = createBrowserRouter([
-	{
-		path: "/",
-		element: <App />,
-		errorElement: <ErrorPage />,
-		children: [
-			{
-				path: "/",
-				element: <MainPage />,
-			},
-			{
-				path: "dataset/:datasetId",
-				element: <DatasetPage />,
-			},
-		],
-	},
-]);
+import { router } from "./router";
 
 ReactDOM.render(
 	<React.StrictMode>
