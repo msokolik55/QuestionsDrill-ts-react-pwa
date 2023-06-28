@@ -4,9 +4,9 @@ import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
 import { Menu } from "@mui/icons-material";
 
 import { isDrawerOpenAtom } from "../state/atom";
-import MainDrawer from "./drawer/MainDrawer";
+import MainDrawer from "../components/drawer/MainDrawer";
 
-const MainPage = (props: { content: JSX.Element }) => {
+const MainPage = (props: { content?: JSX.Element }) => {
 	const setIsDrawerOpen = useSetRecoilState(isDrawerOpenAtom);
 
 	return (
@@ -20,13 +20,15 @@ const MainPage = (props: { content: JSX.Element }) => {
 					>
 						<Menu />
 					</IconButton>
-					<Typography style={{ fontWeight: "bold" }}>Drill otázok</Typography>
+					<Typography style={{ fontWeight: "bold" }}>
+						Drill otázok
+					</Typography>
 				</Toolbar>
 			</AppBar>
 
 			<MainDrawer />
 
-			{props.content}
+			{props?.content}
 		</>
 	);
 };

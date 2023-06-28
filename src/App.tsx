@@ -5,7 +5,7 @@ import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 import { Container, Grid, Typography } from "@mui/material";
 
 import "./App.css";
-import MainPage from "./components/MainPage";
+import MainPage from "./routes/MainPage";
 import GridQuestion from "./components/question/GridQuestion";
 import GridStats from "./components/stats/GridStats";
 import { dbKeys } from "./data/dbKeys";
