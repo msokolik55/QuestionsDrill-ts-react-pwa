@@ -10,6 +10,7 @@ import ServiceWorkerWrapper from "./ServiceWorkerWrapper";
 import "./index.css";
 import ErrorPage from "./routes/ErrorPage";
 import DatasetPage from "./routes/DatasetPage";
+import MainPage from "./routes/MainPage";
 
 const router = createBrowserRouter([
 	{
@@ -17,6 +18,10 @@ const router = createBrowserRouter([
 		element: <App />,
 		errorElement: <ErrorPage />,
 		children: [
+			{
+				path: "/",
+				element: <MainPage />,
+			},
 			{
 				path: "dataset/:datasetId",
 				element: <DatasetPage />,
