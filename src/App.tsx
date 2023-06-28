@@ -6,16 +6,22 @@ import "./App.css";
 import { dbKeys } from "./data/dbKeys";
 import { datasetIdAtom, datasetsAtom } from "./state/atom";
 import LandingPage from "./routes/LandingPage";
+import { useLoaderData } from "react-router-dom";
+import { IDataset } from "./models/Dataset";
+
+export const loader = async () => {
+	const datasets = await fetch("/.netlify/functions/getDatasets");
+	return datasets;
+};
 
 // TODO: locale language
 function App() {
-	//#region useState
+	const datasets = useLoaderData() as IDataset[];
 	const setDatasets = useSetRecoilState(datasetsAtom);
+	setDatasets(datasets);
 
 	const [datasetId, setDatasetId] = useRecoilState(datasetIdAtom);
-	//#endregion
 
-	//#region useEffect
 	useEffect(() => {
 		get(dbKeys.lastDatasetId).then((lastDatasetId) => {
 			if (lastDatasetId) setDatasetId(lastDatasetId);
@@ -25,13 +31,6 @@ function App() {
 	useEffect(() => {
 		set(dbKeys.lastDatasetId, datasetId);
 	}, [datasetId]);
-
-	useEffect(() => {
-		fetch("/.netlify/functions/getDatasets")
-			.then((response) => response.json())
-			.then((data) => setDatasets(data));
-	}, [setDatasets]);
-	//#endregion
 
 	return <LandingPage />;
 }
