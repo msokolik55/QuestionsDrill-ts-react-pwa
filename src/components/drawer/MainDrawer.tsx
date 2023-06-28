@@ -27,9 +27,11 @@ const MainDrawer = () => {
 				</IconButton>
 			</div>
 			<Divider />
+
 			<Link to="/">
 				<ItemDrawer title="Home" datasetId="" />
 			</Link>
+
 			<AccordionDrawer title="drilly">
 				{datasets.map((dataset) => (
 					<Link to={`dataset/${dataset.id}`}>
@@ -41,6 +43,10 @@ const MainDrawer = () => {
 					</Link>
 				))}
 			</AccordionDrawer>
+
+			<Link to="dataset/add">
+				<ItemDrawer title="Add" datasetId="" />
+			</Link>
 		</SwipeableDrawer>
 	);
 };
