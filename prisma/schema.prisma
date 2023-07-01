@@ -20,7 +20,7 @@ model Dataset {
 
 model Question {
   id    String @id @default(uuid())
-  title String @unique
+  title String
 
   datasetId String
   dataset   Dataset @relation(fields: [datasetId], references: [id])
