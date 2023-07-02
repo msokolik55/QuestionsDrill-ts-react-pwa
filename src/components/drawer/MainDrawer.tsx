@@ -34,9 +34,8 @@ const MainDrawer = () => {
 
 			<AccordionDrawer title="drilly">
 				{datasets.map((dataset) => (
-					<Link to={`dataset/${dataset.id}`}>
+					<Link key={dataset.id} to={`dataset/${dataset.id}`}>
 						<ItemDrawer
-							key={dataset.id}
 							title={dataset.name}
 							datasetId={dataset.id}
 						/>
