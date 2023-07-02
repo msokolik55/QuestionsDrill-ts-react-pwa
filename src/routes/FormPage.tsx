@@ -4,6 +4,7 @@ import { Form } from "react-router-dom";
 
 export const action = async () => {
 	const dataset = await fetch("/.netlify/functions/addDataset", {
+		method: "post",
 		body: "test",
 	});
 	return { dataset };
