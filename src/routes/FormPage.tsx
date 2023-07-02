@@ -3,9 +3,28 @@ import { useState } from "react";
 import { Form } from "react-router-dom";
 import Question from "../components/form/Question";
 import { nextValue } from "../util";
+import { IDataset } from "../models/Dataset";
 
-export const action = async () => {
-	const dataset = null;
+export const action = async ({ request }) => {
+	const formData = await request.formData();
+	const data = Object.fromEntries(formData);
+	const keys = Object.keys(data);
+	const dataset: IDataset = {
+		id: data["name"],
+		name: data["name"],
+		questions: keys
+			.filter((key) => key.match(/^qst-[0-9]+$/g))
+			.map((keyQuestion) => {
+				return {
+					title: data[keyQuestion],
+					options: keys
+						.filter((key) => key.match(`${keyQuestion}-opt-`))
+						.map((keyOption) => data[keyOption]),
+				};
+			}),
+	};
+
+	console.log(dataset);
 	// const dataset = await fetch("/.netlify/functions/addDataset", {
 	// 	method: "post",
 	// 	body: "test",
@@ -14,6 +33,7 @@ export const action = async () => {
 };
 
 // TODO: design
+// TODO: refactor
 const FormPage = () => {
 	const [questions, setQuestions] = useState<number[]>([]);
 
