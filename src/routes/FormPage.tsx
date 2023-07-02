@@ -11,12 +11,39 @@ export const action = async () => {
 	return { dataset };
 };
 
+interface IPropsOption {
+	idx: number;
+	questionIdx: number;
+	setOptions: Dispatch<SetStateAction<number[]>>;
+}
+
+const Option = (props: IPropsOption) => {
+	return (
+		<>
+			<Button
+				onClick={() => {
+					props.setOptions((curr) =>
+						curr.filter((item) => item !== props.idx)
+					);
+				}}
+			>
+				X
+			</Button>
+			<label>Option:</label>
+			<input name={`qst-${props.questionIdx}-opt-${props.idx}`} />
+			<br />
+		</>
+	);
+};
+
 interface IPropsQuestion {
 	idx: number;
 	setQuestions: Dispatch<SetStateAction<number[]>>;
 }
 
 const Question = (props: IPropsQuestion) => {
+	const [options, setOptions] = useState<number[]>([]);
+
 	return (
 		<>
 			<Button
@@ -30,9 +57,34 @@ const Question = (props: IPropsQuestion) => {
 			</Button>
 			<label>Question name:</label>
 			<input name={`qst-${props.idx}`} />
+			<Button
+				onClick={() =>
+					setOptions((old) => [...old, nextValue(options)])
+				}
+			>
+				Add option
+			</Button>
+			<br />
+			{options.map((val) => (
+				<Option
+					key={`qst-${props.idx}-opt-${val}`}
+					idx={val}
+					questionIdx={props.idx}
+					setOptions={setOptions}
+				/>
+			))}
+
 			<br />
 		</>
 	);
+};
+
+const last = (arr: any[]) => {
+	return arr[arr.length - 1];
+};
+
+const nextValue = (arr: number[]) => {
+	return arr.length > 0 ? last(arr) + 1 : 0;
 };
 
 // TODO: design
@@ -46,12 +98,7 @@ const FormPage = () => {
 
 			<Button
 				onClick={() =>
-					setQuestions((old) => [
-						...old,
-						questions.length > 0
-							? questions[questions.length - 1] + 1
-							: 0,
-					])
+					setQuestions((old) => [...old, nextValue(questions)])
 				}
 			>
 				Add question
