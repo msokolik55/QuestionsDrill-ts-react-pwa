@@ -1,18 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { RecoilRoot } from "recoil";
+import { RouterProvider } from "react-router-dom";
 
-import App from "./App";
 // import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 // import reportWebVitals from './reportWebVitals';
 import ServiceWorkerWrapper from "./ServiceWorkerWrapper";
 import "./index.css";
+import { router } from "./router";
 
 ReactDOM.render(
 	<React.StrictMode>
 		<ServiceWorkerWrapper />
 		<RecoilRoot>
-			<App />
+			<RouterProvider router={router} />
 		</RecoilRoot>
 	</React.StrictMode>,
 	document.getElementById("root")
