@@ -9,12 +9,6 @@ import LandingPage from "./routes/LandingPage";
 import { useLoaderData } from "react-router-dom";
 import { IDataset } from "./models/Dataset";
 
-export const loader = async () => {
-	const datasets = await fetch("/.netlify/functions/getDatasets");
-	// return datasets;
-	return [{ id: "uuid01", name: "Dataset 1" }];
-};
-
 // TODO: locale language
 function App() {
 	const datasets = useLoaderData() as IDataset[];
