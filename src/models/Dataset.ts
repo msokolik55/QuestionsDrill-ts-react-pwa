@@ -1,7 +1,7 @@
 import { IQuestion } from "./Question";
 
 export interface IDataset {
-	id: string;
+	id?: string;
 	name: string;
 	questions: IQuestion[];
 }
