@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
-import App, { loader as appLoader } from "./App";
-import { action as formAction } from "./routes/FormPage";
+import App from "./App";
+import { loader as appLoader } from "./appLoader";
+import { action as formAction } from "./routes/formAction";
 import ErrorPage from "./routes/ErrorPage";
 import DatasetPage from "./routes/DatasetPage";
 import MainPage from "./routes/MainPage";
