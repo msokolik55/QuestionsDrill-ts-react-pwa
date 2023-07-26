@@ -34,6 +34,7 @@ const Question = (props: IPropsQuestion) => {
 							<Clear />
 						</Button>
 						<TextField
+							aria-aria-label="Question text field"
 							required={true}
 							multiline={true}
 							label="Question"

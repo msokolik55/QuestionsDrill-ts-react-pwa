@@ -21,6 +21,7 @@ const Option = (props: IPropsOption) => {
 				<Remove />
 			</Button>
 			<TextField
+				aria-aria-label="Option text field"
 				required={true}
 				multiline={true}
 				// style={{ width: "80%" }}
