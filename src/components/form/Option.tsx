@@ -1,4 +1,5 @@
 import { Button, TextField } from "@mui/material";
+import { Remove } from "@mui/icons-material";
 import { Dispatch, SetStateAction } from "react";
 
 interface IPropsOption {
@@ -17,7 +18,7 @@ const Option = (props: IPropsOption) => {
 					);
 				}}
 			>
-				X
+				<Remove />
 			</Button>
 			<TextField
 				required={true}
