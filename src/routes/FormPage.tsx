@@ -34,7 +34,6 @@ const FormPage = () => {
 					/>
 				))}
 			</Stack>
-			<Button type="submit">Add dataset</Button>
 			<SpeedDial
 				ariaLabel="Speed dial for adding things"
 				sx={{ position: "fixed", bottom: 16, right: 16 }}
@@ -47,7 +46,15 @@ const FormPage = () => {
 						setQuestions((old) => [...old, nextValue(questions)])
 					}
 				/>
-				<SpeedDialAction icon={<Add />} tooltipTitle="Add dataset" />
+
+				<SpeedDialAction
+					icon={
+						<Button type="submit">
+							<Add />
+						</Button>
+					}
+					tooltipTitle="Add dataset"
+				/>
 			</SpeedDial>
 		</Form>
 	);
