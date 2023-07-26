@@ -37,7 +37,7 @@ const MainDrawer = () => {
 					<Link key={dataset.id} to={`dataset/${dataset.id}`}>
 						<ItemDrawer
 							title={dataset.name}
-							datasetId={dataset.id}
+							datasetId={dataset.id || ""}
 						/>
 					</Link>
 				))}
