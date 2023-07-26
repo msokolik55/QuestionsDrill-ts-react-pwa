@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import { Dispatch, SetStateAction, useState } from "react";
 import Option from "./Option";
 import { nextValue } from "../../util";
@@ -22,8 +22,12 @@ const Question = (props: IPropsQuestion) => {
 			>
 				X
 			</Button>
-			<label>Question name:</label>
-			<input name={`qst-${props.idx}`} />
+			<TextField
+				required={true}
+				label="Question"
+				name={`qst-${props.idx}`}
+				size="small"
+			/>
 			<Button
 				onClick={() =>
 					setOptions((old) => [...old, nextValue(options)])

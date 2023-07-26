@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import { Dispatch, SetStateAction } from "react";
 
 interface IPropsOption {
@@ -19,8 +19,12 @@ const Option = (props: IPropsOption) => {
 			>
 				X
 			</Button>
-			<label>Option:</label>
-			<input name={`qst-${props.questionIdx}-opt-${props.idx}`} />
+			<TextField
+				required={true}
+				label="Option"
+				name={`qst-${props.questionIdx}-opt-${props.idx}`}
+				size="small"
+			/>
 			<br />
 		</>
 	);

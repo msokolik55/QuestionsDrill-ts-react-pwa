@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import { useState } from "react";
 import { Form } from "react-router-dom";
 import Question from "../components/form/Question";
@@ -11,8 +11,12 @@ const FormPage = () => {
 
 	return (
 		<Form method="post">
-			<label>Dataset name:</label>
-			<input name="name" />
+			<TextField
+				required={true}
+				label="Dataset"
+				name="name"
+				size="small"
+			/>
 
 			<Button
 				onClick={() =>
