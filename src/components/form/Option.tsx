@@ -1,4 +1,4 @@
-import { Button, TextField } from "@mui/material";
+import { Box, Button, TextField } from "@mui/material";
 import { Remove } from "@mui/icons-material";
 import { Dispatch, SetStateAction } from "react";
 
@@ -10,7 +10,7 @@ interface IPropsOption {
 
 const Option = (props: IPropsOption) => {
 	return (
-		<div>
+		<Box>
 			<Button
 				onClick={() => {
 					props.setOptions((curr) =>
@@ -26,7 +26,7 @@ const Option = (props: IPropsOption) => {
 				name={`qst-${props.questionIdx}-opt-${props.idx}`}
 				size="small"
 			/>
-		</div>
+		</Box>
 	);
 };
 

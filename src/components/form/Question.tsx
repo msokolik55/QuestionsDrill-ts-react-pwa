@@ -1,4 +1,11 @@
-import { Button, Card, CardContent, Stack, TextField } from "@mui/material";
+import {
+	Box,
+	Button,
+	Card,
+	CardContent,
+	Stack,
+	TextField,
+} from "@mui/material";
 import { Clear } from "@mui/icons-material";
 import { Dispatch, SetStateAction, useState } from "react";
 import Option from "./Option";
@@ -16,7 +23,7 @@ const Question = (props: IPropsQuestion) => {
 		<Card>
 			<CardContent>
 				<Stack spacing={1}>
-					<div>
+					<Box>
 						<Button
 							onClick={() => {
 								props.setQuestions((curr) =>
@@ -42,7 +49,7 @@ const Question = (props: IPropsQuestion) => {
 						>
 							Add option
 						</Button>
-					</div>
+					</Box>
 					<Stack spacing={0.5}>
 						{options.map((val) => (
 							<Option

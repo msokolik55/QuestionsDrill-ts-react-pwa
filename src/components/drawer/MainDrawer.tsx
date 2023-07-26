@@ -1,7 +1,7 @@
 import { useRecoilState, useRecoilValue } from "recoil";
 import { Link } from "react-router-dom";
 
-import { Divider, IconButton, SwipeableDrawer } from "@mui/material";
+import { Box, Divider, IconButton, SwipeableDrawer } from "@mui/material";
 import { ChevronLeft } from "@mui/icons-material";
 
 // import datasets from "../../data/datasets";
@@ -21,11 +21,11 @@ const MainDrawer = () => {
 			onOpen={() => setIsDrawerOpen(true)}
 			onClose={() => setIsDrawerOpen(false)}
 		>
-			<div>
+			<Box>
 				<IconButton onClick={() => setIsDrawerOpen(false)}>
 					<ChevronLeft />
 				</IconButton>
-			</div>
+			</Box>
 			<Divider />
 
 			<Link to="/">
