@@ -1,4 +1,4 @@
-import { Button, TextField } from "@mui/material";
+import { Button, Stack, TextField } from "@mui/material";
 import { useState } from "react";
 import { Form } from "react-router-dom";
 import Question from "../components/form/Question";
@@ -26,13 +26,15 @@ const FormPage = () => {
 				Add question
 			</Button>
 			<br />
-			{questions.map((val) => (
-				<Question
-					key={`qst-${val}`}
-					idx={val}
-					setQuestions={setQuestions}
-				/>
-			))}
+			<Stack>
+				{questions.map((val) => (
+					<Question
+						key={`qst-${val}`}
+						idx={val}
+						setQuestions={setQuestions}
+					/>
+				))}
+			</Stack>
 			<Button type="submit">Add dataset</Button>
 		</Form>
 	);

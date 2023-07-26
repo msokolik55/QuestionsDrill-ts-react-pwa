@@ -1,4 +1,4 @@
-import { Button, TextField } from "@mui/material";
+import { Button, Stack, TextField } from "@mui/material";
 import { Dispatch, SetStateAction, useState } from "react";
 import Option from "./Option";
 import { nextValue } from "../../util";
@@ -12,7 +12,7 @@ const Question = (props: IPropsQuestion) => {
 	const [options, setOptions] = useState<number[]>([]);
 
 	return (
-		<>
+		<div>
 			<Button
 				onClick={() => {
 					props.setQuestions((curr) =>
@@ -36,17 +36,17 @@ const Question = (props: IPropsQuestion) => {
 				Add option
 			</Button>
 			<br />
-			{options.map((val) => (
-				<Option
-					key={`qst-${props.idx}-opt-${val}`}
-					idx={val}
-					questionIdx={props.idx}
-					setOptions={setOptions}
-				/>
-			))}
-
-			<br />
-		</>
+			<Stack>
+				{options.map((val) => (
+					<Option
+						key={`qst-${props.idx}-opt-${val}`}
+						idx={val}
+						questionIdx={props.idx}
+						setOptions={setOptions}
+					/>
+				))}
+			</Stack>
+		</div>
 	);
 };
 

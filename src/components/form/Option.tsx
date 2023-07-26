@@ -9,7 +9,7 @@ interface IPropsOption {
 
 const Option = (props: IPropsOption) => {
 	return (
-		<>
+		<div>
 			<Button
 				onClick={() => {
 					props.setOptions((curr) =>
@@ -25,8 +25,7 @@ const Option = (props: IPropsOption) => {
 				name={`qst-${props.questionIdx}-opt-${props.idx}`}
 				size="small"
 			/>
-			<br />
-		</>
+		</div>
 	);
 };
 
