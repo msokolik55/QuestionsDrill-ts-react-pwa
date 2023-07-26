@@ -35,6 +35,7 @@ const Question = (props: IPropsQuestion) => {
 						</Button>
 						<TextField
 							required={true}
+							multiline={true}
 							label="Question"
 							name={`qst-${props.idx}`}
 							size="small"

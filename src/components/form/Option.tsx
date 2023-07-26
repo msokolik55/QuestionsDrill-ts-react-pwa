@@ -22,6 +22,8 @@ const Option = (props: IPropsOption) => {
 			</Button>
 			<TextField
 				required={true}
+				multiline={true}
+				// style={{ width: "80%" }}
 				label="Option"
 				name={`qst-${props.questionIdx}-opt-${props.idx}`}
 				size="small"
