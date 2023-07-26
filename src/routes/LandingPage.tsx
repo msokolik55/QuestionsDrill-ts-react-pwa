@@ -1,7 +1,13 @@
 import { useSetRecoilState } from "recoil";
 import { Outlet } from "react-router-dom";
 
-import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
+import {
+	AppBar,
+	Container,
+	IconButton,
+	Toolbar,
+	Typography,
+} from "@mui/material";
 import { Menu } from "@mui/icons-material";
 
 import { isDrawerOpenAtom } from "../state/atom";
@@ -29,7 +35,9 @@ const LandingPage = () => {
 
 			<MainDrawer />
 
-			<Outlet />
+			<Container>
+				<Outlet />
+			</Container>
 		</>
 	);
 };
