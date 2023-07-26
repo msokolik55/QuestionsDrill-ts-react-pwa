@@ -5,6 +5,7 @@ import {
 	Stack,
 	TextField,
 	SpeedDialIcon,
+	Typography,
 } from "@mui/material";
 import { Add, QuestionMark } from "@mui/icons-material";
 import { useState } from "react";
@@ -18,45 +19,53 @@ const FormPage = () => {
 	const [questions, setQuestions] = useState<number[]>([]);
 
 	return (
-		<Form method="post">
-			<TextField
-				required={true}
-				label="Dataset"
-				name="name"
-				size="small"
-			/>
-			<Stack spacing={2}>
-				{questions.map((val) => (
-					<Question
-						key={`qst-${val}`}
-						idx={val}
-						setQuestions={setQuestions}
+		<>
+			<Typography variant="h4" component="h1">
+				Dataset
+			</Typography>
+			<Form method="post">
+				<TextField
+					required={true}
+					label="Name"
+					name="name"
+					size="small"
+				/>
+				<Stack spacing={2}>
+					{questions.map((val) => (
+						<Question
+							key={`qst-${val}`}
+							idx={val}
+							setQuestions={setQuestions}
+						/>
+					))}
+				</Stack>
+				<SpeedDial
+					ariaLabel="Speed dial for adding things"
+					sx={{ position: "fixed", bottom: 16, right: 16 }}
+					icon={<SpeedDialIcon />}
+				>
+					<SpeedDialAction
+						icon={<QuestionMark />}
+						tooltipTitle="Add question"
+						onClick={() =>
+							setQuestions((old) => [
+								...old,
+								nextValue(questions),
+							])
+						}
 					/>
-				))}
-			</Stack>
-			<SpeedDial
-				ariaLabel="Speed dial for adding things"
-				sx={{ position: "fixed", bottom: 16, right: 16 }}
-				icon={<SpeedDialIcon />}
-			>
-				<SpeedDialAction
-					icon={<QuestionMark />}
-					tooltipTitle="Add question"
-					onClick={() =>
-						setQuestions((old) => [...old, nextValue(questions)])
-					}
-				/>
 
-				<SpeedDialAction
-					icon={
-						<Button type="submit">
-							<Add />
-						</Button>
-					}
-					tooltipTitle="Add dataset"
-				/>
-			</SpeedDial>
-		</Form>
+					<SpeedDialAction
+						icon={
+							<Button type="submit">
+								<Add />
+							</Button>
+						}
+						tooltipTitle="Add dataset"
+					/>
+				</SpeedDial>
+			</Form>
+		</>
 	);
 };
 
