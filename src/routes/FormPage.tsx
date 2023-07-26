@@ -26,7 +26,7 @@ const FormPage = () => {
 				Add question
 			</Button>
 			<br />
-			<Stack>
+			<Stack spacing={2}>
 				{questions.map((val) => (
 					<Question
 						key={`qst-${val}`}
