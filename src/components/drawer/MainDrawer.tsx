@@ -1,5 +1,5 @@
 import { useRecoilState, useRecoilValue } from "recoil";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 import { Box, Divider, IconButton, SwipeableDrawer } from "@mui/material";
 import { ChevronLeft } from "@mui/icons-material";
@@ -12,6 +12,21 @@ import ItemDrawer from "./ItemDrawer";
 const MainDrawer = () => {
 	const [isDrawerOpen, setIsDrawerOpen] = useRecoilState(isDrawerOpenAtom);
 	const datasets = useRecoilValue(datasetsAtom);
+
+	// TODO: move everything into classes
+	const handleLink = ({
+		isActive,
+		isPending,
+	}: {
+		isActive: boolean;
+		isPending: boolean;
+	}) => {
+		return {
+			textDecoration: "none",
+			color: isActive ? "white" : isPending ? "red" : "black",
+			backgroundColor: isActive ? "blue" : "inherit",
+		};
+	};
 
 	return (
 		<SwipeableDrawer
@@ -28,24 +43,28 @@ const MainDrawer = () => {
 			</Box>
 			<Divider />
 
-			<Link to="/">
+			<NavLink to="/" style={handleLink}>
 				<ItemDrawer title="Home" datasetId="" />
-			</Link>
+			</NavLink>
 
 			<AccordionDrawer title="drilly">
 				{datasets.map((dataset) => (
-					<Link key={dataset.id} to={`dataset/${dataset.id}`}>
+					<NavLink
+						key={dataset.id}
+						to={`dataset/${dataset.id}`}
+						style={handleLink}
+					>
 						<ItemDrawer
 							title={dataset.name}
 							datasetId={dataset.id || ""}
 						/>
-					</Link>
+					</NavLink>
 				))}
 			</AccordionDrawer>
 
-			<Link to="dataset/add">
+			<NavLink to="dataset/add" style={handleLink}>
 				<ItemDrawer title="Add" datasetId="" />
-			</Link>
+			</NavLink>
 		</SwipeableDrawer>
 	);
 };
