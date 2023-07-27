@@ -44,7 +44,7 @@ const LandingPage = () => {
 
 			<MainDrawer />
 
-			<Container>
+			<Container style={{ marginTop: "1em" }}>
 				<Outlet />
 			</Container>
 
