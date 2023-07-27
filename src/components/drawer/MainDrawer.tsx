@@ -62,9 +62,15 @@ const MainDrawer = () => {
 				))}
 			</AccordionDrawer>
 
-			<NavLink to="dataset/add" style={handleLink}>
-				<ItemDrawer title="Add" datasetId="" />
-			</NavLink>
+			{/* TODO: remove datasetId */}
+			<AccordionDrawer title="manage">
+				<NavLink to="dataset/add" style={handleLink}>
+					<ItemDrawer title="Add" datasetId="" />
+				</NavLink>
+				<NavLink to="dataset/delete" style={handleLink}>
+					<ItemDrawer title="Delete" datasetId="" />
+				</NavLink>
+			</AccordionDrawer>
 		</SwipeableDrawer>
 	);
 };

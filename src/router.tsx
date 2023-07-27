@@ -6,6 +6,7 @@ import ErrorPage from "./routes/ErrorPage";
 import DatasetPage from "./routes/DatasetPage";
 import MainPage from "./routes/MainPage";
 import FormPage from "./routes/FormPage";
+import DeletePage from "./routes/DeletePage";
 
 export const router = createBrowserRouter([
 	{
@@ -30,6 +31,7 @@ export const router = createBrowserRouter([
 						element: <FormPage />,
 						action: formAction,
 					},
+					{ path: "dataset/delete", element: <DeletePage /> },
 				],
 			},
 		],
