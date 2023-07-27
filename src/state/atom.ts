@@ -1,5 +1,6 @@
 import { atom } from "recoil";
 import { IDataset } from "../models/Dataset";
+import { ISnackbarProps } from "../models/SnackbarProps";
 
 export const datasetIdAtom = atom<string>({
 	key: "selectedDatasetId",
@@ -34,4 +35,9 @@ export const hasAnsweredAtom = atom<boolean>({
 export const isDrawerOpenAtom = atom<boolean>({
 	key: "isDrawerOpen",
 	default: false,
+});
+
+export const snackbarPropsAtom = atom<ISnackbarProps>({
+	key: "snackbarProps",
+	default: { open: false, severity: "success", text: "" },
 });

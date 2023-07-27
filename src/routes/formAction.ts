@@ -1,5 +1,6 @@
 import { ActionFunction } from "react-router";
 import { IDataset } from "../models/Dataset";
+import { redirect } from "react-router-dom";
 
 export const action: ActionFunction = async ({ request }) => {
 	const formData = await request.formData();
@@ -34,5 +35,6 @@ export const action: ActionFunction = async ({ request }) => {
 	// 	method: "post",
 	// 	body: "test",
 	// });
-	return { dataset };
+	// return { dataset };
+	return redirect(`/dataset/${dataset.id}`);
 };
