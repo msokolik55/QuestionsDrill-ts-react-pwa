@@ -10,29 +10,29 @@ import { Clear } from "@mui/icons-material";
 import { Dispatch, SetStateAction, useState } from "react";
 import Option from "./Option";
 import { nextValue } from "../../util";
+import DeleteButton from "./DeleteButton";
 
 interface IPropsQuestion {
 	idx: number;
+	count: number;
 	setQuestions: Dispatch<SetStateAction<number[]>>;
 }
 
 const Question = (props: IPropsQuestion) => {
-	const [options, setOptions] = useState<number[]>([]);
+	const init = [0];
+	const [options, setOptions] = useState<number[]>(init);
 
 	return (
 		<Card>
 			<CardContent>
 				<Stack spacing={1}>
 					<Box>
-						<Button
-							onClick={() => {
-								props.setQuestions((curr) =>
-									curr.filter((item) => item !== props.idx)
-								);
-							}}
-						>
-							<Clear />
-						</Button>
+						<DeleteButton
+							disabled={props.count <= 1}
+							setter={props.setQuestions}
+							value={props.idx}
+							icon={<Clear />}
+						/>
 						<TextField
 							aria-aria-label="Question text field"
 							required={true}
@@ -57,6 +57,7 @@ const Question = (props: IPropsQuestion) => {
 							<Option
 								key={`qst-${props.idx}-opt-${val}`}
 								idx={val}
+								count={options.length}
 								questionIdx={props.idx}
 								setOptions={setOptions}
 							/>

@@ -16,7 +16,8 @@ import { nextValue } from "../util";
 // TODO: design
 // TODO: refactor
 const FormPage = () => {
-	const [questions, setQuestions] = useState<number[]>([]);
+	const init = [0];
+	const [questions, setQuestions] = useState<number[]>(init);
 
 	return (
 		<>
@@ -36,6 +37,7 @@ const FormPage = () => {
 						<Question
 							key={`qst-${val}`}
 							idx={val}
+							count={questions.length}
 							setQuestions={setQuestions}
 						/>
 					))}
