@@ -12,6 +12,8 @@ import { useState } from "react";
 import { Form } from "react-router-dom";
 import Question from "../components/form/Question";
 import { nextValue } from "../util";
+import { useSetRecoilState } from "recoil";
+import { snackbarPropsAtom } from "../state/atom";
 
 // TODO: design
 // TODO: refactor
@@ -19,12 +21,25 @@ const FormPage = () => {
 	const init = [0];
 	const [questions, setQuestions] = useState<number[]>(init);
 
+	const setSnackbarProps = useSetRecoilState(snackbarPropsAtom);
+
 	return (
 		<>
 			<Typography variant="h4" component="h1">
 				Dataset
 			</Typography>
-			<Form method="post">
+			<Form
+				method="post"
+				onSubmit={() =>
+					setSnackbarProps(() => {
+						return {
+							open: true,
+							severity: "success",
+							text: "Dataset successfully added.",
+						};
+					})
+				}
+			>
 				<TextField
 					aria-label="Dataset name text field"
 					required={true}
