@@ -15,17 +15,22 @@ export const router = createBrowserRouter([
 		loader: appLoader,
 		children: [
 			{
-				path: "/",
-				element: <MainPage />,
-			},
-			{
-				path: "dataset/:datasetId",
-				element: <DatasetPage />,
-			},
-			{
-				path: "dataset/add",
-				element: <FormPage />,
-				action: formAction,
+				errorElement: <ErrorPage />,
+				children: [
+					{
+						index: true,
+						element: <MainPage />,
+					},
+					{
+						path: "dataset/:datasetId",
+						element: <DatasetPage />,
+					},
+					{
+						path: "dataset/add",
+						element: <FormPage />,
+						action: formAction,
+					},
+				],
 			},
 		],
 	},
