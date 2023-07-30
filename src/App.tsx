@@ -12,6 +12,8 @@ import { IDataset } from "./models/Dataset";
 // TODO: locale language
 function App() {
 	const datasets = useLoaderData() as IDataset[];
+	console.log(datasets);
+
 	const setDatasets = useSetRecoilState(datasetsAtom);
 	setDatasets(datasets);
 
