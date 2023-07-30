@@ -2,7 +2,7 @@ import { Handler } from "@netlify/functions";
 import prisma from "../../prisma/client";
 
 const handler: Handler = async (_event, _context) => {
-	const datasetId = _event.body || undefined;
+	const datasetId = JSON.parse(_event.body || "");
 	const dataset = await prisma.dataset.delete({ where: { id: datasetId } });
 
 	return {

@@ -4,9 +4,9 @@ export const action: ActionFunction = async ({ request }) => {
 	const formData = await request.formData();
 	const data = Object.fromEntries(formData) as { [k: string]: string };
 
-	await fetch("/.netlify/functions/removeDataset", {
+	const res = await fetch("/.netlify/functions/removeDataset", {
 		method: "post",
-		body: data["id"],
+		body: JSON.stringify(data["id"]),
 	});
-	return data;
+	return res;
 };
