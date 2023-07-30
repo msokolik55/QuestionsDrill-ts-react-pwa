@@ -7,7 +7,7 @@ export const action: ActionFunction = async ({ request }) => {
 
 	const res = await fetch("/.netlify/functions/removeDataset", {
 		method: "post",
-		body: JSON.stringify(data["id"]),
+		body: data["id"],
 	});
 	return res;
 };
