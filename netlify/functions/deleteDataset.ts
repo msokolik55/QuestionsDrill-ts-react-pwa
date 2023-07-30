@@ -3,7 +3,7 @@ import prisma from "../../prisma/client";
 
 const handler: Handler = async (_event, _context) => {
 	const datasetId = _event.body || "";
-	console.log(datasetId);
+	console.log(datasetId["id"]);
 	const dataset = await prisma.dataset.delete({ where: { id: datasetId } });
 
 	return {
