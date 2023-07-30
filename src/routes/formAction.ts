@@ -1,6 +1,6 @@
 import { ActionFunction } from "react-router";
 import { IDataset } from "../models/Dataset";
-import { redirect } from "react-router-dom";
+// import { redirect } from "react-router-dom";
 
 export const action: ActionFunction = async ({ request }) => {
 	const formData = await request.formData();
@@ -23,18 +23,17 @@ export const action: ActionFunction = async ({ request }) => {
 	};
 
 	const dataset: IDataset = {
-		id: data["name"],
 		name: data["name"],
 		questions: keys
 			.filter((key) => key.match(/^qst-[0-9]+$/g))
 			.map(getQuestion),
 	};
 
-	console.log(dataset);
-	// const dataset = await fetch("/.netlify/functions/addDataset", {
-	// 	method: "post",
-	// 	body: "test",
-	// });
-	// return { dataset };
-	return redirect(`/dataset/${dataset.id}`);
+	const res = await fetch("/.netlify/functions/addDataset", {
+		method: "post",
+		body: JSON.stringify(dataset),
+	});
+
+	return res;
+	// return redirect(`/dataset/${dataset.id}`);
 };
