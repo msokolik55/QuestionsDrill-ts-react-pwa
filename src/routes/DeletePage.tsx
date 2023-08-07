@@ -38,6 +38,7 @@ const DeletePage = () => {
 			<Typography variant="h4" component="h1">
 				All datasets
 			</Typography>
+			{datasets.length === 0 && <p>You need to add a dataset first.</p>}
 			{datasets.map((dataset) => (
 				<Card key={dataset.id}>
 					<Form
