@@ -4,7 +4,7 @@ export const action: ActionFunction = async ({ request }) => {
 	const formData = await request.formData();
 
 	const res = await fetch("/.netlify/functions/deleteDataset", {
-		method: "post",
+		method: "delete",
 		body: JSON.stringify(formData),
 	});
 
