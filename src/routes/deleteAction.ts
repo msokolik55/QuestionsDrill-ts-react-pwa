@@ -8,6 +8,6 @@ export const action: ActionFunction = async ({ request }) => {
 		body: JSON.stringify(formData),
 	});
 
-	console.log(res);
+	console.log(JSON.stringify(formData));
 	return res;
 };
