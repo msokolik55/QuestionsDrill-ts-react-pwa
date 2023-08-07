@@ -4,20 +4,9 @@ import prisma from "../../prisma/client";
 const handler: Handler = async (_event, _context) => {
 	const dataset = JSON.parse(_event.body || "");
 
-	// const deleteQuestions = prisma.question.deleteMany({
-	// 	where: {
-	// 		datasetId: dataset["id"],
-	// 	},
-	// });
-
 	const deleteDataset = await prisma.dataset.delete({
 		where: { id: dataset["id"] },
 	});
-
-	// const transaction = await prisma.$transaction([
-	// 	deleteQuestions,
-	// 	deleteDataset,
-	// ]);
 
 	return {
 		statusCode: 200,
