@@ -23,7 +23,7 @@ model Question {
   title String
 
   datasetId String
-  dataset   Dataset @relation(fields: [datasetId], references: [id])
+  dataset   Dataset @relation(fields: [datasetId], references: [id], onDelete: Cascade)
 
   options Option[]
 
@@ -36,7 +36,7 @@ model Option {
   isRight Boolean @default(false)
 
   questionId String
-  question   Question @relation(fields: [questionId], references: [id])
+  question   Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
 
   @@index([questionId])
 }
