@@ -1,4 +1,4 @@
-import { Stack, Typography } from "@mui/material";
+import { Button, Stack, Typography } from "@mui/material";
 import { FormEvent } from "react";
 import { Form } from "react-router-dom";
 
@@ -17,6 +17,7 @@ const ImportPage = () => {
 			<Typography>Choose a JSON file to import:</Typography>
 			<Form method="post" onSubmit={handleSubmit}>
 				<input type="file" name="file" accept="application/JSON" />
+				<Button type="submit">Import</Button>
 			</Form>
 		</Stack>
 	);
