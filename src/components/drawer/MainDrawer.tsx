@@ -67,6 +67,9 @@ const MainDrawer = () => {
 				<NavLink to="dataset/add" style={handleLink}>
 					<ItemDrawer title="Add" datasetId="" />
 				</NavLink>
+				<NavLink to="dataset/import" style={handleLink}>
+					<ItemDrawer title="Import" datasetId="" />
+				</NavLink>
 				<NavLink to="dataset/delete" style={handleLink}>
 					<ItemDrawer title="Delete" datasetId="" />
 				</NavLink>
