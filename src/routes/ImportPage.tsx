@@ -4,6 +4,8 @@ import { Form } from "react-router-dom";
 
 const ImportPage = () => {
 	const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+		e.preventDefault();
+
 		const reader = new FileReader();
 		reader.onload = async () => {
 			const text = e.currentTarget.result;
@@ -16,8 +18,10 @@ const ImportPage = () => {
 		<Stack>
 			<Typography>Choose a JSON file to import:</Typography>
 			<Form method="post" onSubmit={handleSubmit}>
-				<input type="file" name="file" accept="application/JSON" />
-				<Button type="submit">Import</Button>
+				<Stack>
+					<input type="file" name="file" accept="application/JSON" />
+					<Button type="submit">Import</Button>
+				</Stack>
 			</Form>
 		</Stack>
 	);
