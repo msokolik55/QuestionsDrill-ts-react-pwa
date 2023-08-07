@@ -9,6 +9,5 @@ export const action: ActionFunction = async ({ request }) => {
 		body: JSON.stringify(data),
 	});
 
-	console.log(res);
 	return res;
 };
