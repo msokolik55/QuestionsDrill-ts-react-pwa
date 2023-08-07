@@ -6,9 +6,9 @@ export const action: ActionFunction = async ({ request }) => {
 
 	const res = await fetch("/.netlify/functions/deleteDataset", {
 		method: "delete",
-		body: JSON.stringify(formData),
+		body: JSON.stringify(data),
 	});
 
-	console.log(data);
+	console.log(res);
 	return res;
 };
