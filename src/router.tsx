@@ -8,6 +8,7 @@ import DatasetPage from "./routes/DatasetPage";
 import MainPage from "./routes/MainPage";
 import FormPage from "./routes/FormPage";
 import DeletePage from "./routes/DeletePage";
+import ImportPage from "./routes/ImportPage";
 
 export const router = createBrowserRouter([
 	{
@@ -31,6 +32,11 @@ export const router = createBrowserRouter([
 						path: "dataset/add",
 						element: <FormPage />,
 						action: formAction,
+					},
+					{
+						path: "dataset/import",
+						element: <ImportPage />,
+						// action: importAction,
 					},
 					{
 						path: "dataset/delete",
